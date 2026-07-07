@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events & Updates | Nigama Foundation</title>
+  <meta name="description" content="Latest news, events, and field updates from Nigama Foundation — Project Parivarthan workshops, blood donation camps, youth well-being programs, and more." />
+  <link rel="canonical" href="https://www.nigamafoundation.org/events" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="nav scrolled" role="navigation">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Nigama Foundation home">
+      <img class="nav-logo-img" src="https://www.nigamafoundation.org/wp-content/uploads/2024/10/logo.svg" alt="Nigama Foundation" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-home-icon" aria-label="Home"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M1.5 7.5L8 1.5L14.5 7.5V14.5H10.5V10H5.5V14.5H1.5V7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="impact.html">Impact</a></li>
+      <li><a href="events.html" style="color:#F0A930">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html" class="btn btn-primary">Donate</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile">
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="impact.html">Impact</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate.html" class="btn btn-primary" style="margin-top:0.75rem;justify-content:center;">Donate Now</a>
+  </div>
+</nav>
+
+<section class="page-hero page-hero--mosaic">
+  <div class="page-hero-mosaic">
+    <div class="phm-main" style="background-image:url('images/pv-session-1.jpg');background-position:center 35%"></div>
+    <div class="phm-side">
+      <div class="phm-side-top" style="background-image:url('images/event-parivarthan-2026.jpg');background-position:center 30%"></div>
+      <div class="phm-side-bottom" style="background-image:url('images/pv-zphs-nellore.jpg');background-position:center 40%"></div>
+    </div>
+  </div>
+  <div class="page-hero-overlay"></div>
+  <div class="container">
+    <div class="page-hero-inner">
+      <span class="page-hero-label">In the Field</span>
+      <h1>Where the Work<br>Shows Up.</h1>
+      <p>Workshops, drives, deliveries, and on-ground programs — each entry is something that happened, not something planned.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── PHOTOJOURNALISM TIMELINE ── -->
+<section class="pj-timeline-section">
+  <style>
+    .pj-timeline-section { background: #fff; padding: 4rem 0; }
+    .pj-timeline-header { display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem; }
+    .pj-timeline { position:relative; }
+    .pj-timeline::before {
+      content:'';position:absolute;left:3rem;top:0;bottom:0;width:1px;
+      background:linear-gradient(to bottom,transparent 0%,var(--gold) 8%,var(--gold) 92%,transparent 100%);
+    }
+    .pj-entry { display:grid;grid-template-columns:6rem 1fr;gap:0;margin-bottom:0;position:relative; }
+    .pj-spine { display:flex;flex-direction:column;align-items:center;padding-top:2.5rem; }
+    .pj-node {
+      width:12px;height:12px;border-radius:50%;
+      border:2px solid var(--gold);background:#fff;
+      flex-shrink:0;position:relative;z-index:1;
+      transition:background 0.3s ease;
+    }
+    .pj-entry:hover .pj-node { background:var(--gold); }
+    .pj-year {
+      font-size:0.62rem;font-weight:800;letter-spacing:0.12em;
+      text-transform:uppercase;color:var(--gold);
+      margin-top:0.5rem;writing-mode:vertical-rl;
+      transform:rotate(180deg);opacity:0.7;
+    }
+    .pj-body { padding:2.5rem 0 2.5rem 3rem; border-bottom:1px solid rgba(0,0,0,0.06); }
+    .pj-entry:last-child .pj-body { border-bottom:none; }
+    .pj-photo {
+      width:100%;aspect-ratio:16/7;border-radius:16px;overflow:hidden;
+      box-shadow:0 8px 40px rgba(0,0,0,0.1);margin-bottom:1.75rem;position:relative;
+    }
+    .pj-photo img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease; }
+    .pj-entry:hover .pj-photo img { transform:scale(1.02); }
+    .pj-photo-caption {
+      position:absolute;bottom:0;left:0;right:0;
+      background:linear-gradient(to top,rgba(0,0,0,0.65) 0%,transparent 100%);
+      padding:1.5rem 1.25rem 0.75rem;
+      font-size:0.72rem;color:rgba(255,255,255,0.8);
+      border-left:2px solid var(--gold);
+      margin-left:1.25rem;
+      font-style:italic;
+    }
+    .pj-meta { display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;flex-wrap:wrap; }
+    .pj-date-badge {
+      font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+      background:rgba(232,130,10,0.1);border:1px solid rgba(232,130,10,0.25);
+      border-radius:100px;padding:0.25rem 0.75rem;color:var(--gold);
+    }
+    .pj-tag {
+      font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+      color:var(--gray-300);
+    }
+    .pj-body h2 {
+      font-size:clamp(1.5rem,2.5vw,2.1rem);color:var(--navy-dark);
+      line-height:1.2;margin-bottom:1rem;
+    }
+    .pj-body p { font-size:0.975rem;line-height:1.75;color:var(--gray-600);max-width:65ch;margin-bottom:1.25rem; }
+    .pj-body .pj-read-more {
+      display:inline-flex;align-items:center;gap:0.4rem;
+      font-size:0.85rem;font-weight:600;color:var(--navy);
+      border-bottom:1px solid rgba(26,60,42,0.25);padding-bottom:1px;
+      transition:border-color 0.2s,color 0.2s;
+    }
+    .pj-body .pj-read-more:hover { color:var(--gold);border-color:var(--gold); }
+    @media (max-width:640px) {
+      .pj-timeline::before { left:1.5rem; }
+      .pj-entry { grid-template-columns:3rem 1fr; }
+      .pj-body { padding:2rem 0 2rem 1.5rem; }
+      .pj-year { display:none; }
+    }
+  </style>
+
+  <div class="container">
+    <div class="pj-timeline-header fade-up">
+      <div>
+        <span class="section-label">In the Field</span>
+        <h2 style="margin-top:0.3rem">Events &amp; Field Updates</h2>
+      </div>
+    </div>
+
+    <div class="pj-timeline">
+
+      <!-- Entry 1: Parivarthan 2026 -->
+      <div class="pj-entry fade-up">
+        <div class="pj-spine">
+          <div class="pj-node"></div>
+          <span class="pj-year">2026</span>
+        </div>
+        <div class="pj-body">
+          <div class="pj-photo">
+            <img src="images/pv-gunthakal-session.jpg" alt="Project Parivarthan — Nigama Foundation organizing session at Gunthakal Junior College" loading="lazy" style="object-position:center 30%" />
+            <div class="pj-photo-caption">Kurnool District · 2026</div>
+          </div>
+          <div class="pj-meta">
+            <span class="pj-date-badge">June 2026</span>
+            <span class="pj-tag">Youth Mental Health · Andhra Pradesh</span>
+          </div>
+          <h2>Project Parivarthan: Setting the Tone for 2026</h2>
+          <p>Expanded across 4 districts — Kurnool, Nandyal, Kadapa, and Annamayya — reaching 104 institutions and over 3,000 young adults with structured mental health awareness workshops. Screen addiction, peer pressure, emotional resilience: conversations India's classrooms rarely have, delivered by professionals who show up in person.</p>
+          <a href="parivarthan.html" class="pj-read-more">See the full Parivarthan story →</a>
+        </div>
+      </div>
+
+      <!-- Entry 2: Youth Well-Being -->
+      <div class="pj-entry fade-up">
+        <div class="pj-spine">
+          <div class="pj-node"></div>
+          <span class="pj-year">2025</span>
+        </div>
+        <div class="pj-body">
+          <div class="pj-photo">
+            <img src="images/event-youth-wellbeing-2.jpg" alt="Commitment to youth well-being — Nigama Foundation mental health clinic" loading="lazy" style="object-position:center 30%" />
+            <div class="pj-photo-caption">Nandyal District · Nov–Dec 2025</div>
+          </div>
+          <div class="pj-meta">
+            <span class="pj-date-badge">Nov–Dec 2025</span>
+            <span class="pj-tag">Parivarthan Phase 1 · 16 Institutions</span>
+          </div>
+          <h2>Commitment to Youth Well-Being</h2>
+          <p>In a single season, Nigama Foundation reached 16 schools, junior colleges, and welfare hostels across Kurnool and Nandyal, bringing 3,500+ young men and women face-to-face with a counselor — many for the first time. This was Parivarthan's proof-of-concept, and it worked.</p>
+          <a href="https://www.nigamafoundation.org/commitment-to-youth-well-being/" target="_blank" rel="noopener" class="pj-read-more">Read the full report →</a>
+        </div>
+      </div>
+
+      <!-- Entry 3: Blood Donation -->
+      <div class="pj-entry fade-up">
+        <div class="pj-spine">
+          <div class="pj-node"></div>
+        </div>
+        <div class="pj-body">
+          <div class="pj-photo">
+            <img src="images/event-blood-donation.jpg" alt="Indotronix Avani blood donation camp 2025" loading="lazy" style="object-position:center 30%" />
+            <div class="pj-photo-caption">Indotronix Avani HQ · Hyderabad · Nov 2025</div>
+          </div>
+          <div class="pj-meta">
+            <span class="pj-date-badge">Nov 2025</span>
+            <span class="pj-tag">Community Health · Hyderabad</span>
+          </div>
+          <h2>Blood Donation Camp 2025</h2>
+          <p>The Indotronix Avani team in Hyderabad came together for a volunteer blood donation drive — a morning of compassion, community, and collective impact. The people who fund the mission also show up for it.</p>
+          <a href="https://www.nigamafoundation.org/blood-donation-camp-2025/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Entry 4: VMS Dining Hall -->
+      <div class="pj-entry fade-up">
+        <div class="pj-spine">
+          <div class="pj-node"></div>
+          <span class="pj-year">2024</span>
+        </div>
+        <div class="pj-body">
+          <div class="pj-photo">
+            <img src="images/program-vms-dining.jpg" alt="Dining hall at Visakha Model School for the Blind — renovated by Nigama Foundation" loading="lazy" style="object-position:center 20%" />
+            <div class="pj-photo-caption">Visakha Model School for the Blind · Vizag · Aug 2024</div>
+          </div>
+          <div class="pj-meta">
+            <span class="pj-date-badge">Aug 2024</span>
+            <span class="pj-tag">Delivering Care · Vizag</span>
+          </div>
+          <h2>Dining Hall Renovation — Visakha Model School for the Blind</h2>
+          <p>Commissioned on August 8th, 2024, the dining hall renovation at VMS gave blind-school students a dignified space to share meals. This is what Indotronix Avani Group's CSR commitment looks like when it arrives in person — not a plaque on a wall, but a room where children eat every day.</p>
+          <a href="programs.html#care" class="pj-read-more">About our Care programs →</a>
+        </div>
+      </div>
+
+      <!-- Entry 5: School Supplies -->
+      <div class="pj-entry fade-up">
+        <div class="pj-spine">
+          <div class="pj-node"></div>
+        </div>
+        <div class="pj-body">
+          <div class="pj-photo">
+            <img src="images/program-education-distribution.jpg" alt="School supply distribution — Amitabha Aadarana Vidyalaya" loading="lazy" style="object-position:center 30%" />
+            <div class="pj-photo-caption">Amitabha Aadarana Vidyalaya · Hyderabad · 2024</div>
+          </div>
+          <div class="pj-meta">
+            <span class="pj-date-badge">2024</span>
+            <span class="pj-tag">Delivering Education · Hyderabad</span>
+          </div>
+          <h2>School Supplies Distribution — Amitabha Aadarana</h2>
+          <p>Uniforms, notebooks, bags, and stationery distributed to students who would otherwise start the year without basics. Fifty children sponsored annually through the Nigama school-supply programme — each one named, each one tracked, each one followed through to the end of the year.</p>
+          <a href="programs.html#education" class="pj-read-more">About our Education programs →</a>
+        </div>
+      </div>
+
+      <!-- Entry 6: Sadhana / Respect -->
+      <div class="pj-entry fade-up">
+        <div class="pj-spine">
+          <div class="pj-node"></div>
+        </div>
+        <div class="pj-body">
+          <div class="pj-photo">
+            <img src="images/program-sadhana-impact.jpg" alt="Sadhana Institute for the Intellectually Challenged — Nigama Foundation support" loading="lazy" style="object-position:center 25%" />
+            <div class="pj-photo-caption">Sadhana Institute for the Intellectually Challenged · Hyderabad</div>
+          </div>
+          <div class="pj-meta">
+            <span class="pj-date-badge">2024</span>
+            <span class="pj-tag">Delivering Respect · Hyderabad</span>
+          </div>
+          <h2>Delivering Respect — Sadhana Institute</h2>
+          <p>Appliances, assistive resources, and sustained support for the Sadhana Institute for the Intellectually Challenged. Respect isn't sympathy from a distance — it's equipment delivered, a visit made, a hand shaken. The barrier for most people with disabilities is access, not ability. We address the barrier.</p>
+          <a href="programs.html#respect" class="pj-read-more">About our Respect programs →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="donate-section" style="padding:4rem 0">
+  <div class="container">
+    <div style="text-align:center;max-width:560px;margin:0 auto">
+      <span class="section-label">Stay Involved</span>
+      <h2 style="margin:0.5rem 0 1rem">Want to Be Part<br>of the Next Update?</h2>
+      <p style="color:rgba(255,255,255,0.6);margin-bottom:2rem">Volunteer, donate, or partner with us. Every new entry in this timeline starts with someone deciding to show up.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="donate.html" class="btn btn-primary">Donate Now →</a>
+        <a href="contact.html" class="btn btn-outline">Volunteer or Partner</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Nigama Foundation</div>
+        <p>Delivering dignity, one person at a time, across Hyderabad, Vizag, and Chennai.</p>
+        <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap">
+          <span style="background:rgba(201,120,12,0.15);border:1px solid rgba(201,120,12,0.3);border-radius:4px;padding:0.2rem 0.6rem;font-size:0.7rem;color:#e8a43a;font-weight:600">80G Certified</span>
+          <span style="background:rgba(201,120,12,0.15);border:1px solid rgba(201,120,12,0.3);border-radius:4px;padding:0.2rem 0.6rem;font-size:0.7rem;color:#e8a43a;font-weight:600">12AB Registered</span>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Navigation</h4><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Programs</h4><ul>
+        <li><a href="programs.html#education">Delivering Education</a></li>
+        <li><a href="programs.html#care">Delivering Care</a></li>
+        <li><a href="programs.html#respect">Delivering Respect</a></li>
+        <li><a href="parivarthan.html">Project Parivarthan</a></li>
+      </ul></div>
+      <div class="footer-col footer-address"><h4>Contact</h4>
+        <p><a href="mailto:contact@nigamafoundation.org">contact@nigamafoundation.org</a><br><br>
+        Indotronix Avani Group, Orbit<br>
+        Plot No. 30/C, 20th Floor<br>
+        Knowledge City, Hyderabad<br>
+        Telangana – 500081</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Nigama Foundation. All Rights Reserved.</span>
+      <div class="footer-bottom-right">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

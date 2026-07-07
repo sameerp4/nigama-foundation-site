@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Parivarthan | Nigama Foundation</title>
+  <meta name="description" content="Project Parivarthan — Nigama Foundation's flagship youth mental health initiative. 3,000+ youth reached, 110+ institutions, 4 districts of Andhra Pradesh. Official Government of India partnership." />
+  <meta property="og:title" content="Project Parivarthan | Nigama Foundation" />
+  <meta property="og:description" content="Helping India's youth navigate screen addiction, peer pressure, and mental health — one classroom at a time." />
+  <link rel="canonical" href="https://www.nigamafoundation.org/parivarthan" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Parivarthan page accent ── */
+    :root {
+      --pv-purple:  #7B2D8B;
+      --pv-violet:  #A855F7;
+      --pv-mid:     #6D28D9;
+      --pv-pale:    rgba(168,85,247,0.08);
+      --pv-border:  rgba(168,85,247,0.22);
+    }
+
+    /* Stats bar */
+    .pv-stats {
+      background: #fff;
+      padding: 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      position: relative;
+    }
+    /* thin gradient rule at the very top, bridging from hero */
+    .pv-stats::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--pv-purple) 0%, var(--pv-violet) 55%, #F0A930 100%);
+    }
+    .pv-stats-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .pv-stat {
+      padding: 1.5rem 1.5rem 1.25rem;
+      text-align: center;
+      border-right: 1px solid rgba(0,0,0,0.07);
+      position: relative;
+    }
+    .pv-stat:last-child { border-right: none; }
+    /* accent dot above the number */
+    .pv-stat::before {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pv-purple), var(--pv-violet));
+      margin: 0 auto 0.65rem;
+    }
+    .pv-stat-num {
+      font-family: Georgia, serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1;
+      display: block;
+      color: var(--navy-dark);
+    }
+    .pv-stat-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--navy-dark);
+      opacity: 0.55;
+      margin-top: 0.4rem;
+      display: block;
+      font-weight: 600;
+    }
+
+    /* Origin story */
+    .pv-origin {
+      padding: 4rem 0;
+      background: #fff;
+    }
+    .pv-origin-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .pv-accent-bar {
+      height: 5px;
+      width: 56px;
+      background: linear-gradient(90deg, var(--pv-purple), var(--pv-violet));
+      border-radius: 3px;
+      margin-bottom: 1.5rem;
+    }
+    .pv-origin-img {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.14);
+    }
+    .pv-origin-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+    .pv-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--pv-pale);
+      border: 1px solid var(--pv-border);
+      border-radius: 100px;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--pv-purple);
+      margin-bottom: 1rem;
+    }
+    .pv-blockquote {
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--navy-dark);
+      line-height: 1.75;
+      border-left: 3px solid var(--pv-violet);
+      padding-left: 1.25rem;
+      margin: 1.75rem 0;
+    }
+
+    /* Focus areas */
+    .pv-focus {
+      background: var(--gray-50);
+      padding: 4rem 0;
+    }
+    .pv-focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .pv-focus-card {
+      background: #fff;
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .pv-focus-card:hover {
+      box-shadow: 0 8px 32px rgba(123,45,139,0.10);
+      border-color: var(--pv-border);
+    }
+    .pv-focus-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--pv-pale);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    .pv-focus-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      margin-bottom: 0.5rem;
+    }
+    .pv-focus-card p {
+      font-size: 0.88rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* How it works */
+    .pv-process {
+      background: var(--navy-dark);
+      padding: 4rem 0;
+    }
+    .pv-process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 2rem;
+      position: relative;
+    }
+    .pv-process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 1px;
+      background: rgba(168,85,247,0.3);
+    }
+    .pv-step {
+      text-align: center;
+      padding: 0 1rem;
+      position: relative;
+    }
+    .pv-step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pv-purple), var(--pv-mid));
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.25rem;
+      box-shadow: 0 0 0 4px rgba(123,45,139,0.25);
+    }
+    .pv-step h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .pv-step p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.52);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Gallery */
+    .pv-gallery {
+      background: #fff;
+      padding: 4rem 0;
+    }
+    .pv-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 220px 220px;
+      gap: 6px;
+      margin-top: 2rem;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+    .pv-gallery-cell {
+      overflow: hidden;
+    }
+    .pv-gallery-cell img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+    .pv-gallery-cell:hover img { transform: scale(1.05); }
+    .pv-gallery-cell--tall {
+      grid-row: span 2;
+    }
+
+    /* Institutions */
+    .pv-institutions {
+      background: var(--gray-50);
+      padding: 4rem 0;
+    }
+    /* ── Unified phases card ── */
+    .pv-phases-card {
+      margin-top: 2rem;
+      background: #fff;
+      border: 1px solid rgba(168,85,247,0.14);
+      border-radius: 20px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+    /* progress bar at top spanning both phases */
+    .pv-phases-progress {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 5px;
+    }
+    .pv-phases-progress-p1 {
+      background: linear-gradient(90deg, var(--pv-purple), var(--pv-violet));
+    }
+    .pv-phases-progress-p2 {
+      background: linear-gradient(90deg, rgba(168,85,247,0.35), rgba(168,85,247,0.15));
+    }
+    .pv-phases-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .pv-phase-col {
+      padding: 2rem 2.25rem;
+    }
+    .pv-phase-col--p1 {
+      border-right: 1px solid rgba(168,85,247,0.12);
+    }
+    .pv-phase-col--p2 {
+      background: rgba(123,45,139,0.03);
+    }
+    .pv-phase-head {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .pv-phase-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.6rem;
+      height: 1.6rem;
+      background: var(--pv-pale);
+      border: 1px solid var(--pv-border);
+      border-radius: 50%;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--pv-purple);
+    }
+    .pv-phase-title {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pv-purple);
+    }
+    .pv-phase-badge-status {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.55rem;
+      border-radius: 100px;
+    }
+    .pv-phase-badge-status--done {
+      background: rgba(34,197,94,0.1);
+      color: #16a34a;
+      border: 1px solid rgba(34,197,94,0.25);
+    }
+    .pv-phase-badge-status--live {
+      background: rgba(168,85,247,0.1);
+      color: var(--pv-purple);
+      border: 1px solid rgba(168,85,247,0.25);
+    }
+    .pv-phase-sub {
+      font-size: 0.8rem;
+      color: var(--gray-300);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(168,85,247,0.1);
+    }
+    .pv-inst-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .pv-inst-tag {
+      background: var(--gray-50);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 7px;
+      padding: 0.38rem 0.75rem;
+      font-size: 0.78rem;
+      color: var(--navy-dark);
+      font-weight: 500;
+      transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    }
+    .pv-inst-tag:hover {
+      border-color: rgba(168,85,247,0.4);
+      background: var(--pv-pale);
+      color: var(--pv-purple);
+    }
+    /* Phase 2 uses same tag style but with slightly different base */
+    .pv-phase-col--p2 .pv-inst-tag {
+      background: rgba(168,85,247,0.05);
+      border-color: rgba(168,85,247,0.18);
+      color: var(--navy-dark);
+    }
+    .pv-phase-col--p2 .pv-inst-tag:hover {
+      background: rgba(168,85,247,0.12);
+      border-color: rgba(168,85,247,0.4);
+      color: var(--pv-purple);
+    }
+    .pv-phases-footer {
+      padding: 1rem 2.25rem 1.25rem;
+      border-top: 1px solid rgba(168,85,247,0.1);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: linear-gradient(135deg, rgba(123,45,139,0.04) 0%, rgba(168,85,247,0.04) 100%);
+    }
+    .pv-phases-footer-icon { font-size: 1.3rem; }
+    .pv-phases-footer-text {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      font-weight: 500;
+    }
+    .pv-phases-footer-text strong { color: var(--pv-purple); }
+    .pv-district-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 2rem;
+    }
+    .pv-district-chip {
+      background: var(--pv-pale);
+      border: 1px solid var(--pv-border);
+      border-radius: 100px;
+      padding: 0.45rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--pv-purple);
+    }
+
+    /* ── Institution grid ── */
+    .pv-inst-featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .pv-inst-fcard {
+      background: #fff;
+      border: 1px solid var(--pv-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 24px rgba(123,45,139,0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .pv-inst-fcard:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 44px rgba(123,45,139,0.14);
+    }
+    .pv-inst-fcard-media {
+      position: relative;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+    }
+    .pv-inst-fcard-media img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .pv-inst-fcard:hover .pv-inst-fcard-media img { transform: scale(1.04); }
+    .pv-inst-fcard-badge {
+      position: absolute;
+      top: 0.85rem; left: 0.85rem;
+      background: rgba(12,4,28,0.72);
+      color: #E9D5FF;
+      border: 1px solid rgba(168,85,247,0.5);
+      backdrop-filter: blur(6px);
+      border-radius: 100px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .pv-inst-fcard-body { padding: 1.5rem 1.6rem 1.6rem; }
+    .pv-inst-fcard-loc {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--pv-purple);
+      opacity: 0.9;
+    }
+    .pv-inst-fcard-body h3 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--navy-dark);
+      margin: 0.4rem 0 0.6rem;
+      line-height: 1.2;
+    }
+    .pv-inst-fcard-body p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.65;
+      margin: 0 0 1.1rem;
+    }
+    .pv-inst-fcard-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .pv-inst-sessions {
+      background: var(--pv-pale);
+      border: 1px solid var(--pv-border);
+      color: var(--pv-purple);
+      border-radius: 100px;
+      padding: 0.28rem 0.75rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .pv-inst-status {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--gray-300);
+    }
+
+    .pv-inst-group { margin-top: 2.75rem; }
+    .pv-inst-group-head {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--pv-border);
+    }
+    .pv-inst-group-head h4 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy-dark);
+      margin: 0;
+    }
+    .pv-inst-group-count {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--pv-purple);
+      background: var(--pv-pale);
+      border-radius: 100px;
+      padding: 0.2rem 0.7rem;
+    }
+    .pv-inst-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .pv-inst-card {
+      background: #fff;
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .pv-inst-card:hover {
+      border-color: var(--pv-border);
+      box-shadow: 0 8px 26px rgba(123,45,139,0.08);
+      transform: translateY(-2px);
+    }
+    .pv-inst-card-loc {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--pv-purple);
+      opacity: 0.85;
+    }
+    .pv-inst-card h5 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      margin: 0.4rem 0 0.5rem;
+      line-height: 1.3;
+    }
+    .pv-inst-card p {
+      font-size: 0.8rem;
+      color: var(--gray-600);
+      line-height: 1.55;
+      margin: 0 0 0.9rem;
+      flex-grow: 1;
+    }
+    .pv-inst-card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--gray-100);
+    }
+    .pv-inst-card-sessions {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--pv-purple);
+    }
+    .pv-inst-card-tag {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #16a34a;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.22);
+      border-radius: 100px;
+      padding: 0.15rem 0.55rem;
+    }
+
+    /* Grid-card thumbnail: real photo when available, gradient-initials placeholder otherwise */
+    .pv-inst-card-thumb {
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--pv-purple) 0%, var(--pv-violet) 100%);
+    }
+    .pv-inst-card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .pv-inst-card-thumb-initials {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.94);
+      text-shadow: 0 2px 10px rgba(12,4,28,0.28);
+    }
+
+    /* ── Filtered card grid (96 institutions) ── */
+    .pv-filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 2.5rem;
+    }
+    .pv-filter-tab {
+      border-radius: 100px;
+      padding: 0.4rem 1.2rem;
+      font-family: var(--font-body, Inter, sans-serif);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      border: 1px solid var(--pv-border);
+      background: transparent;
+      color: var(--pv-purple);
+      transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+    }
+    .pv-filter-tab:hover {
+      background: var(--pv-pale);
+      transform: translateY(-1px);
+    }
+    .pv-filter-tab.is-active {
+      background: linear-gradient(135deg, var(--pv-purple), var(--pv-violet));
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 4px 16px rgba(123,45,139,0.28);
+    }
+
+    .pv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.25rem;
+    }
+    .pv-grid-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+    .pv-grid-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(123,45,139,0.16);
+    }
+    .pv-grid-card.is-hidden { display: none; }
+    .pv-grid-card-cover {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+      display: block;
+      background: linear-gradient(135deg, var(--pv-purple), var(--pv-violet));
+    }
+    .pv-grid-card-body {
+      padding: 1.1rem 1.25rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .pv-grid-card-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      line-height: 1.32;
+      margin: 0 0 0.35rem;
+    }
+    .pv-grid-card-loc {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      margin-bottom: 0.85rem;
+    }
+    .pv-grid-card-loc::before { content: '📍 '; }
+    .pv-grid-card-foot {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--gray-100);
+    }
+    .pv-grid-card-month {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--pv-purple);
+      background: var(--pv-pale);
+      border: 1px solid var(--pv-border);
+      border-radius: 100px;
+      padding: 0.2rem 0.65rem;
+    }
+    .pv-grid-card-count {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--gray-600);
+    }
+    .pv-grid-card-count::before { content: '📷 '; }
+
+    /* ── Lightbox ── */
+    .pv-lb {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .pv-lb.is-open { display: flex; }
+    .pv-lb-top {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+    }
+    .pv-lb-title {
+      color: #fff;
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.3;
+      max-width: 75%;
+    }
+    .pv-lb-counter {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .pv-lb-close {
+      position: absolute;
+      top: 1rem; right: 1.25rem;
+      background: rgba(255,255,255,0.12);
+      border: none;
+      color: #fff;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 2;
+      transition: background 0.2s ease;
+    }
+    .pv-lb-close:hover { background: rgba(255,255,255,0.25); }
+    .pv-lb-stage {
+      max-width: 88vw;
+      max-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pv-lb-img {
+      max-width: 88vw;
+      max-height: 78vh;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+    .pv-lb-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.12);
+      border: none;
+      color: #fff;
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+    .pv-lb-nav:hover { background: rgba(168,85,247,0.55); }
+    .pv-lb-prev { left: 1.25rem; }
+    .pv-lb-next { right: 1.25rem; }
+
+    /* Phase 2 expansion band */
+    .pv-inst-expand {
+      margin-top: 2.75rem;
+      background: linear-gradient(135deg, rgba(123,45,139,0.04) 0%, rgba(168,85,247,0.05) 100%);
+      border: 1px solid var(--pv-border);
+      border-radius: var(--radius-xl);
+      padding: 2rem 2.25rem;
+    }
+    .pv-inst-expand-head {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+    .pv-inst-expand-sub {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(168,85,247,0.12);
+    }
+    .pv-inst-expand-foot {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(168,85,247,0.12);
+    }
+    .pv-inst-expand-foot span:first-child { font-size: 1.3rem; }
+    .pv-inst-expand-foot p {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      font-weight: 500;
+      margin: 0;
+    }
+    .pv-inst-expand-foot strong { color: var(--pv-purple); }
+
+    /* Partnership */
+    .pv-partnership {
+      background: #fff;
+      padding: 4rem 0;
+    }
+    .pv-partner-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .pv-partner-card {
+      background: var(--pv-pale);
+      border: 1px solid var(--pv-border);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+    }
+    .pv-partner-card-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .pv-partner-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      margin-bottom: 0.5rem;
+    }
+    .pv-partner-card p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* CTA */
+    .pv-cta {
+      background: linear-gradient(135deg, var(--pv-purple) 0%, var(--pv-mid) 100%);
+      padding: 4rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pv-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 60%, rgba(255,255,255,0.06), transparent 55%),
+                  radial-gradient(circle at 80% 20%, rgba(255,255,255,0.04), transparent 45%);
+    }
+    .pv-cta .container { position: relative; z-index: 1; }
+    .pv-cta h2 { color: #fff; margin-bottom: 0.75rem; }
+    .pv-cta p { color: rgba(255,255,255,0.78); max-width: 520px; margin: 0 auto 2rem; font-size: 1.05rem; }
+    .pv-cta .btn-white {
+      background: #fff;
+      color: var(--pv-purple);
+      font-weight: 700;
+      padding: 0.9rem 2.2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .pv-cta .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+    }
+    .pv-cta .btn-ghost {
+      margin-left: 1rem;
+      border: 1.5px solid rgba(255,255,255,0.5);
+      color: #fff;
+      padding: 0.9rem 2.2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .pv-cta .btn-ghost:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.8);
+    }
+
+    /* ── Cinematic hero ── */
+    .pv-hero {
+      position: relative;
+      height: 600px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: #0e0818;
+    }
+    .pv-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center 30%;
+    }
+    /* two-layer overlay: directional darkness + purple tint */
+    .pv-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(105deg,
+          rgba(10,10,10,0.90) 0%,
+          rgba(10,10,10,0.72) 35%,
+          rgba(10,10,10,0.30) 58%,
+          transparent 100%),
+        linear-gradient(to top,
+          rgba(10,10,10,0.50) 0%,
+          transparent 40%);
+    }
+    .pv-hero-overlay::after { content: none; }
+    /* fix: remove width:100% override so container respects its own margins */
+    .pv-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .pv-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 4rem;
+      align-items: center;
+    }
+    .pv-hero-text { max-width: 540px; }
+
+    /* label badge */
+    .pv-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(168,85,247,0.16);
+      border: 1px solid rgba(168,85,247,0.40);
+      border-radius: 100px;
+      padding: 0.38rem 1rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #C4B5FD;
+      margin-bottom: 1rem;
+    }
+    .pv-hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #A855F7;
+      box-shadow: 0 0 6px #A855F7;
+      flex-shrink: 0;
+    }
+
+    .pv-hero-text h1 {
+      color: #fff;
+      font-size: clamp(2.8rem, 4.2vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.06;
+      margin: 0 0 1.1rem;
+      letter-spacing: -0.025em;
+    }
+    /* purple gradient on the word "Parivarthan" */
+    .pv-hero-text h1 .pv-gradient-word {
+      background: linear-gradient(90deg, #C084FC 0%, #818CF8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .pv-hero-text p {
+      color: rgba(255,255,255,0.76);
+      font-size: 1rem;
+      line-height: 1.74;
+      max-width: 460px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* chips: single row, no wrap */
+    .pv-hero-chips {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: nowrap;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .pv-hero-chip {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(168,85,247,0.35);
+      border-radius: 100px;
+      padding: 0.28rem 0.72rem;
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #C4B5FD;
+      white-space: nowrap;
+      backdrop-filter: blur(6px);
+    }
+
+    /* CTA button group */
+    .pv-hero-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .pv-btn-primary {
+      background: linear-gradient(135deg, #7B2D8B, #A855F7);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.8rem 1.75rem;
+      border-radius: 100px;
+      text-decoration: none;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 4px 22px rgba(168,85,247,0.40);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .pv-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(168,85,247,0.55);
+    }
+    .pv-btn-ghost-sm {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .pv-btn-ghost-sm:hover { color: #fff; }
+
+    /* floating accent photos — right column */
+    .pv-hero-photos {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+    .pv-hero-photo {
+      width: 100%;
+      height: 152px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1.5px solid rgba(168,85,247,0.38);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.55);
+      position: relative;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .pv-hero-photo:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 18px 48px rgba(0,0,0,0.65);
+    }
+    .pv-hero-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .pv-hero-photo-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(12,4,28,0.88) 0%, transparent 100%);
+      padding: 0.85rem 0.75rem 0.45rem;
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.82);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    /* glowing purple dot on the second photo for visual variety */
+    .pv-hero-photo:last-child::before {
+      content: '';
+      position: absolute;
+      top: 0.55rem; right: 0.55rem;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #A855F7;
+      box-shadow: 0 0 8px #A855F7;
+      z-index: 2;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .pv-hero { height: auto; min-height: 420px; padding: 5rem 0 3rem; }
+      .pv-hero-inner { grid-template-columns: 1fr; }
+      .pv-hero-photos { display: none; }
+      .pv-stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .pv-stat { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.06); }
+      .pv-origin-grid, .pv-partner-cards { grid-template-columns: 1fr; gap: 2.5rem; }
+      .pv-phases-cols { grid-template-columns: 1fr; }
+      .pv-phase-col--p1 { border-right: none; border-bottom: 1px solid rgba(168,85,247,0.12); }
+      .pv-focus-grid { grid-template-columns: 1fr 1fr; }
+      .pv-process-steps { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+      .pv-process-steps::before { display: none; }
+      .pv-gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+      .pv-gallery-cell--tall { grid-row: span 1; }
+      .pv-inst-featured { grid-template-columns: 1fr; }
+      .pv-inst-grid { grid-template-columns: 1fr 1fr; }
+      .pv-grid { grid-template-columns: 1fr 1fr; }
+      .pv-lb-title { font-size: 0.95rem; }
+      .pv-lb-nav { width: 44px; height: 44px; font-size: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .pv-focus-grid { grid-template-columns: 1fr; }
+      .pv-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .pv-inst-grid { grid-template-columns: 1fr; }
+      .pv-grid { grid-template-columns: 1fr; }
+      .pv-cta .btn-ghost { display: block; margin: 1rem auto 0; width: fit-content; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav scrolled" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Nigama Foundation home">
+      <img class="nav-logo-img" src="https://www.nigamafoundation.org/wp-content/uploads/2024/10/logo.svg" alt="Nigama Foundation" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-home-icon" aria-label="Home"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M1.5 7.5L8 1.5L14.5 7.5V14.5H10.5V10H5.5V14.5H1.5V7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="impact.html">Impact</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html" class="btn btn-primary">Donate</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile">
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="impact.html">Impact</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate.html" class="btn btn-primary" style="margin-top:0.75rem;justify-content:center;">Donate Now</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="pv-hero">
+  <div class="pv-hero-bg" style="background-image:url('images/pv-hero-bg.jpg')"></div>
+  <div class="pv-hero-overlay"></div>
+  <div class="container">
+    <div class="pv-hero-inner">
+      <div class="pv-hero-text">
+        <span class="pv-hero-badge">Flagship Initiative &nbsp;·&nbsp; Govt. of India Recognized</span>
+        <h1>Project<br><span class="pv-gradient-word">Parivarthan</span></h1>
+        <p>In a junior college classroom in Kurnool, a sixteen-year-old raises his hand and asks a question he's never said out loud: how do I stop being on my phone at 2 a.m.? That question is why this exists.</p>
+        <div class="pv-hero-chips">
+          <span class="pv-hero-chip">3,000+ Youth Reached</span>
+          <span class="pv-hero-chip">110+ Institutions</span>
+          <span class="pv-hero-chip">4 Districts · AP</span>
+          <span class="pv-hero-chip">🤝 GoI Partner</span>
+        </div>
+        <div class="pv-hero-actions">
+          <a href="donate.html" class="pv-btn-primary">Fund a Workshop →</a>
+          <a href="#pv-origin" class="pv-btn-ghost-sm">Learn the story ↓</a>
+        </div>
+      </div>
+      <div class="pv-hero-photos">
+        <div class="pv-hero-photo">
+          <img src="images/pv-session-1.jpg" alt="Parivarthan session — Kurnool district" loading="lazy" />
+          <div class="pv-hero-photo-label">Kurnool District</div>
+        </div>
+        <div class="pv-hero-photo">
+          <img src="images/pv-session-2.jpg" alt="Parivarthan session — Andhra Pradesh" loading="lazy" />
+          <div class="pv-hero-photo-label">Andhra Pradesh</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<section class="pv-stats">
+  <div class="container">
+    <div class="pv-stats-inner">
+      <div class="pv-stat">
+        <span class="pv-stat-num" data-target="3000" data-suffix="+">3,000+</span>
+        <span class="pv-stat-label">Youth Reached (Single Campaign)</span>
+      </div>
+      <div class="pv-stat">
+        <span class="pv-stat-num" data-target="110" data-suffix="+">110+</span>
+        <span class="pv-stat-label">Institutions Reached</span>
+      </div>
+      <div class="pv-stat">
+        <span class="pv-stat-num" data-target="4">4</span>
+        <span class="pv-stat-label">Districts of Andhra Pradesh</span>
+      </div>
+      <div class="pv-stat">
+        <span class="pv-stat-num" data-target="3500" data-suffix="+">3,500+</span>
+        <span class="pv-stat-label">Youth (Nov–Dec 2025)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ORIGIN STORY ── -->
+<section class="pv-origin" id="pv-origin">
+  <div class="container">
+    <div class="pv-origin-grid">
+      <div class="pv-origin-img fade-up">
+        <img
+          src="https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_119-1.jpg"
+          alt="Project Parivarthan workshop in session — youth mental health awareness"
+          loading="lazy"
+        />
+      </div>
+      <div class="fade-up fade-up-delay-1">
+        <div class="pv-accent-bar"></div>
+        <span class="pv-pill">Why Parivarthan Exists</span>
+        <h2>A Question Asked Out Loud.</h2>
+        <blockquote class="pv-blockquote">
+          "In a junior college classroom in Kurnool, a sixteen-year-old raises his hand and asks a question he's never said out loud: how do I stop being on my phone at 2 a.m.?"
+        </blockquote>
+        <p>That question — honest, uncomfortable, and urgent — is why Project Parivarthan exists. India's youth are navigating a world shaped by social media pressure, academic stress, substance influence, and emotional isolation. Most of them navigate it alone, without language or safe space to ask for help.</p>
+        <p style="margin-top:1rem">In partnership with the Government of India, Nigama Foundation deploys mental health professionals directly into junior colleges, government schools, and residential hostels across Andhra Pradesh. Not webinars. Not pamphlets. In-person, interactive sessions where young people can ask the questions they've been holding.</p>
+        <a href="donate.html" class="btn btn-primary" style="margin-top:1.5rem">Fund a Workshop</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT WE ADDRESS ── -->
+<section class="pv-focus">
+  <div class="container">
+    <div style="text-align:center;max-width:580px;margin:0 auto">
+      <div class="pv-accent-bar" style="margin:0 auto 1.5rem"></div>
+      <span class="section-label">Program Focus</span>
+      <h2>Six Conversations India's Youth Need to Have</h2>
+      <p style="color:var(--gray-600);margin-top:0.75rem">Every Parivarthan session is structured around the real pressures young people face — not theoretical topics, but the situations they're living through.</p>
+    </div>
+    <div class="pv-focus-grid">
+      <div class="pv-focus-card fade-up">
+        <div class="pv-focus-icon">📱</div>
+        <h3>Screen Addiction</h3>
+        <p>Understanding compulsive phone use, social media anxiety, and how digital habits reshape sleep, focus, and relationships. Participants leave with practical boundaries, not bans.</p>
+      </div>
+      <div class="pv-focus-card fade-up fade-up-delay-1">
+        <div class="pv-focus-icon">🚫</div>
+        <h3>Substance Abuse</h3>
+        <p>Early awareness about tobacco, alcohol, and substance experimentation — approached through peer-to-peer dialogue, not fear. The goal is informed choice, not lecture.</p>
+      </div>
+      <div class="pv-focus-card fade-up fade-up-delay-2">
+        <div class="pv-focus-icon">🧠</div>
+        <h3>Mental Health Awareness</h3>
+        <p>Building vocabulary for anxiety, depression, and emotional overwhelm. Students learn to recognize symptoms, ask for help, and understand that struggling is not weakness.</p>
+      </div>
+      <div class="pv-focus-card fade-up">
+        <div class="pv-focus-icon">🤝</div>
+        <h3>Peer Pressure</h3>
+        <p>Navigation tools for social influence — how to say no, how to recognize manipulation, and how to build friendships that don't require compromise of values.</p>
+      </div>
+      <div class="pv-focus-card fade-up fade-up-delay-1">
+        <div class="pv-focus-icon">❤️</div>
+        <h3>Emotional Well-Being</h3>
+        <p>Self-awareness, emotional regulation, and healthy expression. Youth learn to identify what they're feeling and why — a foundation for every life skill that follows.</p>
+      </div>
+      <div class="pv-focus-card fade-up fade-up-delay-2">
+        <div class="pv-focus-icon">🌱</div>
+        <h3>Life Skills</h3>
+        <p>Digital responsibility, communication, goal-setting, and decision-making. The skills that schools teach toward exams — not the skills that shape a life. We teach the latter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW A SESSION WORKS ── -->
+<section class="pv-process">
+  <div class="container">
+    <div style="text-align:center;max-width:580px;margin:0 auto">
+      <div class="pv-accent-bar" style="margin:0 auto 1.5rem;background:linear-gradient(90deg,#A855F7,#7B2D8B)"></div>
+      <span class="section-label" style="color:rgba(255,255,255,0.35)">Our Approach</span>
+      <h2 style="color:#fff">How a Parivarthan Session Works</h2>
+      <p style="color:rgba(255,255,255,0.6);margin-top:0.75rem">Four structured stages. Every session runs in person, led by trained mental health professionals, not volunteers.</p>
+    </div>
+    <div class="pv-process-steps">
+      <div class="pv-step fade-up">
+        <div class="pv-step-num">1</div>
+        <h4>Institution Onboarding</h4>
+        <p>Nigama Foundation coordinates with school or college leadership to schedule sessions and prepare the environment for open dialogue.</p>
+      </div>
+      <div class="pv-step fade-up fade-up-delay-1">
+        <div class="pv-step-num">2</div>
+        <h4>Interactive Session</h4>
+        <p>A trained professional leads 60–90 minutes of structured discussion using real-life case studies, role plays, and guided Q&A — no lectures.</p>
+      </div>
+      <div class="pv-step fade-up fade-up-delay-2">
+        <div class="pv-step-num">3</div>
+        <h4>Open Dialogue</h4>
+        <p>Students ask the questions they've never asked out loud. Anonymity is preserved. The facilitator normalises struggle and points toward resources.</p>
+      </div>
+      <div class="pv-step fade-up fade-up-delay-3">
+        <div class="pv-step-num">4</div>
+        <h4>Follow-Up Support</h4>
+        <p>Institutions receive materials for ongoing use. Students flagged as needing further support are connected with counseling resources.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PHOTO GALLERY ── -->
+<section class="pv-gallery">
+  <div class="container">
+    <div style="text-align:center;max-width:580px;margin:0 auto">
+      <div class="pv-accent-bar" style="margin:0 auto 1.5rem"></div>
+      <span class="section-label">From the Field</span>
+      <h2>Parivarthan in Action</h2>
+      <p style="color:var(--gray-600);margin-top:0.75rem">Real sessions, real students, real conversations — across Kurnool, Nandyal, Kadapa, and Annamayya districts.</p>
+    </div>
+    <div class="pv-gallery-grid">
+      <div class="pv-gallery-cell pv-gallery-cell--tall">
+        <img src="images/pv-session-2.jpg" alt="Parivarthan session — student engagement" loading="lazy" />
+      </div>
+      <div class="pv-gallery-cell">
+        <img src="https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_116-1.jpg" alt="Parivarthan workshop — Kurnool district" loading="lazy" />
+      </div>
+      <div class="pv-gallery-cell">
+        <img src="https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_115-3.jpg" alt="Parivarthan session — mental health awareness" loading="lazy" />
+      </div>
+      <div class="pv-gallery-cell">
+        <img src="https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_114-5.jpg" alt="Parivarthan — youth dialogue session" loading="lazy" />
+      </div>
+      <div class="pv-gallery-cell">
+        <img src="https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_116-7.jpg" alt="Parivarthan — facilitator with students" loading="lazy" />
+      </div>
+      <div class="pv-gallery-cell">
+        <img src="https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_115-7.jpg" alt="Parivarthan workshop — Nandyal district" loading="lazy" />
+      </div>
+      <div class="pv-gallery-cell">
+        <img src="images/pv-gallery-1.jpg" alt="Parivarthan — group discussion in session" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INSTITUTIONS ── -->
+<section class="pv-institutions">
+  <div class="container">
+    <div style="text-align:center;max-width:580px;margin:0 auto">
+      <div class="pv-accent-bar" style="margin:0 auto 1.5rem"></div>
+      <span class="section-label">Reach</span>
+      <h2>Where We've Been</h2>
+      <p style="color:var(--gray-600);margin-top:0.75rem">Every institution is its own story. From engineering campuses and welfare hostels to government junior colleges and ZP schools — here is where Parivarthan has met students face to face.</p>
+    </div>
+    <div class="pv-district-chips" style="justify-content:center">
+      <span class="pv-district-chip">Kurnool District</span>
+      <span class="pv-district-chip">Nandyal District</span>
+      <span class="pv-district-chip">Kadapa District</span>
+      <span class="pv-district-chip">Annamayya District</span>
+    </div>
+    <!-- Featured institutions — the two with field photos -->
+    <div class="pv-inst-featured">
+      <article class="pv-inst-fcard fade-up">
+        <div class="pv-inst-fcard-media">
+          <img src="images/pv-svit.jpg" alt="Project Parivarthan session at SVIT Engineering College — student open-mic Q&amp;A" loading="lazy" />
+          <span class="pv-inst-fcard-badge">Engineering College</span>
+        </div>
+        <div class="pv-inst-fcard-body">
+          <span class="pv-inst-fcard-loc">📍 Anantapur District</span>
+          <h3>SVIT Engineering College</h3>
+          <p>An interactive session with engineering students on screen addiction, peer pressure, and emotional resilience — including a candid open-mic Q&amp;A where students spoke about the pressures they carry.</p>
+          <div class="pv-inst-fcard-meta">
+            <span class="pv-inst-sessions">1 session</span>
+            <span class="pv-inst-status">Phase 1 · Completed</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="pv-inst-fcard fade-up fade-up-delay-1">
+        <div class="pv-inst-fcard-media">
+          <img src="images/pv-gbch.jpg" alt="Project Parivarthan 'Nasha Mukt Yuva for Viksit Bharat' session at Govt. BC College Boys Hostel, Anantapur" loading="lazy" />
+          <span class="pv-inst-fcard-badge">Welfare Hostel</span>
+        </div>
+        <div class="pv-inst-fcard-body">
+          <span class="pv-inst-fcard-loc">📍 Anantapur District</span>
+          <h3>Govt. BC College Boys Hostel (GBCH)</h3>
+          <p>A Parivarthan <em>“Nasha Mukt Yuva for Viksit Bharat”</em> session for hostel residents — an honest conversation about substance influence, stress, and the importance of asking for help.</p>
+          <div class="pv-inst-fcard-meta">
+            <span class="pv-inst-sessions">1 session</span>
+            <span class="pv-inst-status">Phase 1 · Completed</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- ── Filtered institution card grid (96) ── -->
+    <div class="pv-filter-tabs" id="pvFilterTabs">
+      <button class="pv-filter-tab is-active" data-filter="all">All (96)</button>
+      <button class="pv-filter-tab" data-filter="january">January (15)</button>
+      <button class="pv-filter-tab" data-filter="february">February (25)</button>
+      <button class="pv-filter-tab" data-filter="march">March (56)</button>
+    </div>
+    <div class="pv-grid" id="pvGrid"></div>
+
+    <!-- Lightbox -->
+    <div class="pv-lb" id="pvLightbox" aria-hidden="true">
+      <div class="pv-lb-top">
+        <span class="pv-lb-title" id="pvLbTitle"></span>
+        <span class="pv-lb-counter" id="pvLbCounter"></span>
+      </div>
+      <button class="pv-lb-close" id="pvLbClose" aria-label="Close">&times;</button>
+      <button class="pv-lb-nav pv-lb-prev" id="pvLbPrev" aria-label="Previous">&#8249;</button>
+      <div class="pv-lb-stage"><img class="pv-lb-img" id="pvLbImg" alt="" /></div>
+      <button class="pv-lb-nav pv-lb-next" id="pvLbNext" aria-label="Next">&#8250;</button>
+    </div>
+
+    <script>
+    (function(){
+      var EVENTS = [{"name":"AP Tribal Welfare Residential School Kadapa","month":"february","loc":"Kadapa District","count":7,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1-1-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1-7.jpg"]},{"name":"Govt. Degree College Mydukur Kadapa","month":"february","loc":"Mydukur, Kadapa","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_2-1-300x169.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_2-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_2-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_2-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_2-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_2-5.jpg"]},{"name":"Venkata Ram Junior College Mydukur Kadapa","month":"february","loc":"Mydukur, Kadapa","count":13,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_3-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_3-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_3-10.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_3-11.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_3-12.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_3-13.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_3-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_3-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_3-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_3-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_3-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_3-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_3-8.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_3-9.jpg"]},{"name":"Sri Balasiva Girl S High School Mydukur Kadapa","month":"february","loc":"Mydukur, Kadapa","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_4-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_4-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_4-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_4-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_4-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_4-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_4-6.jpg"]},{"name":"Z. P. High School C. Kothapeta Kadapa","month":"february","loc":"Kothapeta, Kadapa","count":8,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_5-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_5-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_5-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_5-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_5-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_5-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_5-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_5-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_5-8.jpg"]},{"name":"Morning Star Em High School G. V. Sathara Mydukur Kadapa","month":"february","loc":"Mydukur, Kadapa","count":3,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_6-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_6-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_6-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_6-3.jpg"]},{"name":"Siva Surya High School Mydukur Kadapa","month":"february","loc":"Mydukur, Kadapa","count":13,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-1-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-1-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-10-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-11-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-12-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-13-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-2-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-3-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-4-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-5-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-6-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-7-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-8-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-9-1.jpg"]},{"name":"Z. P. High School Girl S Khajipeta Kadapa","month":"february","loc":"Khajipeta, Kadapa","count":13,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-10.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-11.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-12.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-13.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-8.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_7-9.jpg"]},{"name":"Z. P. High School Chapadu Kadapa","month":"february","loc":"Chapadu, Kadapa","count":15,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-10.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-11.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-12.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-13.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-14.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-15.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-8.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-9.jpg"]},{"name":"Sri Shirdi Sai Degree College Jammalamadugu","month":"february","loc":"Jammalamadugu","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_10-1-300x169.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_10-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_10-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_10-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_10-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_10-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_10-6.jpg"]},{"name":"Z. P. High School Matlavaripalli Annamayya District","month":"february","loc":"Matlavaripalli, Annamayya","count":8,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_11-1-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_11-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_11-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_11-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_11-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_11-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_11-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_11-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_11-8.jpg"]},{"name":"Z. P. High School Mydukur Kadapa","month":"february","loc":"Mydukur, Kadapa","count":14,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-5-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-8.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-10.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-11.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-12.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-13.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-14.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-15.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-16.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_12-3.jpg"]},{"name":"C. S. I High School Madanapalli Annamayya District","month":"february","loc":"Madanapalli, Annamayya","count":7,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_13-1-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_13-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_13-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_13-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_13-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_13-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_13-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_13-7.jpg"]},{"name":"Government Degree College Madanapalli","month":"february","loc":"Madanapalli","count":9,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_14-1-300x169.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_14-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_14-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_14-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_14-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_14-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_14-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_14-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_14-8.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_14-9.jpg"]},{"name":"Nscbav Jsos Organizations Kadapa","month":"february","loc":"Kadapa District","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_15-10-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_15-10.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_15-12.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_15-14.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_15-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_15-8.jpg"]},{"name":"Apr Urdu Boys School Kadapa","month":"february","loc":"Kadapa District","count":7,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_16-3-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_16-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_16-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_16-8.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_16-12.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_16-14.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_16-18.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_16-1.jpg"]},{"name":"Abhyudhaya High School Madhanapalli","month":"february","loc":"Madhanapalli","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_17-1-300x169.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_17-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_17-14.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_17-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_17-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_17-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_17-9.jpg"]},{"name":"AP Model School & College Vallur Kadapa","month":"february","loc":"Vallur, Kadapa","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_18-1-1-300x135.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_18-1-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_18-3-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_18-4-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_18-5-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_18-11-1.jpg"]},{"name":"Z. P. High School For Girl S Kammapalli Madhanapalli","month":"february","loc":"Madhanapalli","count":11,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_19-1-300x169.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_19-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_19-10.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_19-11.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_19-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_19-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_19-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_19-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_19-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_19-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_19-8.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_19-9.jpg"]},{"name":"Z. P. High School Chinnamachupalli Kadapa","month":"february","loc":"Chinnamachupalli, Kadapa","count":17,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-10.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-11.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-12.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-13.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-14.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-15.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-16.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-17.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-8.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_20-9.jpg"]},{"name":"Radiance High School Jammalamadugu Kadapa","month":"february","loc":"Jammalamadugu, Kadapa","count":8,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_21-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_21-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_21-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_21-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_21-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_21-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_21-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_21-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_21-8.jpg"]},{"name":"Govt. Sw Boys Hostel Kadapa","month":"february","loc":"Kadapa District","count":4,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_22-1-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_22-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_22-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_22-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_22-4.jpg"]},{"name":"ZPHS Ayyavaripalli Chapadu Kadapa","month":"february","loc":"Chapadu, Kadapa","count":14,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-10.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-11.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-12.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-13.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-14.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-8.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_23-9.jpg"]},{"name":"Mpup School Diguvapalli Chittoor","month":"february","loc":"Diguvapalli, Chittoor","count":3,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24-1-300x158.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24-3.jpg"]},{"name":"ZPHS Chiyyapadu Kadapa","month":"february","loc":"Chiyyapadu, Kadapa","count":10,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24_-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24_-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24_-10.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24_-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24_-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24_-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24_-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24_-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24_-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24_-8.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_24_-9.jpg"]},{"name":"Z. P High School Settivaripalli Mydukur","month":"march","loc":"Mydukur","count":13,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_25-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_25-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_25-10.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_25-11.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_25-12.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_25-13.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_25-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_25-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_25-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_25-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_25-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_25-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_25-8.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_25-9.jpg"]},{"name":"Govt. Sw College Girls Hostel Kadapa","month":"march","loc":"Kadapa District","count":9,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_26-1-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_26-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_26-10.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_26-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_26-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_26-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_26-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_26-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_26-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_26-8.jpg"]},{"name":"Z. P High School Peddirajupalli Kadapa","month":"march","loc":"Peddirajupalli, Kadapa","count":4,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_28-1-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_28-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_28-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_28-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_28-4.jpg"]},{"name":"Sri Chaithanya High School Mylavaram","month":"march","loc":"Mylavaram","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_29-1-300x185.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_29-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_29-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_29-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_29-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_29-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_29-6.jpg"]},{"name":"Gtw Ashram High School Rajampeta","month":"march","loc":"Rajampeta","count":9,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_30-1-300x136.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_30-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_30-10.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_30-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_30-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_30-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_30-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_30-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_30-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_30-8.jpg"]},{"name":"ZPHS Nandyalampeta Mydukur","month":"march","loc":"Mydukur","count":8,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_31-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_31-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_31-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_31-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_31-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_31-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_31-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_31-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_31-8.jpg"]},{"name":"ZPHS Akepadu Rajampeta","month":"march","loc":"Rajampeta","count":3,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_32-1-300x169.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_32-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_32-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_32-3.jpg"]},{"name":"ZPHS Naraharipuram Chapadu","month":"march","loc":"Chapadu","count":8,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_33-1-300x157.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_33-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_33-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_33-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_33-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_33-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_33-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_33-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_33-8.jpg"]},{"name":"ZPHS Chinnaguruvalur Kadapa","month":"march","loc":"Chinnaguruvalur, Kadapa","count":3,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_34-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_34-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_34-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_34-3.jpg"]},{"name":"ZPHS Girl S Chemmuyapeta","month":"march","loc":"Chemmuyapeta","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_35-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_35-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_35-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_35-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_35-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_35-5.jpg"]},{"name":"ZPHS Gudipadu Kadapa","month":"march","loc":"Gudipadu, Kadapa","count":8,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_36-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_36-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_36-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_36-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_36-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_36-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_36-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_36-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_36-8.jpg"]},{"name":"Horsley Hills College Of Nursing Madanapalli Annamayya","month":"march","loc":"Madanapalli, Annamayya","count":7,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_37-2-300x169.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_37-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_37-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_37-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_37-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_37-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_37-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_37-1.jpg"]},{"name":"ZP Urdu High School Chintakunta Duvvur","month":"march","loc":"Duvvur","count":7,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_38-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_38-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_38-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_38-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_38-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_38-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_38-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_38-7.jpg"]},{"name":"Govt. Bc. College Boy S Hostel Kadapa","month":"march","loc":"Kadapa District","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_39-2-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_39-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_39-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_39-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_39-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_39-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_39-1.jpg"]},{"name":"Sri Venkateswara Aided High School Bayanapalli Kadapa","month":"march","loc":"Bayanapalli, Kadapa","count":3,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_40-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_40-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_40-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_40-3.jpg"]},{"name":"ZPHS J.Kothapalli","month":"march","loc":"J.Kothapalli","count":8,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_41-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_41-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_41-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_41-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_41-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_41-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_41-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_41-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_41-8.jpg"]},{"name":"ZP High School Girl S Chennur","month":"march","loc":"Chennur","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_42-4-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_42-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_42-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_42-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_42-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_42-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_42-3.jpg"]},{"name":"ZPHS Chinthakommadinne","month":"march","loc":"Chinthakommadinne","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_43-6-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_43-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_43-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_43-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_43-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_43-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_43-5.jpg"]},{"name":"ZPHS Kolumulapalli","month":"march","loc":"Kolumulapalli","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_44-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_44-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_44-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_44-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_44-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_44-5.jpg"]},{"name":"ZP Boy S High School Khajipeta","month":"march","loc":"Khajipeta","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_45-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_45-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_45-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_45-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_45-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_45-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_45-6.jpg"]},{"name":"Muncipal Corporation High School Gandhinagar","month":"march","loc":"Gandhinagar","count":8,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_46-4-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_46-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_46-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_46-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_46-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_46-8.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_46-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_46-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_46-3.jpg"]},{"name":"ZPHS Urdhu Sarvakhanpeta Khajipeta","month":"march","loc":"Khajipeta","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_47-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_47-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_47-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_47-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_47-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_47-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_47-6.jpg"]},{"name":"Sri Sai Teja High School","month":"march","loc":"Andhra Pradesh","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_48-2-300x170.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_48-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_48-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_48-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_48-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_48-1.jpg"]},{"name":"Ysr Vivekananda Govt. Degree College Vemapalli Annamayya","month":"march","loc":"Vemapalli, Annamayya","count":7,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_49-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_49-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_49-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_49-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_49-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_49-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_49-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_49-7.jpg"]},{"name":"GOVT.Polytechnic College Mydukur","month":"march","loc":"Mydukur","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_50-2-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_50-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_50-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_50-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_50-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_50-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_50-1.jpg"]},{"name":"Chaitanya High School Vempalli Kadapa","month":"march","loc":"Vempalli, Kadapa","count":7,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_51-1-300x190.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_51-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_51-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_51-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_51-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_51-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_51-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_51-7.jpg"]},{"name":"ZP High School L. R Palli Annamayya","month":"march","loc":"Palli, Annamayya","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_52-1-300x266.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_52-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_52-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_52-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_52-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_52-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_52-6.jpg"]},{"name":"St. Joseph Em High School Mariyapuram","month":"march","loc":"Mariyapuram","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_53-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_53-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_53-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_53-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_53-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_53-5.jpg"]},{"name":"ZPHS Boys Chemmumiapet Kadapa","month":"march","loc":"Chemmumiapet, Kadapa","count":7,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_54-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_54-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_54-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_54-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_54-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_54-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_54-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_54-7.jpg"]},{"name":"ZP High School Mutharasupalli Kadapa","month":"march","loc":"Mutharasupalli, Kadapa","count":9,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_55-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_55-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_55-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_55-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_55-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_55-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_55-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_55-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_55-8.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_55-9.jpg"]},{"name":"ZP High School Rekalakunta B. Matam Kadapa","month":"march","loc":"Matam, Kadapa","count":3,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_56-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_56-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_56-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_56-3.jpg"]},{"name":"Z. P High School Peddirajupalli B. Matam Kadapa","month":"march","loc":"Matam, Kadapa","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_57-1-300x169.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_57-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_57-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_57-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_57-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_57-5.jpg"]},{"name":"ZP High School Palugurralapalli B. Matam Kadapa","month":"march","loc":"Matam, Kadapa","count":4,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_58-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_58-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_58-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_58-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_58-4.jpg"]},{"name":"ZP High School Ck Dinne Kadapa","month":"march","loc":"Kadapa District","count":8,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_59-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_59-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_59-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_59-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_59-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_59-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_59-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_59-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_59-8.jpg"]},{"name":"Sv College Of Higher Education Settivaripalli Mydukur","month":"march","loc":"Mydukur","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_60-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_60-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_60-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_60-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_60-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_60-5.jpg"]},{"name":"ZP High School Neelakantraopet Annamayya","month":"march","loc":"Neelakantraopet, Annamayya","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_61-1-300x169.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_61-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_61-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_61-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_61-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_61-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_61-6.jpg"]},{"name":"Sri Madhusudhana High School Balaji Nagar","month":"march","loc":"Andhra Pradesh","count":8,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_62-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_62-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_62-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_62-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_62-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_62-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_62-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_62-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_62-8.jpg"]},{"name":"ZP High School S. Mydukur Kadapa","month":"march","loc":"Mydukur, Kadapa","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_63-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_63-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_63-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_63-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_63-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_63-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_63-6.jpg"]},{"name":"ZP High School Angadiveedi C. K Dinne","month":"march","loc":"Andhra Pradesh","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_64-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_64-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_64-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_64-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_64-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_64-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_64-6.jpg"]},{"name":"Dr. B. R Ambedkar Gurukulam Adapur Kadapa","month":"march","loc":"Adapur, Kadapa","count":4,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_65-1-300x132.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_65-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_65-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_65-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_65-4.jpg"]},{"name":"ZP High School Utukur Rajampeta","month":"march","loc":"Rajampeta","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_66-2-300x135.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_66-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_66-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_66-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_66-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_66-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_66-1.jpg"]},{"name":"Mjpapbcwr Jr. College Nandalur Kadapa","month":"march","loc":"Nandalur, Kadapa","count":4,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_67-1-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_67-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_67-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_67-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_67-4.jpg"]},{"name":"ZP High School Urdu Lakkireddypalli Annamayya","month":"march","loc":"Lakkireddypalli, Annamayya","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_68-1-300x135.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_68-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_68-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_68-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_68-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_68-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_68-6.jpg"]},{"name":"ZP High School Naraharipuram Chapadu","month":"march","loc":"Chapadu","count":8,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_69-2-300x169.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_69-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_69-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_69-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_69-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_69-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_69-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_69-8.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_69-1.jpg"]},{"name":"Govt. High School Rajampeta","month":"march","loc":"Rajampeta","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_70-1-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_70-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_70-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_70-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_70-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_70-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_70-6.jpg"]},{"name":"Govt. Sw Girls Hostel Nandalur","month":"march","loc":"Nandalur","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_71-1-225x300.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_71-1-768x1024.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_71-4-1024x768.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_71-5-1024x486.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_71-6-1024x486.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_71-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_71-8-1024x486.jpg"]},{"name":"ZP High School Pullareddy Peta Kadapa","month":"march","loc":"Peta, Kadapa","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_72-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_72-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_72-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_72-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_72-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_72-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_72-6.jpg"]},{"name":"ZP High School Duvvur Kadapa","month":"march","loc":"Duvvur, Kadapa","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_73-2-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_73-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_73-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_73-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_73-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_73-1.jpg"]},{"name":"ZP High School H. Cherlopalli Annamayya","month":"march","loc":"Cherlopalli, Annamayya","count":4,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_74-1-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_74-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_74-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_74-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_74-4.jpg"]},{"name":"ZP High School Neelapuram Duvvur","month":"march","loc":"Duvvur","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_75-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_75-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_75-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_75-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_75-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_75-5.jpg"]},{"name":"ZPHS Palugurralapalli Kadapa","month":"march","loc":"Palugurralapalli, Kadapa","count":3,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_80-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_80-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_80-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_80-3.jpg"]},{"name":"ZPHS Rekalakunta Kadapa","month":"march","loc":"Rekalakunta, Kadapa","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_82-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_82-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_82-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_82-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_82-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_82-5.jpg"]},{"name":"ZPHS Peddirajupalli Kadapa","month":"march","loc":"Peddirajupalli, Kadapa","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_83-1-300x169.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_83-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_83-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_83-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_83-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_83-5.jpg"]},{"name":"Sri Chaithanya High School Mylavaram Kadapa","month":"march","loc":"Mylavaram, Kadapa","count":7,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_85-1-300x134.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_85-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_85-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_85-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_85-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_85-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_85-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_85-7.jpg"]},{"name":"Government College Men Kurnool","month":"january","loc":"Men, Kurnool","count":8,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-1-1-300x137.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-1-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-2-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-3-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-4-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-5-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-6-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-7-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_9-8-1.jpg"]},{"name":"Srujana Junior College Kurnool","month":"january","loc":"Kurnool District","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_10-1-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_10-1-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_10-2-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_10-3-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_10-4-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_10-5-1.jpg"]},{"name":"Government Junior College B -Camp Kurnool","month":"january","loc":"Kurnool District","count":7,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_101-1-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_101-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_101-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_101-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_101-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_101-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_101-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_101-7.jpg"]},{"name":"Government Urdhu College Kurnool District","month":"january","loc":"District","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_102-1-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_102-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_102-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_102-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_102-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_102-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_102-6.jpg"]},{"name":"Govt. Junior College Kurnool District","month":"january","loc":"District","count":7,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_103-1-300x225.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_103-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_103-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_103-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_103-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_103-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_103-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_103-7.jpg"]},{"name":"Govt.High School Girls B. Camp Kurnool","month":"january","loc":"Kurnool District","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_104-1-300x170.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_104-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_104-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_104-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_104-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_104-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_104-6.jpg"]},{"name":"Govt. Igmm School Kurnool","month":"january","loc":"Kurnool District","count":4,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_105-1-300x170.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_105-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_105-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_105-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_105-4.jpg"]},{"name":"Govt. Urdu High School Kurnool","month":"january","loc":"Kurnool District","count":6,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_106-1-300x170.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_106-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_106-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_106-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_106-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_106-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_106-6.jpg"]},{"name":"Crr Mmc Govt. High School Kurnool","month":"january","loc":"Kurnool District","count":7,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1007-1-300x135.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1007-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1007-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1007-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1007-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1007-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1007-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_1007-7.jpg"]},{"name":"Swamy Vivekananda Govt. High School","month":"march","loc":"Andhra Pradesh","count":8,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-1-300x169.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-8.jpg"]},{"name":"Kesava Memorial High School Kurnool","month":"january","loc":"Kurnool District","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-1-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-1-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-2-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-3-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-4-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_110-5-1.jpg"]},{"name":"Nehru Memorial High School Kurnool","month":"january","loc":"Kurnool District","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/IMG-20260406-WA0135-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/IMG-20260406-WA0135.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/IMG-20260406-WA0136.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/IMG-20260406-WA0143.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/IMG-20260406-WA0144.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_112.jpg"]},{"name":"Govt. High School Boys B. Camp","month":"january","loc":"Andhra Pradesh","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_113-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_113-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_113-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_113-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_113-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_113-5.jpg"]},{"name":"Silver Jubilee Govt. Degree College Kurnool","month":"january","loc":"Kurnool District","count":7,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_114-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_114-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_114-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_114-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_114-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_114-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_114-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_114-7.jpg"]},{"name":"Bala Bharathi High School Kurnool","month":"march","loc":"Kurnool District","count":7,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_115-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_115-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_115-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_115-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_115-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_115-6.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_115-7.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_115-8.jpg"]},{"name":"Dr.B.R Ambedkar Gurukulam Kurnool","month":"january","loc":"Gurukulam, Kurnool","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_116-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_116-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_116-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_116-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_116-5.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_116-7.jpg"]},{"name":"Br Sovn Em High School Kurnool","month":"january","loc":"Kurnool District","count":5,"cover":"https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_119-1-300x226.jpg","fulls":["https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_119-1.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_119-2.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_119-3.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_119-4.jpg","https://www.nigamafoundation.org/wp-content/uploads/2026/06/Project-Parivarthan_119-5.jpg"]}];
+      var grid = document.getElementById('pvGrid');
+      var frag = document.createDocumentFragment();
+      EVENTS.forEach(function(ev, i){
+        var card = document.createElement('article');
+        card.className = 'pv-grid-card';
+        card.setAttribute('data-month', ev.month);
+        card.setAttribute('data-idx', i);
+        var img = document.createElement('img');
+        img.className = 'pv-grid-card-cover';
+        img.loading = 'lazy';
+        img.src = ev.cover;
+        img.alt = 'Project Parivarthan session at ' + ev.name;
+        var body = document.createElement('div');
+        body.className = 'pv-grid-card-body';
+        var mLabel = ev.month.charAt(0).toUpperCase() + ev.month.slice(1);
+        body.innerHTML =
+          '<h3 class="pv-grid-card-name"></h3>' +
+          '<div class="pv-grid-card-loc"></div>' +
+          '<div class="pv-grid-card-foot">' +
+            '<span class="pv-grid-card-month">' + mLabel + '</span>' +
+            '<span class="pv-grid-card-count">' + ev.count + (ev.count === 1 ? ' photo' : ' photos') + '</span>' +
+          '</div>';
+        body.querySelector('.pv-grid-card-name').textContent = ev.name;
+        body.querySelector('.pv-grid-card-loc').textContent = ev.loc;
+        card.appendChild(img);
+        card.appendChild(body);
+        card.addEventListener('click', function(){ openLb(i); });
+        frag.appendChild(card);
+      });
+      grid.appendChild(frag);
+
+      // Filter tabs
+      var tabs = document.querySelectorAll('.pv-filter-tab');
+      var cards = grid.querySelectorAll('.pv-grid-card');
+      tabs.forEach(function(tab){
+        tab.addEventListener('click', function(){
+          tabs.forEach(function(t){ t.classList.remove('is-active'); });
+          tab.classList.add('is-active');
+          var f = tab.getAttribute('data-filter');
+          cards.forEach(function(c){
+            c.classList.toggle('is-hidden', f !== 'all' && c.getAttribute('data-month') !== f);
+          });
+        });
+      });
+
+      // Lightbox
+      var lb = document.getElementById('pvLightbox');
+      var lbImg = document.getElementById('pvLbImg');
+      var lbTitle = document.getElementById('pvLbTitle');
+      var lbCounter = document.getElementById('pvLbCounter');
+      var cur = null, pos = 0;
+
+      function render(){
+        var ev = EVENTS[cur];
+        lbImg.src = ev.fulls[pos];
+        lbImg.alt = ev.name + ' — photo ' + (pos + 1);
+        lbTitle.textContent = ev.name;
+        lbCounter.textContent = (pos + 1) + ' / ' + ev.fulls.length;
+      }
+      function openLb(i){
+        cur = i; pos = 0;
+        render();
+        lb.classList.add('is-open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLb(){
+        lb.classList.remove('is-open');
+        lb.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        cur = null;
+      }
+      function step(d){
+        if (cur === null) return;
+        var n = EVENTS[cur].fulls.length;
+        pos = (pos + d + n) % n;
+        render();
+      }
+      document.getElementById('pvLbClose').addEventListener('click', closeLb);
+      document.getElementById('pvLbPrev').addEventListener('click', function(e){ e.stopPropagation(); step(-1); });
+      document.getElementById('pvLbNext').addEventListener('click', function(e){ e.stopPropagation(); step(1); });
+      lb.addEventListener('click', function(e){ if (e.target === lb || e.target.classList.contains('pv-lb-stage')) closeLb(); });
+      document.addEventListener('keydown', function(e){
+        if (!lb.classList.contains('is-open')) return;
+        if (e.key === 'Escape') closeLb();
+        else if (e.key === 'ArrowLeft') step(-1);
+        else if (e.key === 'ArrowRight') step(1);
+      });
+    })();
+    </script>
+
+    <!-- Phases card -->
+    <div class="pv-phases-card fade-up">
+      <div class="pv-phases-progress">
+        <div class="pv-phases-progress-p1"></div>
+        <div class="pv-phases-progress-p2"></div>
+      </div>
+      <div class="pv-phases-cols">
+        <div class="pv-phase-col pv-phase-col--p1">
+          <div class="pv-phase-badge"><span class="pv-phase-num">1</span><span class="pv-phase-title">Phase 1</span><span class="pv-phase-badge-status">✓ Complete</span></div>
+          <p class="pv-phase-sub">2024–25 · Kurnool, Nandyal &amp; Anantapur Districts · 16 institutions</p>
+          <div class="pv-inst-tags">
+            <span class="pv-inst-tag">SVIT Engineering College</span>
+            <span class="pv-inst-tag">Andhra Loyola College</span>
+            <span class="pv-inst-tag">Govt. Junior College, Atmakur</span>
+            <span class="pv-inst-tag">Govt. Jr. College for Girls, Dharmavaram</span>
+            <span class="pv-inst-tag">A.P.S.W.R. Jr. College for Girls, Kurigunta</span>
+            <span class="pv-inst-tag">Govt. BC (DNT) Boys Hostel, Anantapur</span>
+            <span class="pv-inst-tag">Govt. SC Girls Hostel, Anantapur</span>
+            <span class="pv-inst-tag">Govt. BC College Boys Hostel (GBCH)</span>
+            <span class="pv-inst-tag">Govt. Social Welfare College Girls Hostel</span>
+            <span class="pv-inst-tag">Sri Vani Degree &amp; PG College</span>
+            <span class="pv-inst-tag">Govt. Social Welfare College</span>
+            <span class="pv-inst-tag">High School, Rekulakunta</span>
+            <span class="pv-inst-tag">ZPH School, Kandukur</span>
+            <span class="pv-inst-tag">AP Model School, Raptadu</span>
+            <span class="pv-inst-tag">ZP High School, Gangadhara</span>
+            <span class="pv-inst-tag">MCHS, Gremspet</span>
+          </div>
+        </div>
+        <div class="pv-phase-col pv-phase-col--p2">
+          <div class="pv-phase-badge"><span class="pv-phase-num">2</span><span class="pv-phase-title">Phase 2</span><span class="pv-phase-badge-status pv-phase-badge-status--live">↗ Expanding</span></div>
+          <p class="pv-phase-sub">2026 · Kadapa &amp; Annamayya Districts · 85+ institutions</p>
+          <div class="pv-inst-tags">
+            <span class="pv-inst-tag">Govt. Junior Colleges (co-ed &amp; girls)</span>
+            <span class="pv-inst-tag">Social Welfare Residential Schools</span>
+            <span class="pv-inst-tag">BC &amp; SC Hostels</span>
+            <span class="pv-inst-tag">Engineering Colleges</span>
+            <span class="pv-inst-tag">ZP High Schools</span>
+            <span class="pv-inst-tag">AP Tribal Welfare Schools</span>
+            <span class="pv-inst-tag">Municipal High Schools</span>
+            <span class="pv-inst-tag">Private Degree &amp; PG Institutions</span>
+            <span class="pv-inst-tag">Model Schools</span>
+            <span class="pv-inst-tag">Boarding Colleges</span>
+          </div>
+        </div>
+      </div>
+      <div class="pv-phases-footer">
+        <div class="pv-phases-footer-icon">🚀</div>
+        <div class="pv-phases-footer-text">From <strong>16 institutions</strong> to <strong>85+</strong> in a single year — national scale in sight. Expanding beyond Andhra Pradesh in 2026.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PARTNERSHIP ── -->
+<section class="pv-partnership">
+  <div class="container">
+    <div style="text-align:center;max-width:580px;margin:0 auto">
+      <div class="pv-accent-bar" style="margin:0 auto 1.5rem"></div>
+      <span class="section-label">Official Recognition</span>
+      <h2>Backed by the Government of India</h2>
+      <p style="color:var(--gray-600);margin-top:0.75rem">Project Parivarthan operates under an official GoI mandate — not a grant, a recognized state-backed partnership to reach India's youth.</p>
+    </div>
+    <div class="pv-partner-cards fade-up">
+      <div class="pv-partner-card">
+        <div class="pv-partner-card-icon">🇮🇳</div>
+        <h3>Ministry of Education — Government of India</h3>
+        <p>Nigama Foundation holds a formal GoI partnership under the Ministry of Education. Project Parivarthan operates as a recognized youth well-being initiative across Kurnool, Nandyal, Kadapa, and Annamayya districts of Andhra Pradesh. Sessions are conducted with institutional coordination and state-level sanction.</p>
+      </div>
+      <div class="pv-partner-card">
+        <div class="pv-partner-card-icon" style="font-size:1.5rem;font-weight:900;color:var(--pv-purple);font-family:Georgia,serif">MY<br>Bharat</div>
+        <h3>MY Bharat — Mera Yuva Bharat</h3>
+        <p>Nigama Foundation is an officially registered organization under MY Bharat, the Government of India's national platform for youth engagement. This recognition validates Parivarthan as part of India's national youth development framework and connects the initiative to government infrastructure for scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="pv-cta">
+  <div class="container">
+    <span class="section-label" style="color:rgba(255,255,255,0.45);display:block;margin-bottom:1rem">Get Involved</span>
+    <h2>Fund a Classroom Conversation.</h2>
+    <p>₹5,000 funds one full Parivarthan workshop session — a trained professional, a full session, and a room full of students who finally have language for what they're going through.</p>
+    <div>
+      <a href="donate.html" class="btn-white">Donate Now</a>
+      <a href="contact.html" class="btn-ghost">Partner With Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Nigama Foundation</div>
+        <p>Delivering dignity, one person at a time, across Hyderabad, Vizag, and Chennai.</p>
+        <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap">
+          <span style="background:rgba(201,120,12,0.15);border:1px solid rgba(201,120,12,0.3);border-radius:4px;padding:0.2rem 0.6rem;font-size:0.7rem;color:#e8a43a;font-weight:600">80G Certified</span>
+          <span style="background:rgba(201,120,12,0.15);border:1px solid rgba(201,120,12,0.3);border-radius:4px;padding:0.2rem 0.6rem;font-size:0.7rem;color:#e8a43a;font-weight:600">12AB Registered</span>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Navigation</h4><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Programs</h4><ul>
+        <li><a href="programs.html#education">Delivering Education</a></li>
+        <li><a href="programs.html#care">Delivering Care</a></li>
+        <li><a href="programs.html#respect">Delivering Respect</a></li>
+        <li><a href="parivarthan.html" style="color:#A855F7">Project Parivarthan</a></li>
+      </ul></div>
+      <div class="footer-col footer-address"><h4>Contact</h4>
+        <p><a href="mailto:contact@nigamafoundation.org">contact@nigamafoundation.org</a><br><br>
+        Indotronix Avani Group, Orbit<br>
+        Plot No. 30/C, 20th Floor<br>
+        Knowledge City, Hyderabad<br>
+        Telangana – 500081</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Nigama Foundation. All Rights Reserved.</span>
+      <div class="footer-bottom-right">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

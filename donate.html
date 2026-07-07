@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate | Nigama Foundation</title>
+  <meta name="description" content="Donate to Nigama Foundation. Support education, elderly care, and youth mental health across Andhra Pradesh. 80G tax-exempt. UPI, credit/debit, netbanking accepted." />
+  <meta property="og:title" content="Donate | Nigama Foundation — Give with Purpose" />
+  <link rel="canonical" href="https://www.nigamafoundation.org/donate" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Razorpay Checkout -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+
+<nav class="nav scrolled" role="navigation">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Nigama Foundation home">
+      <img class="nav-logo-img" src="https://www.nigamafoundation.org/wp-content/uploads/2024/10/logo.svg" alt="Nigama Foundation" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-home-icon" aria-label="Home"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M1.5 7.5L8 1.5L14.5 7.5V14.5H10.5V10H5.5V14.5H1.5V7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="impact.html">Impact</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html" class="btn btn-primary" style="background:#B8760F">Donate</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile">
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="impact.html">Impact</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate.html" class="btn btn-primary" style="margin-top:0.75rem;justify-content:center;">Donate Now</a>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('images/program-water-delivery.jpg');background-position:center 35%"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container">
+    <div class="page-hero-inner">
+      <span class="page-hero-label">Make a Contribution</span>
+      <h1>Give with Purpose.</h1>
+      <p>Nigama Foundation pledges $100,000 annually to communities across Telangana and Andhra Pradesh. Your donation joins that commitment, and you'll know exactly where it went.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── MAIN DONATE LAYOUT ── -->
+<section style="background:var(--gray-50);padding:4rem 0">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start">
+
+      <!-- Left: what your money does -->
+      <div class="fade-up">
+        <span class="section-label">Where Your Money Goes</span>
+        <h2 style="margin-bottom:1.5rem">Specific. Traceable. Real.</h2>
+        <div style="display:flex;flex-direction:column;gap:1.25rem">
+          <div style="background:#fff;border-radius:12px;padding:1.5rem;border:1px solid var(--gray-100);display:flex;gap:1rem;align-items:flex-start">
+            <div style="width:48px;height:48px;background:rgba(27,58,107,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0">📚</div>
+            <div>
+              <div style="font-weight:700;color:var(--navy-dark);margin-bottom:0.25rem">₹500: School Supplies for One Child, One Month</div>
+              <p style="font-size:0.88rem">Books, pens, exam materials: everything a student needs to sit their exams without borrowing from a neighbor.</p>
+            </div>
+          </div>
+          <div style="background:#fff;border-radius:12px;padding:1.5rem;border:1px solid var(--gray-100);display:flex;gap:1rem;align-items:flex-start">
+            <div style="width:48px;height:48px;background:rgba(212,137,26,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0">👕</div>
+            <div>
+              <div style="font-weight:700;color:var(--navy-dark);margin-bottom:0.25rem">₹2,000: Sponsor a Child for a Year</div>
+              <p style="font-size:0.88rem">School uniform + full supply kit. One of the 50 children we sponsor annually. This is what that number actually looks like.</p>
+            </div>
+          </div>
+          <div style="background:#fff;border-radius:12px;padding:1.5rem;border:1px solid var(--gray-100);display:flex;gap:1rem;align-items:flex-start">
+            <div style="width:48px;height:48px;background:rgba(45,106,79,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0">🧠</div>
+            <div>
+              <div style="font-weight:700;color:var(--navy-dark);margin-bottom:0.25rem">₹5,000: One Parivarthan Workshop Session</div>
+              <p style="font-size:0.88rem">A mental health professional, a classroom, and 30-40 young people who finally have space to talk about what they're carrying.</p>
+            </div>
+          </div>
+          <div style="background:#fff;border-radius:12px;padding:1.5rem;border:1px solid var(--gray-100);display:flex;gap:1rem;align-items:flex-start">
+            <div style="width:48px;height:48px;background:rgba(123,45,139,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0">🖥️</div>
+            <div>
+              <div style="font-weight:700;color:var(--navy-dark);margin-bottom:0.25rem">₹25,000: Computer or Infrastructure Contribution</div>
+              <p style="font-size:0.88rem">Equipment for a school lab, or part of a larger infrastructure investment like the auditorium we built at Uravakonda Jr College.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 80G info -->
+        <div style="background:rgba(45,106,79,0.08);border:1px solid rgba(45,106,79,0.2);border-radius:12px;padding:1.5rem;margin-top:1.5rem">
+          <div style="font-weight:700;color:var(--green);margin-bottom:0.5rem;font-size:0.9rem">🏛️ 80G Tax Benefit</div>
+          <p style="font-size:0.88rem;color:var(--gray-600);line-height:1.7">Nigama Foundation is registered under Section 80G and 12AB of the Income Tax Act, 1961. Your donation is eligible for tax deduction. You'll receive an 80G receipt by email within 7 working days.</p>
+        </div>
+
+        <!-- UPI -->
+        <div style="background:var(--gray-50);border:1px solid var(--gray-100);border-radius:12px;padding:1.5rem;margin-top:1.25rem;text-align:center">
+          <div style="font-weight:700;color:var(--navy-dark);margin-bottom:0.75rem;font-size:0.9rem">Pay Directly via UPI</div>
+          <div style="background:#fff;border-radius:8px;padding:1rem;display:inline-block;margin-bottom:0.75rem">
+            <!-- UPI QR placeholder — replace with actual QR image -->
+            <div style="width:140px;height:140px;background:linear-gradient(135deg,#f5f5f5,#e0e0e0);display:flex;align-items:center;justify-content:center;border-radius:4px;color:var(--gray-300);font-size:0.8rem;text-align:center;padding:1rem">
+              Replace with UPI QR image
+            </div>
+          </div>
+          <div style="font-size:0.9rem;color:var(--gray-600)">UPI ID: <strong style="color:var(--navy-dark)">nigama.csr@okaxis</strong></div>
+          <div style="font-size:0.78rem;color:var(--gray-300);margin-top:0.25rem">Scan with PhonePe, GPay, Paytm, or any UPI app</div>
+        </div>
+      </div>
+
+      <!-- Right: donation form -->
+      <div class="fade-up fade-up-delay-1">
+        <div style="background:#fff;border-radius:24px;padding:2.5rem;box-shadow:var(--shadow-lg);position:sticky;top:100px">
+          <h3 style="color:var(--navy-dark);margin-bottom:0.5rem">Make a Contribution</h3>
+          <p style="font-size:0.9rem;margin-bottom:1.5rem">All amounts in Indian Rupees (₹). Secure payment via Razorpay.</p>
+
+          <div class="donate-amounts" style="margin-bottom:1rem">
+            <button class="amount-btn" data-amount="500">₹500<span class="amount-label">Supplies</span></button>
+            <button class="amount-btn active" data-amount="2000">₹2,000<span class="amount-label">Sponsor Child</span></button>
+            <button class="amount-btn" data-amount="5000">₹5,000<span class="amount-label">Workshop</span></button>
+            <button class="amount-btn" data-amount="10000">₹10,000<span class="amount-label">Impact Kit</span></button>
+            <button class="amount-btn" data-amount="25000">₹25,000<span class="amount-label">Infrastructure</span></button>
+            <button class="amount-btn" data-amount="">Custom<span class="amount-label">Your Amount</span></button>
+          </div>
+
+          <div class="donate-custom" style="margin-bottom:1.25rem">
+            <span class="donate-custom-prefix">₹</span>
+            <input type="number" id="donate-amount" placeholder="Enter amount" value="2000" min="1" aria-label="Donation amount in rupees" />
+          </div>
+
+          <div class="form-group">
+            <label for="donor-name">Your Name</label>
+            <input type="text" id="donor-name" placeholder="Full name" />
+          </div>
+          <div class="form-group">
+            <label for="donor-email">Email (for 80G receipt)</label>
+            <input type="email" id="donor-email" placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="donor-phone">Phone (optional)</label>
+            <input type="tel" id="donor-phone" placeholder="+91 98765 43210" />
+          </div>
+          <div class="form-group">
+            <label for="donate-purpose">Designate your donation (optional)</label>
+            <select id="donate-purpose">
+              <option value="general">General Fund: Foundation decides best use</option>
+              <option value="education">Delivering Education</option>
+              <option value="parivarthan">Project Parivarthan</option>
+              <option value="care">Delivering Care (Elder Care)</option>
+              <option value="respect">Delivering Respect (Disability Support)</option>
+            </select>
+          </div>
+
+          <button onclick="openRazorpay()" class="btn btn-primary donate-submit" style="font-size:1rem;width:100%;justify-content:center;padding:1rem">
+            Donate Securely →
+          </button>
+          <p style="text-align:center;font-size:0.78rem;color:var(--gray-300);margin-top:1rem">
+            🔒 Secured by Razorpay · 80G receipt within 7 working days
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SUCCESS MESSAGE (hidden until triggered) ── -->
+<div id="donate-success" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:200;align-items:center;justify-content:center">
+  <div style="background:#fff;border-radius:24px;padding:3rem;max-width:480px;text-align:center;margin:1rem">
+    <div style="font-size:4rem;margin-bottom:1rem">🙏</div>
+    <h2 style="color:var(--navy-dark);margin-bottom:1rem">Thank You.</h2>
+    <p style="color:var(--gray-600);margin-bottom:1.5rem">Your contribution has been received. An 80G receipt will be emailed to you within 7 working days. <em>Give once and watch what arrives. We'll show you.</em></p>
+    <button onclick="document.getElementById('donate-success').style.display='none'" class="btn btn-primary" style="width:100%;justify-content:center">Close</button>
+  </div>
+</div>
+
+<section style="background:var(--navy-dark);padding:4rem 0;text-align:center">
+  <div class="container">
+    <h2 style="color:#fff;margin-bottom:1rem">Have questions before you give?</h2>
+    <p style="color:rgba(255,255,255,0.6);max-width:480px;margin:0 auto 2rem">We're happy to walk you through how donations are used and connect you with specific programs.</p>
+    <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Nigama Foundation</div>
+        <p>Delivering dignity, one person at a time, across Hyderabad, Vizag, and Chennai.</p>
+        <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap">
+          <span style="background:rgba(201,120,12,0.15);border:1px solid rgba(201,120,12,0.3);border-radius:4px;padding:0.2rem 0.6rem;font-size:0.7rem;color:#e8a43a;font-weight:600">80G Certified</span>
+          <span style="background:rgba(201,120,12,0.15);border:1px solid rgba(201,120,12,0.3);border-radius:4px;padding:0.2rem 0.6rem;font-size:0.7rem;color:#e8a43a;font-weight:600">12AB Registered</span>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Navigation</h4><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Programs</h4><ul>
+        <li><a href="programs.html#education">Delivering Education</a></li>
+        <li><a href="programs.html#care">Delivering Care</a></li>
+        <li><a href="programs.html#respect">Delivering Respect</a></li>
+        <li><a href="parivarthan.html">Project Parivarthan</a></li>
+      </ul></div>
+      <div class="footer-col footer-address"><h4>Contact</h4>
+        <p><a href="mailto:donate@nigamafoundation.org">donate@nigamafoundation.org</a><br><br>
+        Indotronix Avani Group, Orbit<br>
+        Plot No. 30/C, 20th Floor<br>
+        Knowledge City, Hyderabad<br>
+        Telangana – 500081</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Nigama Foundation. All Rights Reserved.</span>
+      <div class="footer-bottom-right">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function openRazorpay() {
+  const amount = parseInt(document.getElementById('donate-amount').value, 10);
+  const name   = document.getElementById('donor-name').value.trim();
+  const email  = document.getElementById('donor-email').value.trim();
+  const phone  = document.getElementById('donor-phone').value.trim();
+
+  if (!amount || amount < 1) { alert('Please enter a valid amount.'); return; }
+  if (!name)  { alert('Please enter your name.'); return; }
+  if (!email) { alert('Please enter your email address for the 80G receipt.'); return; }
+
+  const options = {
+    // ⚠️ REPLACE with your actual Razorpay Key ID from https://dashboard.razorpay.com
+    key: 'rzp_live_REPLACE_WITH_YOUR_KEY',
+    amount: amount * 100,  // paise
+    currency: 'INR',
+    name: 'Nigama Foundation',
+    description: 'Donation: Delivering Dignity',
+    image: 'https://www.nigamafoundation.org/favicon.ico',
+    prefill: { name, email, contact: phone },
+    notes: {
+      purpose: document.getElementById('donate-purpose').value
+    },
+    theme: { color: '#D4891A' },
+    handler: function(response) {
+      document.getElementById('donate-success').style.display = 'flex';
+      // In production: POST response to your backend to verify + issue 80G receipt
+      console.log('Payment ID:', response.razorpay_payment_id);
+    },
+    modal: {
+      ondismiss: function() { /* user closed without paying */ }
+    }
+  };
+
+  const rzp = new Razorpay(options);
+  rzp.on('payment.failed', function(response) {
+    alert('Payment failed: ' + response.error.description + '. Please try again.');
+  });
+  rzp.open();
+}
+</script>
+</body>
+</html>
