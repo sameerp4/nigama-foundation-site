@@ -833,6 +833,15 @@ section { padding: 3.5rem 0; }
   transition: filter 0.2s ease;
 }
 .partner:hover .partner-logo { filter: grayscale(0%); }
+.partner--dark {
+  background: #0e1e35;
+  border-color: #0e1e35;
+}
+.partner--dark:hover {
+  border-color: #1a3255;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+}
+.partner--dark .partner-logo { filter: grayscale(0%); }
 
 /* ============================================================
    MISSION STRIP (trust bar — kept for compatibility)
