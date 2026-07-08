@@ -1450,6 +1450,7 @@ section { padding: 3.5rem 0; }
     radial-gradient(ellipse 40% 50% at 95% 20%, rgba(245,158,11,0.07) 0%, transparent 55%);
   pointer-events: none;
 }
+.donate-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
 .donate-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1844,7 +1845,7 @@ section { padding: 3.5rem 0; }
   .phm-side { display: none; }
   .phm-main { height: 100%; }
   .from-field-grid { grid-template-columns: repeat(2, 1fr); }
-  .mission-grid, .donate-inner, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .mission-grid, .donate-inner, .donate-layout, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .hero-stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
   .hstat:nth-child(2) { border-right: none; }
   .impact-bar-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1860,6 +1861,9 @@ section { padding: 3.5rem 0; }
   .cred-grid { grid-template-columns: 1fr; }
   .cred-card--gov { flex-direction: column; }
   .cred-gov-right { margin-left: 0; }
+  .cred-card--mybharat { flex-wrap: wrap; }
+  .cred-cert-right { padding-left: 0; width: 100%; justify-content: flex-start; }
+  .cert-thumb-img { width: 140px; }
 }
 @media (max-width: 640px) {
   section { padding: 3.5rem 0; }

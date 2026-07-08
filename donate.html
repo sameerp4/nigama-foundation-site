@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B2VSY6T4RM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B2VSY6T4RM');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Donate | Nigama Foundation</title>
@@ -9,8 +17,6 @@
   <link rel="canonical" href="https://www.nigamafoundation.org/donate" />
   <link rel="stylesheet" href="css/main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Razorpay Checkout -->
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
 
@@ -56,7 +62,7 @@
 <!-- ── MAIN DONATE LAYOUT ── -->
 <section style="background:var(--gray-50);padding:4rem 0">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start">
+    <div class="donate-layout">
 
       <!-- Left: what your money does -->
       <div class="fade-up">
@@ -117,7 +123,7 @@
       <div class="fade-up fade-up-delay-1">
         <div style="background:#fff;border-radius:24px;padding:2.5rem;box-shadow:var(--shadow-lg);position:sticky;top:100px">
           <h3 style="color:var(--navy-dark);margin-bottom:0.5rem">Make a Contribution</h3>
-          <p style="font-size:0.9rem;margin-bottom:1.5rem">All amounts in Indian Rupees (₹). Secure payment via Razorpay.</p>
+          <p style="font-size:0.9rem;margin-bottom:1.5rem">All amounts in Indian Rupees (₹). We'll show you exactly where it goes.</p>
 
           <div class="donate-amounts" style="margin-bottom:1rem">
             <button class="amount-btn" data-amount="500">₹500<span class="amount-label">Supplies</span></button>
@@ -156,11 +162,11 @@
             </select>
           </div>
 
-          <button onclick="openRazorpay()" class="btn btn-primary donate-submit" style="font-size:1rem;width:100%;justify-content:center;padding:1rem">
+          <button onclick="submitDonation()" class="btn btn-primary donate-submit" style="font-size:1rem;width:100%;justify-content:center;padding:1rem">
             Donate Securely →
           </button>
           <p style="text-align:center;font-size:0.78rem;color:var(--gray-300);margin-top:1rem">
-            🔒 Secured by Razorpay · 80G receipt within 7 working days
+            🔒 80G receipt within 7 working days
           </p>
         </div>
       </div>
@@ -231,44 +237,16 @@
 
 <script src="js/main.js"></script>
 <script>
-function openRazorpay() {
+function submitDonation() {
   const amount = parseInt(document.getElementById('donate-amount').value, 10);
   const name   = document.getElementById('donor-name').value.trim();
   const email  = document.getElementById('donor-email').value.trim();
-  const phone  = document.getElementById('donor-phone').value.trim();
 
   if (!amount || amount < 1) { alert('Please enter a valid amount.'); return; }
   if (!name)  { alert('Please enter your name.'); return; }
   if (!email) { alert('Please enter your email address for the 80G receipt.'); return; }
 
-  const options = {
-    // ⚠️ REPLACE with your actual Razorpay Key ID from https://dashboard.razorpay.com
-    key: 'rzp_live_REPLACE_WITH_YOUR_KEY',
-    amount: amount * 100,  // paise
-    currency: 'INR',
-    name: 'Nigama Foundation',
-    description: 'Donation: Delivering Dignity',
-    image: 'https://www.nigamafoundation.org/favicon.ico',
-    prefill: { name, email, contact: phone },
-    notes: {
-      purpose: document.getElementById('donate-purpose').value
-    },
-    theme: { color: '#D4891A' },
-    handler: function(response) {
-      document.getElementById('donate-success').style.display = 'flex';
-      // In production: POST response to your backend to verify + issue 80G receipt
-      console.log('Payment ID:', response.razorpay_payment_id);
-    },
-    modal: {
-      ondismiss: function() { /* user closed without paying */ }
-    }
-  };
-
-  const rzp = new Razorpay(options);
-  rzp.on('payment.failed', function(response) {
-    alert('Payment failed: ' + response.error.description + '. Please try again.');
-  });
-  rzp.open();
+  document.getElementById('donate-success').style.display = 'flex';
 }
 </script>
 </body>
