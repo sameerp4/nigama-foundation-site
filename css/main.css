@@ -40,7 +40,7 @@ h1, h2, h3 { font-family: var(--font-display); }
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: auto; }
+html { scroll-behavior: auto; scroll-padding-top: 72px; }
 body {
   font-family: var(--ff-sans);
   background: #FEFCF5;
@@ -213,6 +213,7 @@ section { padding: 3.5rem 0; }
   align-items: flex-end;
   overflow: hidden;
   background: var(--navy-dark);
+  padding-top: 60px;
 }
 /* ── Hero mosaic — three-panel system ── */
 .hero-media {
@@ -1628,6 +1629,7 @@ section { padding: 3.5rem 0; }
   align-items: flex-end;
   overflow: hidden;
   background: var(--navy-dark);
+  padding-top: 60px;
 }
 .page-hero-bg {
   position: absolute;
@@ -1798,6 +1800,24 @@ section { padding: 3.5rem 0; }
 .mt-1 { margin-top: 1rem; }
 .mt-2 { margin-top: 2rem; }
 
+/* Responsive grid helpers — used by inline-style grids that need mobile collapse */
+.grid-3          { display: grid; grid-template-columns: repeat(3, 1fr); }
+.grid-2-collapse { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+@media (max-width: 860px) {
+  .grid-2-collapse { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+.breadcrumb { background: var(--gray-50); border-bottom: 1px solid var(--gray-100); padding: 0.85rem 0; }
+.breadcrumb ol { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; list-style: none; font-size: 0.8rem; }
+.breadcrumb li { display: flex; align-items: center; gap: 0.5rem; color: var(--gray-600); }
+.breadcrumb li + li::before { content: "/"; color: var(--gray-300); }
+.breadcrumb a { color: var(--gold); font-weight: 600; text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb li[aria-current="page"] { color: var(--gray-800); font-weight: 600; }
+
 /* ============================================================
    FADE-UP ANIMATIONS
    ============================================================ */
@@ -1863,7 +1883,8 @@ section { padding: 3.5rem 0; }
   .cred-gov-right { margin-left: 0; }
   .cred-card--mybharat { flex-wrap: wrap; }
   .cred-cert-right { padding-left: 0; width: 100%; justify-content: flex-start; }
-  .cert-thumb-img { width: 140px; }
+  .cert-thumb-img { width: 100%; max-width: 160px; }
+  .cred-issuer { white-space: normal; }
 }
 @media (max-width: 640px) {
   section { padding: 3.5rem 0; }
@@ -1883,4 +1904,7 @@ section { padding: 3.5rem 0; }
   .impact-bar-grid { grid-template-columns: 1fr; }
   .impact-bar-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .impact-bar-item:last-child { border-bottom: none; }
+}
+@media (max-width: 600px) {
+  .grid-3 { grid-template-columns: 1fr; }
 }

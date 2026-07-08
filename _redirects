@@ -1,0 +1,21 @@
+# Serve clean URLs from existing .html files (Render Static)
+/about        /about.html        200
+/programs     /programs.html     200
+/impact       /impact.html       200
+/events       /events.html       200
+/parivarthan  /parivarthan.html  200
+/donate       /donate.html       200
+/contact      /contact.html      200
+/privacy      /privacy.html      200
+/terms        /terms.html        200
+
+# 301 redirect legacy .html requests to clean URLs (SEO)
+/about.html        /about        301!
+/programs.html     /programs     301!
+/impact.html       /impact       301!
+/events.html       /events       301!
+/parivarthan.html  /parivarthan  301!
+/donate.html       /donate       301!
+/contact.html      /contact      301!
+/privacy.html      /privacy      301!
+/terms.html        /terms        301!

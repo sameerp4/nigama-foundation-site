@@ -948,6 +948,7 @@
       align-items: center;
       overflow: hidden;
       background: #0e0818;
+      padding-top: 60px;
     }
     .pv-hero-bg {
       position: absolute;
@@ -1165,33 +1166,40 @@
       .pv-cta .btn-ghost { display: block; margin: 1rem auto 0; width: fit-content; }
     }
   </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://www.nigamafoundation.org/"},
+  {"@type":"ListItem","position":2,"name":"Programs","item":"https://www.nigamafoundation.org/programs"},
+  {"@type":"ListItem","position":3,"name":"Project Parivarthan","item":"https://www.nigamafoundation.org/parivarthan"}
+]}
+</script>
 </head>
 <body>
 
 <nav class="nav scrolled" role="navigation" aria-label="Main navigation">
   <div class="container nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="Nigama Foundation home">
+    <a href="/" class="nav-logo" aria-label="Nigama Foundation home">
       <img class="nav-logo-img" src="images/logo.svg" alt="Nigama Foundation" />
     </a>
     <ul class="nav-links">
-      <li><a href="index.html" class="nav-home-icon" aria-label="Home"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M1.5 7.5L8 1.5L14.5 7.5V14.5H10.5V10H5.5V14.5H1.5V7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="programs.html">Programs</a></li>
-      <li><a href="impact.html">Impact</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="donate.html" class="btn btn-primary">Donate</a></li>
+      <li><a href="/" class="nav-home-icon" aria-label="Home"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M1.5 7.5L8 1.5L14.5 7.5V14.5H10.5V10H5.5V14.5H1.5V7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/programs">Programs</a></li>
+      <li><a href="/impact">Impact</a></li>
+      <li><a href="/events">Events</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/donate" class="btn btn-primary">Donate</a></li>
     </ul>
     <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
   <div class="nav-mobile">
-    <a href="index.html">🏠 Home</a>
-    <a href="about.html">About</a>
-    <a href="programs.html">Programs</a>
-    <a href="impact.html">Impact</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-    <a href="donate.html" class="btn btn-primary" style="margin-top:0.75rem;justify-content:center;">Donate Now</a>
+    <a href="/">🏠 Home</a>
+    <a href="/about">About</a>
+    <a href="/programs">Programs</a>
+    <a href="/impact">Impact</a>
+    <a href="/events">Events</a>
+    <a href="/contact">Contact</a>
+    <a href="/donate" class="btn btn-primary" style="margin-top:0.75rem;justify-content:center;">Donate Now</a>
   </div>
 </nav>
 
@@ -1212,7 +1220,7 @@
           <span class="pv-hero-chip">🤝 GoI Partner</span>
         </div>
         <div class="pv-hero-actions">
-          <a href="donate.html" class="pv-btn-primary">Fund a Workshop →</a>
+          <a href="/donate" class="pv-btn-primary">Fund a Workshop →</a>
           <a href="#pv-origin" class="pv-btn-ghost-sm">Learn the story ↓</a>
         </div>
       </div>
@@ -1229,6 +1237,15 @@
     </div>
   </div>
 </section>
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <ol>
+        <li><a href="https://www.nigamafoundation.org/">Home</a></li>
+        <li><a href="https://www.nigamafoundation.org/programs">Programs</a></li>
+        <li aria-current="page">Project Parivarthan</li>
+    </ol>
+  </div>
+</nav>
 
 <!-- ── STATS BAR ── -->
 <section class="pv-stats">
@@ -1274,7 +1291,7 @@
         </blockquote>
         <p>That question — honest, uncomfortable, and urgent — is why Project Parivarthan exists. India's youth are navigating a world shaped by social media pressure, academic stress, substance influence, and emotional isolation. Most of them navigate it alone, without language or safe space to ask for help.</p>
         <p style="margin-top:1rem">In partnership with the Government of India, Nigama Foundation deploys mental health professionals directly into junior colleges, government schools, and residential hostels across Andhra Pradesh. Not webinars. Not pamphlets. In-person, interactive sessions where young people can ask the questions they've been holding.</p>
-        <a href="donate.html" class="btn btn-primary" style="margin-top:1.5rem">Fund a Workshop</a>
+        <a href="/donate" class="btn btn-primary" style="margin-top:1.5rem">Fund a Workshop</a>
       </div>
     </div>
   </div>
@@ -1661,8 +1678,8 @@
     <h2>Fund a Classroom Conversation.</h2>
     <p>₹5,000 funds one full Parivarthan workshop session — a trained professional, a full session, and a room full of students who finally have language for what they're going through.</p>
     <div>
-      <a href="donate.html" class="btn-white">Donate Now</a>
-      <a href="contact.html" class="btn-ghost">Partner With Us</a>
+      <a href="/donate" class="btn-white">Donate Now</a>
+      <a href="/contact" class="btn-ghost">Partner With Us</a>
     </div>
   </div>
 </section>
@@ -1680,18 +1697,18 @@
         </div>
       </div>
       <div class="footer-col"><h4>Navigation</h4><ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="programs.html">Programs</a></li>
-        <li><a href="impact.html">Impact</a></li>
-        <li><a href="donate.html">Donate</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/programs">Programs</a></li>
+        <li><a href="/impact">Impact</a></li>
+        <li><a href="/donate">Donate</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul></div>
       <div class="footer-col"><h4>Programs</h4><ul>
-        <li><a href="programs.html#education">Delivering Education</a></li>
-        <li><a href="programs.html#care">Delivering Care</a></li>
-        <li><a href="programs.html#respect">Delivering Respect</a></li>
-        <li><a href="parivarthan.html" style="color:#A855F7">Project Parivarthan</a></li>
+        <li><a href="/programs#education">Delivering Education</a></li>
+        <li><a href="/programs#care">Delivering Care</a></li>
+        <li><a href="/programs#respect">Delivering Respect</a></li>
+        <li><a href="/parivarthan" style="color:#A855F7">Project Parivarthan</a></li>
       </ul></div>
       <div class="footer-col footer-address"><h4>Contact</h4>
         <p><a href="mailto:contact@nigamafoundation.org">contact@nigamafoundation.org</a><br><br>
@@ -1704,8 +1721,8 @@
     <div class="footer-bottom">
       <span>© 2025 Nigama Foundation. All Rights Reserved.</span>
       <div class="footer-bottom-right">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
       </div>
     </div>
   </div>
