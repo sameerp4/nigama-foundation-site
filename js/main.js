@@ -219,3 +219,52 @@ contactForm?.addEventListener('submit', (e) => {
   contactForm.style.display = 'none';
   if (contactThanks) contactThanks.style.display = 'block';
 });
+
+// ── Prefetch same-origin pages on hover/focus for instant transitions ──
+(() => {
+  const prefetched = new Set();
+  const supportsPrefetch = (() => {
+    const l = document.createElement('link');
+    return l.relList && l.relList.supports && l.relList.supports('prefetch');
+  })();
+
+  function prefetch(url) {
+    if (!url || prefetched.has(url)) return;
+    prefetched.add(url);
+    if (supportsPrefetch) {
+      const link = document.createElement('link');
+      link.rel = 'prefetch';
+      link.href = url;
+      link.as = 'document';
+      document.head.appendChild(link);
+    } else {
+      // Fallback: warm the HTTP cache with a low-priority fetch
+      fetch(url, { credentials: 'same-origin', priority: 'low' }).catch(() => {});
+    }
+  }
+
+  function candidate(a) {
+    if (!a || !a.href) return null;
+    const url = new URL(a.href, location.href);
+    if (url.origin !== location.origin) return null;         // same-origin only
+    if (url.pathname === location.pathname) return null;       // not the current page
+    if (url.hash && url.pathname === location.pathname) return null;
+    if (a.hasAttribute('download') || a.target === '_blank') return null;
+    return url.href;
+  }
+
+  function onIntent(e) {
+    const a = e.target.closest && e.target.closest('a[href]');
+    if (a) prefetch(candidate(a));
+  }
+
+  document.addEventListener('mouseover', onIntent, { passive: true });
+  document.addEventListener('focusin', onIntent, { passive: true });
+  document.addEventListener('touchstart', onIntent, { passive: true });
+
+  // Idle-prefetch the primary nav destinations so first click is instant too
+  const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1500));
+  idle(() => {
+    document.querySelectorAll('.nav-links a[href]').forEach((a) => prefetch(candidate(a)));
+  });
+})();
