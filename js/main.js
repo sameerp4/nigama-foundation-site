@@ -6,6 +6,10 @@
 window.addEventListener('pageshow', (e) => {
   if (e.persisted) {
     document.body.classList.remove('page-exit');
+    // Force immediate visibility — kill animation + transition so CSS can't keep it hidden
+    document.body.style.opacity = '1';
+    document.body.style.animation = 'none';
+    document.body.style.transition = 'none';
     document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
   }
 });
