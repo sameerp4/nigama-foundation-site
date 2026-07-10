@@ -2,6 +2,14 @@
    NIGAMA FOUNDATION — Main JS
    ============================================================ */
 
+// ── bfcache restore: undo page-exit + re-show fade-up elements ──
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) {
+    document.body.classList.remove('page-exit');
+    document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+  }
+});
+
 // ── Page transition on nav clicks ───────────────────────────
 // Intercept same-origin page navigations and fade out first
 document.addEventListener('click', (e) => {
