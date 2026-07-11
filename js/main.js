@@ -2,47 +2,13 @@
    NIGAMA FOUNDATION — Main JS
    ============================================================ */
 
-// ── bfcache restore: undo page-exit + re-show fade-up elements ──
+// ── bfcache restore: re-show fade-up elements ──
 window.addEventListener('pageshow', (e) => {
   if (e.persisted) {
-    document.body.classList.remove('page-exit');
-    // Force immediate visibility — kill animation + transition so CSS can't keep it hidden
     document.body.style.opacity = '1';
     document.body.style.animation = 'none';
-    document.body.style.transition = 'none';
     document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
   }
-});
-
-// ── Page transition on nav clicks ───────────────────────────
-// Intercept same-origin page navigations and fade out first
-document.addEventListener('click', (e) => {
-  const link = e.target.closest('a[href]');
-  if (!link) return;
-
-  const href = link.getAttribute('href');
-  if (!href) return;
-
-  // Skip: external links, hash-only anchors, download, mailto, tel
-  const isExternal = link.hostname && link.hostname !== location.hostname;
-  const isHashOnly = href.startsWith('#');
-  const isSpecial  = href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:');
-
-  if (isExternal || isHashOnly || isSpecial) return;
-  if (link.hasAttribute('download') || link.target === '_blank') return;
-
-  // For in-page hash anchors (e.g. index.html#events), strip the hash
-  // and navigate to the page root — sections are on separate pages
-  const url = new URL(link.href, location.href);
-  const isSamePage = url.pathname === location.pathname;
-  if (isSamePage && url.hash) return; // allow in-page jumps to snap instantly
-
-  e.preventDefault();
-  document.body.classList.add('page-exit');
-
-  setTimeout(() => {
-    window.location.href = link.href;
-  }, 180);
 });
 
 // ── Nav: always frosted on inner pages, scroll-aware on home ─
