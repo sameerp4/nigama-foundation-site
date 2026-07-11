@@ -1909,3 +1909,46 @@ section { padding: 3.5rem 0; }
 @media (max-width: 600px) {
   .grid-3 { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   MOBILE OVERFLOW FIXES — inner pages at narrow viewports
+   (tested at 390px / iPhone). Desktop styles untouched.
+   ============================================================ */
+@media (max-width: 860px) {
+  /* Safety net: never allow sideways scroll on mobile */
+  html, body { overflow-x: hidden; max-width: 100vw; }
+
+  /* Inline-styled two-column section grids (programs, impact)
+     collapse to a single column. Photo-pair grids (gap:0.75rem)
+     stay two-up — they fit fine. */
+  [style*="grid-template-columns:1fr 1fr"][style*="gap:4rem"] {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+  [style*="grid-template-columns:1fr 1fr"][style*="gap:2rem"],
+  [style*="grid-template-columns:1fr 1fr"][style*="gap:1rem"]:not([style*="grid-template-rows"]) {
+    grid-template-columns: 1fr !important;
+  }
+  /* Inline-styled 3-across stat rows (impact) — stack; photo
+     thumbnail grids (contain <img>) keep their 3-up layout */
+  [style*="grid-template-columns:repeat(3,1fr)"]:not(:has(img)) {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Parivarthan hero — page <style> loads after main.css, so
+     these need !important. Let grid track shrink to container,
+     wrap the chips row, and size the headline for 390px. */
+  .pv-hero-inner > * { min-width: 0; }
+  .pv-hero-text { max-width: 100% !important; }
+  .pv-hero-text h1 { font-size: clamp(2.1rem, 8.8vw, 2.8rem) !important; }
+  .pv-hero-text p { max-width: 100% !important; }
+  .pv-hero-badge { max-width: 100%; white-space: normal !important; }
+  .pv-hero-chips { flex-wrap: wrap !important; }
+}
+@media (max-width: 640px) {
+  /* Parivarthan stats bar — keep 2-up but let tracks compress
+     and shrink the serif numbers so "3,000+" fits */
+  .pv-stats-inner { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .pv-stat { padding: 1.4rem 0.75rem 1.1rem !important; }
+  .pv-stat-num { font-size: 2rem !important; }
+}
