@@ -256,7 +256,7 @@ section { padding: 3.5rem 0; }
 .panel-gather {
   left: 0; right: auto; top: 0;
   width: 48%; height: 57%;
-  background-image: url('../images/option-care-gbch.png');
+  background-image: url('../images/option-care-gbch.webp');
   background-size: cover;
   background-position: 50% 34%;
   filter: brightness(0.82) saturate(0.8);
@@ -400,6 +400,8 @@ section { padding: 3.5rem 0; }
   color: var(--navy);
   letter-spacing: -0.02em;
   line-height: 1;
+  font-variant-numeric: tabular-nums;
+  min-width: 4ch;
 }
 .hstat-label {
   display: block;
