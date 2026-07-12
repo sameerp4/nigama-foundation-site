@@ -1760,6 +1760,27 @@
   </div>
 </section>
 
+<!-- ── PRESS LIGHTBOX ── -->
+<div id="press-lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;padding:1.5rem" role="dialog" aria-modal="true" aria-label="Press clipping viewer">
+  <button id="press-lb-close" aria-label="Close" style="position:absolute;top:1.25rem;right:1.25rem;background:rgba(255,255,255,0.12);border:none;color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1;transition:background .2s">&#x2715;</button>
+  <img id="press-lb-img" src="" alt="" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:8px;box-shadow:0 24px 80px rgba(0,0,0,0.6)" />
+</div>
+<script>
+(function(){
+  var lb  = document.getElementById('press-lightbox');
+  var img = document.getElementById('press-lb-img');
+  function open(src, alt){ img.src=src; img.alt=alt||''; lb.style.display='flex'; document.body.style.overflow='hidden'; }
+  function close(){ lb.style.display='none'; img.src=''; document.body.style.overflow=''; }
+  document.getElementById('press-lb-close').addEventListener('click', close);
+  lb.addEventListener('click', function(e){ if(e.target===lb) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+  document.querySelectorAll('.press-clip').forEach(function(el){
+    el.style.cursor='pointer';
+    el.addEventListener('click', function(){ open(el.dataset.full||el.src, el.alt); });
+  });
+})();
+</script>
+
 <!-- ── PRESS COVERAGE ── -->
 <section style="background:var(--gray-50);padding:5rem 0">
   <div class="container">
@@ -1775,7 +1796,7 @@
 
       <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
         <div style="overflow:hidden;aspect-ratio:4/3">
-          <img src="images/press-the-hindu.jpg" alt="The Hindu coverage of Project Parivarthan launch in Anantapur" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
+          <img src="images/press-the-hindu.jpg" alt="The Hindu coverage of Project Parivarthan launch in Anantapur" class="press-clip" data-full="images/press-the-hindu.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
         </div>
         <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column">
           <div style="font-size:0.68rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.6rem">The Hindu · Anantapur</div>
@@ -1786,7 +1807,7 @@
 
       <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
         <div style="overflow:hidden;aspect-ratio:4/3">
-          <img src="images/press-deccan-chronicle.jpg" alt="Deccan Chronicle coverage of Project Parivarthan" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
+          <img src="images/press-deccan-chronicle.jpg" alt="Deccan Chronicle coverage of Project Parivarthan" class="press-clip" data-full="images/press-deccan-chronicle.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
         </div>
         <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column">
           <div style="font-size:0.68rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.6rem">Deccan Chronicle · Andhra Pradesh</div>
@@ -1802,7 +1823,7 @@
 
       <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
         <div style="overflow:hidden;aspect-ratio:4/3">
-          <img src="images/press-hans-india-1.jpg" alt="Hans India coverage of Project Parivarthan drug abuse prevention" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
+          <img src="images/press-hans-india-1.jpg" alt="Hans India coverage of Project Parivarthan drug abuse prevention" class="press-clip" data-full="images/press-hans-india-1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
         </div>
         <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column">
           <div style="font-size:0.68rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.6rem">Hans India · Kurnool</div>
@@ -1813,7 +1834,7 @@
 
       <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
         <div style="overflow:hidden;aspect-ratio:4/3">
-          <img src="images/press-hans-india-2.jpg" alt="Hans India coverage of Project Parivarthan at PVKK College" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
+          <img src="images/press-hans-india-2.jpg" alt="Hans India coverage of Project Parivarthan at PVKK College" class="press-clip" data-full="images/press-hans-india-2.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
         </div>
         <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column">
           <div style="font-size:0.68rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.6rem">Hans India · Kurnool</div>
@@ -1829,7 +1850,7 @@
 
       <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:12px;overflow:hidden">
         <div style="overflow:hidden;aspect-ratio:3/4">
-          <img src="images/press-eenadu.jpg" alt="Eenadu coverage of Nigama Foundation Parivarthan programme" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
+          <img src="images/press-eenadu.jpg" alt="Eenadu coverage of Nigama Foundation Parivarthan programme" class="press-clip" data-full="images/press-eenadu.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
         </div>
         <div style="padding:1rem">
           <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.4rem">ఈనాడు · Anantapur</div>
@@ -1839,7 +1860,7 @@
 
       <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:12px;overflow:hidden">
         <div style="overflow:hidden;aspect-ratio:3/4">
-          <img src="images/press-surya-1.jpg" alt="Surya newspaper coverage of Parivarthan awareness session" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
+          <img src="images/press-surya-1.jpg" alt="Surya newspaper coverage of Parivarthan awareness session" class="press-clip" data-full="images/press-surya-1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
         </div>
         <div style="padding:1rem">
           <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.4rem">సూర్య · Anantapur</div>
@@ -1849,7 +1870,7 @@
 
       <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:12px;overflow:hidden">
         <div style="overflow:hidden;aspect-ratio:3/4">
-          <img src="images/press-surya-2.jpg" alt="Surya newspaper coverage of Uravakonda Parivarthan session" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
+          <img src="images/press-surya-2.jpg" alt="Surya newspaper coverage of Uravakonda Parivarthan session" class="press-clip" data-full="images/press-surya-2.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
         </div>
         <div style="padding:1rem">
           <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.4rem">సూర్య · Rayadurgam</div>
@@ -1859,7 +1880,7 @@
 
       <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:12px;overflow:hidden">
         <div style="overflow:hidden;aspect-ratio:3/4">
-          <img src="images/press-sakshi.jpg" alt="Sakshi newspaper coverage of Nigama Foundation awareness programme" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
+          <img src="images/press-sakshi.jpg" alt="Sakshi newspaper coverage of Nigama Foundation awareness programme" class="press-clip" data-full="images/press-sakshi.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
         </div>
         <div style="padding:1rem">
           <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.4rem">సాక్షి · Rayadurgam</div>
@@ -1869,7 +1890,7 @@
 
       <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:12px;overflow:hidden">
         <div style="overflow:hidden;aspect-ratio:3/4">
-          <img src="images/press-mee24news.jpg" alt="Mee24News coverage of Parivarthan drug awareness programme" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
+          <img src="images/press-mee24news.jpg" alt="Mee24News coverage of Parivarthan drug awareness programme" class="press-clip" data-full="images/press-mee24news.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" loading="lazy" />
         </div>
         <div style="padding:1rem">
           <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.4rem">మీ24న్యూస్ · Anantapur</div>
