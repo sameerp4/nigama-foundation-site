@@ -1775,9 +1775,11 @@
   document.getElementById('press-lb-close').addEventListener('click', close);
   lb.addEventListener('click', function(e){ if(e.target===lb) close(); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
-  document.querySelectorAll('.press-clip').forEach(function(el){
-    el.style.cursor='pointer';
-    el.addEventListener('click', function(){ open(el.dataset.full||el.src, el.alt); });
+  document.addEventListener('click', function(e){
+    var el = e.target;
+    if(el.classList.contains('press-clip')){
+      open(el.dataset.full || el.src, el.alt);
+    }
   });
 })();
 </script>
