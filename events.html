@@ -132,8 +132,10 @@
     }
     .pj-tag {
       font-size:0.68rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
-      color:var(--gray-300);
+      padding:0.22rem 0.65rem;border-radius:999px;
+      background:rgba(156,163,175,0.12);color:var(--gray-600);
     }
+    .pj-tag[class*="pj-tag"] { display:inline-block; }
     .pj-body h2 {
       font-size:clamp(1.5rem,2.5vw,2.1rem);color:var(--navy-dark);
       line-height:1.2;margin-bottom:1rem;
@@ -160,7 +162,40 @@
         <span class="section-label">In the Field</span>
         <h2 style="margin-top:0.3rem">Events &amp; Field Updates</h2>
       </div>
+      <!-- Pillar filter buttons -->
+      <div id="pillar-filters" style="display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:1.25rem">
+        <button class="pillar-filter-btn pillar-filter-active" data-pillar="all">All Events</button>
+        <button class="pillar-filter-btn" data-pillar="Educate the Young" style="--pill-color:#1d4ed8">Educate the Young</button>
+        <button class="pillar-filter-btn" data-pillar="Care for Every Age" style="--pill-color:#2D6A4F">Care for Every Age</button>
+        <button class="pillar-filter-btn" data-pillar="Build What Lasts" style="--pill-color:#0d1b4b">Build What Lasts</button>
+        <button class="pillar-filter-btn" data-pillar="Youth Mental Health" style="--pill-color:#7B2D8B">Project Parivarthan</button>
+      </div>
     </div>
+
+    <style>
+      .pillar-filter-btn {
+        padding: 0.45rem 1rem;
+        border-radius: 999px;
+        border: 1.5px solid var(--gray-100);
+        background: #fff;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--gray-600);
+        cursor: pointer;
+        transition: all 0.18s ease;
+        font-family: var(--font-body);
+      }
+      .pillar-filter-btn:hover {
+        border-color: var(--gold);
+        color: var(--navy-dark);
+      }
+      .pillar-filter-btn.pillar-filter-active {
+        background: var(--pill-color, var(--navy));
+        border-color: var(--pill-color, var(--navy));
+        color: #fff;
+      }
+      .pj-entry.pj-hidden { display: none; }
+    </style>
 
     <div class="pj-timeline">
 
@@ -308,10 +343,10 @@
           </div>
           <div class="pj-meta">
             <span class="pj-date-badge">June 2025</span>
-            <span class="pj-tag">Care for Every Age · Anantapur</span>
+            <span class="pj-tag">Build What Lasts · Anantapur</span>
           </div>
-          <h2>Clean Water, Bright Futures</h2>
-          <p>Nigama Foundation installed a water filtration system at a government school near Anantapur, giving more than 300 children reliable access to safe drinking water. Clean water is the quiet foundation of health and learning — infrastructure that keeps students in class instead of falling sick.</p>
+          <h2>Water Filtration Plant — Government School, Anantapur</h2>
+          <p>Nigama Foundation installed a permanent water filtration system at a government school near Anantapur, giving more than 300 children reliable access to safe drinking water. Clean water is the quiet foundation of health and learning — infrastructure that keeps students in class instead of falling sick.</p>
           <a href="https://www.nigamafoundation.org/clean-water-bright-futures/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
         </div>
       </div>
@@ -419,11 +454,11 @@
           </div>
           <div class="pj-meta">
             <span class="pj-date-badge">Aug 2024</span>
-            <span class="pj-tag">Care for Every Age · Vizag</span>
+            <span class="pj-tag">Build What Lasts · Vizag</span>
           </div>
           <h2>Dining Hall Renovation — Visakha Model School for the Blind</h2>
           <p>Commissioned on August 8th, 2024, the dining hall renovation at VMS gave blind-school students a dignified space to share meals. This is what Indotronix Avani Group's CSR commitment looks like when it arrives in person — not a plaque on a wall, but a room where children eat every day.</p>
-          <a href="/programs#care" class="pj-read-more">About our Care programs →</a>
+          <a href="/programs#infrastructure" class="pj-read-more">About our Infrastructure programs →</a>
         </div>
       </div>
 
@@ -439,11 +474,11 @@
           </div>
           <div class="pj-meta">
             <span class="pj-date-badge">Aug 2024</span>
-            <span class="pj-tag">Infrastructure Development · Telangana</span>
+            <span class="pj-tag">Build What Lasts · Telangana</span>
           </div>
-          <h2>Infrastructure Delivery — Telangana Social Welfare Residential School</h2>
+          <h2>School Renovation — Kitchen, Washrooms &amp; Urinals, TSWRS Hyderabad</h2>
           <p>Ceipal and Nigama Foundation completed washroom renovation, kitchen upgrades, urinal facilities, and full painting of the Telangana Social Welfare Residential School campus in Hyderabad. The Ceipal + Nigama signboard now stands at the entrance — a commitment made, funded, and delivered on 20 August 2024.</p>
-          <a href="/impact" class="pj-read-more">See our Impact →</a>
+          <a href="/programs#infrastructure" class="pj-read-more">About our Infrastructure programs →</a>
         </div>
       </div>
 
@@ -569,11 +604,11 @@
           </div>
           <div class="pj-meta">
             <span class="pj-date-badge">Sept 2023</span>
-            <span class="pj-tag">Educate the Young · Anantapur</span>
+            <span class="pj-tag">Build What Lasts · Anantapur</span>
           </div>
-          <h2>Uravakonda School</h2>
-          <p>Uravakonda is where founder Sameer Penakalapati spent his primary and middle school years — and where Nigama Foundation returns to invest in the next generation. Supplies, facilities, and sustained engagement for a school that helped shape the foundation's own origins.</p>
-          <a href="https://www.nigamafoundation.org/uravakonda-school/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
+          <h2>Uravakonda Auditorium — Govt. Jr. College</h2>
+          <p>Nigama Foundation constructed a full auditorium at Government Junior College, Uravakonda — the founder's own school. The facility now hosts daily morning prayers, seminars, college functions, and examinations. Uravakonda is where Sameer Penakalapati spent his school years; the auditorium is the foundation's way of giving that back permanently.</p>
+          <a href="/programs#infrastructure" class="pj-read-more">About our Infrastructure programs →</a>
         </div>
       </div>
 
@@ -701,10 +736,10 @@
           </div>
           <div class="pj-meta">
             <span class="pj-date-badge">Oct 2018</span>
-            <span class="pj-tag">Educate the Young · Guntakal</span>
+            <span class="pj-tag">Build What Lasts · Guntakal</span>
           </div>
-          <h2>Saraswathi Vidyamandir</h2>
-          <p>Saraswathi Vidya Mandir in Guntakal educates children from underserved communities, and Nigama Foundation has stood beside it for more than five years with essential charitable support. A long-term commitment to a school that keeps its doors open to those who need it most.</p>
+          <h2>School Building &amp; Electrical Infrastructure — Saraswathi Vidyamandir, Guntakal</h2>
+          <p>Nigama Foundation funded school building construction and full electrical board installation at Saraswathi Vidya Mandir in Guntakal — a school serving children from underserved communities. Beyond supplies, this is structural: lights that stay on, rooms that stand, a campus built to last for the next generation of students.</p>
           <a href="https://www.nigamafoundation.org/saraswathi-vidyamandir/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
         </div>
       </div>
@@ -795,5 +830,52 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+(function () {
+  // Color-code pillar tags
+  const PILLAR_COLORS = {
+    'Educate the Young':  { bg: 'rgba(29,78,216,0.08)', color: '#1d4ed8' },
+    'Care for Every Age': { bg: 'rgba(45,106,79,0.08)',  color: '#2D6A4F' },
+    'Build What Lasts':   { bg: 'rgba(13,27,75,0.08)',   color: '#0d1b4b' },
+    'Youth Mental Health':{ bg: 'rgba(123,45,139,0.08)', color: '#7B2D8B' },
+  };
+  document.querySelectorAll('.pj-tag').forEach(tag => {
+    const text = tag.textContent;
+    for (const [key, style] of Object.entries(PILLAR_COLORS)) {
+      if (text.includes(key)) {
+        tag.style.background = style.bg;
+        tag.style.color = style.color;
+        break;
+      }
+    }
+  });
+})();
+
+(function () {
+  const btns = document.querySelectorAll('.pillar-filter-btn');
+  const entries = document.querySelectorAll('.pj-entry');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const pillar = btn.dataset.pillar;
+
+      // Update active button
+      btns.forEach(b => b.classList.remove('pillar-filter-active'));
+      btn.classList.add('pillar-filter-active');
+
+      // Show / hide entries
+      entries.forEach(entry => {
+        if (pillar === 'all') {
+          entry.classList.remove('pj-hidden');
+        } else {
+          const tag = entry.querySelector('.pj-tag');
+          const matches = tag && tag.textContent.includes(pillar);
+          entry.classList.toggle('pj-hidden', !matches);
+        }
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
