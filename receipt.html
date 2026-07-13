@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B2VSY6T4RM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B2VSY6T4RM');
+  </script>
+  <meta charset="UTF-8" />
+  <style>html{background:#FEFCF5}body{opacity:0;animation:pageEnter .3s ease forwards}@keyframes pageEnter{from{opacity:0}to{opacity:1}}</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donation Receipt | Nigama Foundation</title>
+  <meta name="description" content="Your 80G donation receipt from Nigama Foundation." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&display=swap" rel="stylesheet" />
+  <style>
+    .receipt-section { background: var(--gray-50); padding: 4rem 0 5rem; min-height: 60vh; }
+    .receipt-card {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      padding: 3rem;
+    }
+    .receipt-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .receipt-head-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-variant: small-caps;
+      color: var(--gold);
+    }
+    .receipt-divider {
+      border: none;
+      border-top: 2px solid var(--gold);
+      opacity: 0.6;
+      margin: 1.25rem 0 1.5rem;
+    }
+    .receipt-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      margin-bottom: 1.5rem;
+    }
+    .receipt-meta strong { color: var(--navy-dark); }
+    .receipt-donor-box {
+      background: #f6f6f4;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+    .receipt-donor-box table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .receipt-donor-box td { padding: 0.35rem 0; vertical-align: top; }
+    .receipt-donor-box td:first-child {
+      color: var(--gray-600);
+      width: 32%;
+      font-weight: 600;
+      padding-right: 1rem;
+      white-space: nowrap;
+    }
+    .receipt-donor-box td:last-child { color: var(--navy-dark); word-break: break-word; }
+    .receipt-amount-block { text-align: center; margin: 2rem 0; }
+    .receipt-amount-block .amt {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      font-weight: 600;
+      color: var(--navy-dark);
+      line-height: 1.1;
+    }
+    .receipt-amount-block .amt-program {
+      font-size: 0.92rem;
+      color: var(--gray-600);
+      margin-top: 0.5rem;
+    }
+    .receipt-declaration {
+      font-size: 0.82rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+      border-top: 1px solid var(--gray-100);
+      border-bottom: 1px solid var(--gray-100);
+      padding: 1.25rem 0;
+      margin-bottom: 1.5rem;
+    }
+    .receipt-foundation {
+      font-size: 0.8rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .receipt-foundation strong { color: var(--navy-dark); }
+    .receipt-sign {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.75rem;
+    }
+    .receipt-sign-box {
+      border: 1px dashed var(--gray-200);
+      border-radius: 8px;
+      padding: 1rem 1.5rem 0.85rem;
+      text-align: right;
+      font-size: 0.85rem;
+      color: var(--gray-600);
+      min-width: 220px;
+    }
+    .receipt-sign-box .sign-for {
+      font-weight: 700;
+      color: var(--navy-dark);
+      margin-bottom: 1.75rem;
+    }
+    .receipt-footer-strip {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--gray-300);
+      border-top: 1px solid var(--gray-100);
+      padding-top: 1rem;
+    }
+    .receipt-actions {
+      max-width: 680px;
+      margin: 1.75rem auto 0;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .receipt-screen-note {
+      max-width: 680px;
+      margin: 1rem auto 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--gray-300);
+    }
+    @media (max-width: 640px) {
+      .receipt-card { padding: 1.75rem 1.25rem; border-radius: 12px; }
+      .receipt-amount-block .amt { font-size: 2.15rem; }
+    }
+    @media print {
+      nav, .breadcrumb, footer, .receipt-actions, .receipt-screen-note { display: none !important; }
+      body { background: white !important; }
+      .receipt-card { box-shadow: none !important; border: 1px solid #ccc !important; margin: 0 !important; max-width: 100% !important; }
+      @page { margin: 1.5cm; size: A4 portrait; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav scrolled" role="navigation">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo" aria-label="Nigama Foundation home">
+      <img class="nav-logo-img" src="images/logo.svg" alt="Nigama Foundation" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-home-icon" aria-label="Home"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M1.5 7.5L8 1.5L14.5 7.5V14.5H10.5V10H5.5V14.5H1.5V7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/programs">Programs</a></li>
+      <li><a href="/impact">Impact</a></li>
+      <li><a href="/events">Events</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/donate" class="btn btn-primary" style="background:#B8760F">Donate</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile">
+    <a href="/">🏠 Home</a>
+    <a href="/about">About</a>
+    <a href="/programs">Programs</a>
+    <a href="/impact">Impact</a>
+    <a href="/events">Events</a>
+    <a href="/contact">Contact</a>
+    <a href="/donate" class="btn btn-primary" style="margin-top:0.75rem;justify-content:center;">Donate Now</a>
+  </div>
+</nav>
+
+<section class="receipt-section" style="padding-top:7rem">
+  <div class="container">
+
+    <div class="receipt-card" id="receipt-card">
+      <!-- 1. Header -->
+      <div class="receipt-head">
+        <img src="images/logo.svg" height="36" alt="Nigama Foundation" />
+        <span class="receipt-head-label">Donation Receipt</span>
+      </div>
+
+      <!-- 2. Gold divider -->
+      <hr class="receipt-divider" />
+
+      <!-- 3. Receipt no / date -->
+      <div class="receipt-meta">
+        <span>Receipt No.: <strong id="r-no">—</strong></span>
+        <span>Date: <strong id="r-date">—</strong></span>
+      </div>
+
+      <!-- 4. Donor details -->
+      <div class="receipt-donor-box">
+        <table>
+          <tr><td>Donor Name</td><td id="r-name">—</td></tr>
+          <tr><td>Email</td><td id="r-email">—</td></tr>
+          <tr><td>Donor PAN</td><td id="r-pan">—</td></tr>
+          <tr><td>Amount</td><td id="r-amount">—</td></tr>
+          <tr><td>Program</td><td id="r-program">—</td></tr>
+          <tr><td>Payment ID</td><td id="r-txn">—</td></tr>
+        </table>
+      </div>
+
+      <!-- 5. Amount highlight -->
+      <div class="receipt-amount-block">
+        <div class="amt" id="r-amount2">—</div>
+        <div class="amt-program">Donated to: <span id="r-program2">General Fund</span></div>
+      </div>
+
+      <!-- 6. Declaration -->
+      <p class="receipt-declaration">
+        Certified that the donation of <span id="r-amount3">—</span> received from
+        <span id="r-name2">—</span> on <span id="r-date2">—</span> via electronic transfer
+        (Razorpay Payment ID: <span id="r-txn2">—</span>) shall be used for the charitable
+        purposes of Nigama Foundation. This receipt is issued in compliance with Section 80G
+        of the Income Tax Act, 1961.
+      </p>
+
+      <!-- 7. Foundation details -->
+      <div class="receipt-foundation">
+        <strong>Nigama Foundation</strong><br />
+        Indotronix Avani Group, Orbit, Plot No. 30/C, 20th Floor,<br />
+        Knowledge City, Hyderabad, Telangana – 500081<br />
+        Email: donate@nigamafoundation.org<br />
+        PAN: [FOUNDATION-PAN] &nbsp;|&nbsp; 80G Reg. No.: As per records &nbsp;|&nbsp; 12AB Reg. No.: As per records<br />
+        Registered under Section 80G and Section 12AB of the Income Tax Act, 1961.
+      </div>
+
+      <!-- 8. Signature block -->
+      <div class="receipt-sign">
+        <div class="receipt-sign-box">
+          <div class="sign-for">For Nigama Foundation</div>
+          <div>[Authorized Signatory]</div>
+        </div>
+      </div>
+
+      <!-- 9. Footer strip -->
+      <div class="receipt-footer-strip">
+        This is a computer-generated receipt and is valid without a physical signature.
+      </div>
+    </div>
+
+    <div class="receipt-actions">
+      <button onclick="window.print()" class="btn btn-primary" style="background:var(--gold);justify-content:center">Download Receipt (PDF)</button>
+      <a href="/donate" class="btn btn-outline" style="color:var(--navy-dark);border-color:var(--gray-200);justify-content:center">← Back to Donate</a>
+    </div>
+    <p class="receipt-screen-note">Use your browser's "Save as PDF" option in the print dialog to keep a copy for your tax records.</p>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="images/logo-white.png" alt="Nigama Foundation" class="footer-logo" />
+        <p>Delivering dignity, one person at a time, across Hyderabad, Vizag, and Chennai.</p>
+        <div style="margin-top:1rem;display:flex;gap:0.5rem;flex-wrap:wrap">
+          <span style="background:rgba(201,120,12,0.15);border:1px solid rgba(201,120,12,0.3);border-radius:4px;padding:0.2rem 0.6rem;font-size:0.7rem;color:#e8a43a;font-weight:600">80G Certified</span>
+          <span style="background:rgba(201,120,12,0.15);border:1px solid rgba(201,120,12,0.3);border-radius:4px;padding:0.2rem 0.6rem;font-size:0.7rem;color:#e8a43a;font-weight:600">12AB Registered</span>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Navigation</h4><ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/programs">Programs</a></li>
+        <li><a href="/impact">Impact</a></li>
+        <li><a href="/donate">Donate</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Programs</h4><ul>
+        <li><a href="/programs#education">Educate the Young</a></li>
+        <li><a href="/programs#care">Care for Every Age</a></li>
+        <li><a href="/programs#infrastructure">Build What Lasts</a></li>
+        <li><a href="/parivarthan">Project Parivarthan</a></li>
+      </ul></div>
+      <div class="footer-col footer-address"><h4>Contact</h4>
+        <p><a href="mailto:donate@nigamafoundation.org">donate@nigamafoundation.org</a><br><br>
+        Indotronix Avani Group, Orbit<br>
+        Plot No. 30/C, 20th Floor<br>
+        Knowledge City, Hyderabad<br>
+        Telangana – 500081</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Nigama Foundation. All Rights Reserved.</span>
+      <div class="footer-bottom-right">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+(function(){
+  var p = new URLSearchParams(window.location.search);
+  var txn = p.get('txn');
+  if (!txn) {
+    document.getElementById('receipt-card').innerHTML = '<p style="text-align:center;padding:3rem">No receipt found. Please complete a donation first. <a href="/donate">← Make a donation</a></p>';
+    return;
+  }
+  var year = new Date().getFullYear();
+  var receiptNo = 'NF-' + year + '-' + txn.slice(-6).toUpperCase();
+  var amountStr = '₹' + Number(p.get('amount')).toLocaleString('en-IN');
+  var program = p.get('program') || 'General Fund';
+  // Fill all placeholders
+  document.getElementById('r-no').textContent       = receiptNo;
+  document.getElementById('r-date').textContent     = p.get('date') || '—';
+  document.getElementById('r-name').textContent     = p.get('name') || '—';
+  document.getElementById('r-email').textContent    = p.get('email') || '—';
+  document.getElementById('r-pan').textContent      = p.get('pan') || '—';
+  document.getElementById('r-amount').textContent   = amountStr;
+  document.getElementById('r-program').textContent  = program;
+  document.getElementById('r-txn').textContent      = txn;
+  document.getElementById('r-amount2').textContent  = amountStr;
+  document.getElementById('r-program2').textContent = program;
+  document.getElementById('r-amount3').textContent  = amountStr;
+  document.getElementById('r-name2').textContent    = p.get('name') || '—';
+  document.getElementById('r-date2').textContent    = p.get('date') || '—';
+  document.getElementById('r-txn2').textContent     = txn;
+})();
+</script>
+</body>
+</html>

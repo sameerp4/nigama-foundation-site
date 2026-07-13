@@ -5,6 +5,7 @@
 /events       /events.html       200
 /parivarthan  /parivarthan.html  200
 /donate       /donate.html       200
+/receipt      /receipt.html      200
 /contact      /contact.html      200
 /privacy      /privacy.html      200
 /terms        /terms.html        200
@@ -16,6 +17,7 @@
 /events.html       /events       301!
 /parivarthan.html  /parivarthan  301!
 /donate.html       /donate       301!
+/receipt.html      /receipt      301!
 /contact.html      /contact      301!
 /privacy.html      /privacy      301!
 /terms.html        /terms        301!
