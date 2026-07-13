@@ -154,6 +154,28 @@
       .pj-body { padding:2rem 0 2rem 1.5rem; }
       .pj-year { display:none; }
     }
+    .pj-section-divider {
+      display:flex;align-items:center;gap:1rem;
+      padding:3rem 0 1.25rem 6rem;
+    }
+    .pj-sd-pill {
+      font-size:0.62rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;
+      background:var(--sc,#1d4ed8);color:#fff;border-radius:999px;
+      padding:0.25rem 0.85rem;white-space:nowrap;flex-shrink:0;
+    }
+    .pj-sd-title {
+      font-size:clamp(1.05rem,2vw,1.35rem);font-weight:700;
+      color:var(--navy-dark);margin:0;letter-spacing:-0.01em;
+    }
+    .pj-milestones {
+      margin:0.85rem 0 1.25rem;
+      border-left:2px solid var(--gold);padding-left:1rem;
+    }
+    .pj-milestone {
+      font-size:0.875rem;color:var(--gray-600);line-height:1.65;margin-bottom:0.35rem;
+    }
+    .pj-milestone:last-child{margin-bottom:0}
+    @media(max-width:640px){.pj-section-divider{padding-left:3rem;flex-wrap:wrap;gap:0.5rem}}
   </style>
 
   <div class="container">
@@ -198,6 +220,11 @@
     </style>
 
     <div class="pj-timeline">
+      <div class="pj-section-divider">
+        <span class="pj-sd-pill" style="--sc:#7B2D8B">Project Parivarthan</span>
+        <h3 class="pj-sd-title">A Movement for Young Minds</h3>
+      </div>
+
 
       <!-- Entry 1: Parivarthan 2026 -->
       <div class="pj-entry fade-up">
@@ -216,8 +243,17 @@
           </div>
           <h2>Project Parivarthan: Setting the Tone for 2026</h2>
           <p>Expanded across 8 districts of Andhra Pradesh — reaching 170+ institutions and 22,000+ young adults with structured mental health awareness workshops. Screen addiction, peer pressure, emotional resilience: conversations India's classrooms rarely have, delivered by professionals who show up in person.</p>
+          <div class="pj-milestones">
+            <div class="pj-milestone"><strong>Phase 1 · Nov–Dec 2025</strong> — 16 institutions across Kurnool &amp; Nandyal, 3,500+ youth reached for the first time</div>
+            <div class="pj-milestone"><strong>Phase 2 · 2025–2026</strong> — Expanded to 170+ institutions across 8 districts of Andhra Pradesh, 22,000+ youth</div>
+          </div>
           <a href="/parivarthan" class="pj-read-more">See the full Parivarthan story →</a>
         </div>
+      </div>
+
+      <div class="pj-section-divider">
+        <span class="pj-sd-pill" style="--sc:#1d4ed8">Educate the Young</span>
+        <h3 class="pj-sd-title">Schoolbags &amp; Scholarships</h3>
       </div>
 
       <!-- Entry: Ceipal Cares Education Drive Mar 2026 -->
@@ -241,91 +277,49 @@
         </div>
       </div>
 
-      <!-- Entry: Kurnool & Nandyal District Supply Drive 2026 -->
+      <!-- Entry: Vadaanya Janaa Society July 2024 -->
       <div class="pj-entry fade-up">
         <div class="pj-spine">
           <div class="pj-node"></div>
         </div>
         <div class="pj-body">
-          <div class="pj-photo pj-photo-grid">
-            <img src="images/event-kurnool-supply-1.jpg" alt="Students assembled at a government school during the Kurnool district school supply drive" loading="lazy" />
-            <img src="images/event-kurnool-supply-2.jpg" alt="Nigama Foundation volunteers distributing school supplies in Kurnool" loading="lazy" />
-            <img src="images/event-kurnool-supply-3.jpg" alt="School children receiving learning supplies in Kurnool district" loading="lazy" />
-            <img src="images/event-kurnool-supply-4.jpg" alt="Government high school assembly during the Nandyal district supply drive" loading="lazy" />
-            <div class="pj-photo-caption">Kurnool &amp; Nandyal Districts · 2026</div>
+          <div class="pj-photo">
+            <img src="images/event-vadaanya-1.jpg" alt="Vadaanya Janaa Society scholarship students supported by Nigama Foundation" loading="lazy" style="object-position:center 40%" />
+            <div class="pj-photo-caption">Vadaanya Janaa Society · Andhra Pradesh · July 2024</div>
           </div>
           <div class="pj-meta">
-            <span class="pj-date-badge">Jan–Apr 2026</span>
+            <span class="pj-date-badge">July 2024</span>
             <span class="pj-tag">Educate the Young · Andhra Pradesh</span>
           </div>
-          <h2>Kurnool &amp; Nandyal District School Supply Drive</h2>
-          <p>Across 19 government schools, hostels, and colleges spanning the Kurnool and Nandyal districts, Nigama Foundation volunteers hand-delivered notebooks, stationery, and essential learning supplies to thousands of students. Every campus visited in person — supplies placed directly in the hands of the children who need them most.</p>
-          <a href="/programs#education" class="pj-read-more">About our Education programs →</a>
+          <h2>Vadaanya Janaa Society</h2>
+          <p>Nigama Foundation partnered with Vadaanya Janaa Society, a youth-led non-profit funding merit scholarships and tuition for students who would otherwise be priced out of an education. Backing the Right to Education by supporting the organizations that make it real on the ground.</p>
+          <a href="https://www.nigamafoundation.org/vadaanya-janaa-society/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
         </div>
       </div>
 
-      <!-- Entry: Anantapur District Supply Drive 2025-2026 -->
-      <div class="pj-entry fade-up">
-        <div class="pj-spine">
-          <div class="pj-node"></div>
-        </div>
-        <div class="pj-body">
-          <div class="pj-photo pj-photo-grid">
-            <img src="images/event-anantapur-supply-1.jpg" alt="Girls' college hostel students during the Anantapur district school supply drive" loading="lazy" />
-            <img src="images/event-anantapur-supply-2.jpg" alt="Government social welfare hostel supply distribution in Anantapur" loading="lazy" />
-            <img src="images/event-anantapur-supply-3.jpg" alt="Inauguration event at Sri Krishnadevaraya Bhavan, Anantapur" loading="lazy" />
-            <img src="images/event-anantapur-supply-4.jpg" alt="Government SC girls hostel gathering during the Anantapur drive" loading="lazy" />
-            <div class="pj-photo-caption">Anantapur District · 2025–2026</div>
-          </div>
-          <div class="pj-meta">
-            <span class="pj-date-badge">2025–2026</span>
-            <span class="pj-tag">Educate the Young · Anantapur</span>
-          </div>
-          <h2>Anantapur District School Supply Drive</h2>
-          <p>Spanning welfare hostels, degree colleges, and rural high schools across Anantapur district, this multi-month CSR effort reached students from the most underserved communities with school supplies, encouragement, and awareness sessions. From Kalyanadurg to Rapthadu, the team showed up campus by campus.</p>
-          <a href="/programs#education" class="pj-read-more">About our Education programs →</a>
-        </div>
-      </div>
-
-      <!-- Entry 2: Youth Well-Being -->
-      <div class="pj-entry fade-up">
-        <div class="pj-spine">
-          <div class="pj-node"></div>
-          <span class="pj-year">2025</span>
-        </div>
-        <div class="pj-body">
-          <div class="pj-photo">
-            <img src="images/event-youth-wellbeing-2.jpg" alt="Commitment to youth well-being — Nigama Foundation mental health clinic" loading="lazy" style="object-position:center 30%" />
-            <div class="pj-photo-caption">Nandyal District · Nov–Dec 2025</div>
-          </div>
-          <div class="pj-meta">
-            <span class="pj-date-badge">Nov–Dec 2025</span>
-            <span class="pj-tag">Parivarthan Phase 1 · 16 Institutions</span>
-          </div>
-          <h2>Commitment to Youth Well-Being</h2>
-          <p>In a single season, Nigama Foundation reached 16 schools, junior colleges, and welfare hostels across Kurnool and Nandyal, bringing 3,500+ young men and women face-to-face with a counselor — many for the first time. This was Parivarthan's proof-of-concept, and it worked.</p>
-          <a href="https://www.nigamafoundation.org/commitment-to-youth-well-being/" target="_blank" rel="noopener" class="pj-read-more">Read the full report →</a>
-        </div>
-      </div>
-
-      <!-- Entry 3: Blood Donation -->
+      <!-- Entry 5: School Supplies -->
       <div class="pj-entry fade-up">
         <div class="pj-spine">
           <div class="pj-node"></div>
         </div>
         <div class="pj-body">
           <div class="pj-photo">
-            <img src="images/event-blood-donation.jpg" alt="Indotronix Avani blood donation camp 2025" loading="lazy" style="object-position:center 30%" />
-            <div class="pj-photo-caption">Indotronix Avani HQ · Hyderabad · Nov 2025</div>
+            <img src="images/program-education-distribution.jpg" alt="School supply distribution — Amitabha Aadarana Vidyalaya" loading="lazy" style="object-position:center 30%" />
+            <div class="pj-photo-caption">Amitabha Aadarana Vidyalaya · Hyderabad · 2024</div>
           </div>
           <div class="pj-meta">
-            <span class="pj-date-badge">Nov 2025</span>
-            <span class="pj-tag">Community Health · Hyderabad</span>
+            <span class="pj-date-badge">2024</span>
+            <span class="pj-tag">Educate the Young · Hyderabad</span>
           </div>
-          <h2>Blood Donation Camp 2025</h2>
-          <p>The Indotronix Avani team in Hyderabad came together for a volunteer blood donation drive — a morning of compassion, community, and collective impact. The people who fund the mission also show up for it.</p>
-          <a href="https://www.nigamafoundation.org/blood-donation-camp-2025/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
+          <h2>School Supplies Distribution — Amitabha Aadarana</h2>
+          <p>Uniforms, notebooks, bags, and stationery distributed to students who would otherwise start the year without basics. Fifty children sponsored annually through the Nigama school-supply programme — each one named, each one tracked, each one followed through to the end of the year.</p>
+          <a href="/programs#education" class="pj-read-more">About our Education programs →</a>
         </div>
+      </div>
+
+      <div class="pj-section-divider">
+        <span class="pj-sd-pill" style="--sc:#0d1b4b">Build What Lasts</span>
+        <h3 class="pj-sd-title">Infrastructure That Stays</h3>
       </div>
 
       <!-- Entry: Clean Water Bright Futures June 2025 -->
@@ -348,96 +342,6 @@
           <h2>Water Filtration Plant — Government School, Anantapur</h2>
           <p>Nigama Foundation installed a permanent water filtration system at a government school near Anantapur, giving more than 300 children reliable access to safe drinking water. Clean water is the quiet foundation of health and learning — infrastructure that keeps students in class instead of falling sick.</p>
           <a href="https://www.nigamafoundation.org/clean-water-bright-futures/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
-        </div>
-      </div>
-
-      <!-- Entry: Community Impact Blood Donation Vizag June 2025 -->
-      <div class="pj-entry fade-up">
-        <div class="pj-spine">
-          <div class="pj-node"></div>
-        </div>
-        <div class="pj-body">
-          <div class="pj-photo pj-photo-grid pj-grid-3">
-            <img src="images/event-blood-donation-vizag-2025-1.jpg" alt="Employee donating blood at the Visakhapatnam office blood donation camp" loading="lazy" />
-            <img src="images/event-blood-donation-vizag-2025-2.jpg" alt="Volunteers at the Indotronix Avani Vizag blood donation drive" loading="lazy" />
-            <img src="images/event-blood-donation-vizag-2025-3.jpg" alt="Community Impact blood donation drive at the Visakhapatnam office" loading="lazy" />
-            <div class="pj-photo-caption">Indotronix Avani · Visakhapatnam · June 2025</div>
-          </div>
-          <div class="pj-meta">
-            <span class="pj-date-badge">June 2025</span>
-            <span class="pj-tag">Community Health · Visakhapatnam</span>
-          </div>
-          <h2>Community Impact — Blood Donation Drive, Vizag</h2>
-          <p>The Indotronix Avani Group team at the Visakhapatnam office gave up a weekend to donate blood — an overwhelming turnout that reflects a deep, standing commitment to community service. The people behind the mission roll up their sleeves for it, literally.</p>
-          <a href="https://www.nigamafoundation.org/community-impact-blood-donation-drive/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
-        </div>
-      </div>
-
-      <!-- Entry: Goshala Community Visit Feb 2025 -->
-      <div class="pj-entry fade-up">
-        <div class="pj-spine">
-          <div class="pj-node"></div>
-          <span class="pj-year">2025</span>
-        </div>
-        <div class="pj-body">
-          <div class="pj-photo">
-            <img src="images/goshala_handover_ceremony.jpg" alt="Nigama Foundation and Ceipal team at Pashu Mandap Goshala handover ceremony — Hyderabad, February 2025" loading="lazy" style="object-position:center 40%" />
-            <div class="pj-photo-caption">Pashu Mandap Goshala · Hyderabad · Feb 2025</div>
-          </div>
-          <div class="pj-meta">
-            <span class="pj-date-badge">Feb 2025</span>
-            <span class="pj-tag">Community Service · Hyderabad</span>
-          </div>
-          <h2>Goshala Community Visit — Pashu Mandap</h2>
-          <p>The Nigama Foundation and Ceipal teams visited Pashu Mandap Goshala in Hyderabad, bringing veterinary supplies, feed, and a formal handover ceremony attended by the goshala leadership. A reminder that the foundation's commitment extends to every living being in the communities it serves.</p>
-          <a href="/about" class="pj-read-more">About our approach →</a>
-        </div>
-      </div>
-
-      <!-- Entry: Diwali Fundraising 2024 -->
-      <div class="pj-entry fade-up">
-        <div class="pj-spine">
-          <div class="pj-node"></div>
-          <span class="pj-year">2024</span>
-        </div>
-        <div class="pj-body">
-          <div class="pj-photo pj-photo-grid">
-            <img src="images/event-diwali-2024-1.jpg" alt="Hand-painted diyas created by employees for the Diwali fundraiser" loading="lazy" />
-            <img src="images/event-diwali-2024-2.jpg" alt="Employees at the corporate Diwali fundraising celebration" loading="lazy" />
-            <img src="images/event-diwali-2024-3.jpg" alt="Diwali diya auction supporting Nigama Foundation CSR" loading="lazy" />
-            <img src="images/event-diwali-2024-4.jpg" alt="Festive Diwali celebration and fundraiser" loading="lazy" />
-            <div class="pj-photo-caption">Corporate Diwali Celebration · Oct 2024</div>
-          </div>
-          <div class="pj-meta">
-            <span class="pj-date-badge">Oct 2024</span>
-            <span class="pj-tag">Fundraising · Community</span>
-          </div>
-          <h2>Diwali Fundraising 2024</h2>
-          <p>Employees hand-painted diyas that were auctioned during the corporate Diwali celebrations, turning festive creativity into funding for the year's CSR initiatives. Every rupee raised flows straight into Nigama Foundation programs — art, generosity, and the spirit of giving in a single evening.</p>
-          <a href="https://www.nigamafoundation.org/diwali-fundraising-2024/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
-        </div>
-      </div>
-
-      <!-- Entry: Flood Relief Vijayawada Sept 2024 -->
-      <div class="pj-entry fade-up">
-        <div class="pj-spine">
-          <div class="pj-node"></div>
-        </div>
-        <div class="pj-body">
-          <div class="pj-photo pj-photo-grid">
-            <img src="images/event-flood-relief-vijayawada-1.jpg" alt="Flood relief packs prepared for distribution in Vijayawada" loading="lazy" />
-            <img src="images/event-flood-relief-vijayawada-2.jpg" alt="Nigama Foundation distributing relief packs to flood-affected families" loading="lazy" />
-            <img src="images/event-flood-relief-vijayawada-3.jpg" alt="Flood survivors receiving essential relief supplies in Vijayawada" loading="lazy" />
-            <img src="images/event-flood-relief-vijayawada-4.jpg" alt="Relief pack handover after the September 2024 Vijayawada floods" loading="lazy" />
-            <div class="pj-photo-caption">Vijayawada · Sept 2024</div>
-          </div>
-          <div class="pj-meta">
-            <span class="pj-date-badge">Sept 2024</span>
-            <span class="pj-tag">Disaster Relief · Vijayawada</span>
-          </div>
-          <h2>Flood Relief Support — Vijayawada</h2>
-          <p>In the wake of the September 2024 floods, Nigama Foundation distributed 1,250 relief packs — each curated from survivor feedback with a blanket, towels, a steel plate, a bowl, and a durable cotton bag. A total contribution of roughly Rs. 10 lakh, delivered where it was needed, when it was needed.</p>
-          <a href="https://www.nigamafoundation.org/flood-relief-support-vijayawada/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
         </div>
       </div>
 
@@ -482,23 +386,139 @@
         </div>
       </div>
 
-      <!-- Entry: Vadaanya Janaa Society July 2024 -->
+      <!-- Entry: Uravakonda School Sept 2023 -->
+      <div class="pj-entry fade-up">
+        <div class="pj-spine">
+          <div class="pj-node"></div>
+        </div>
+        <div class="pj-body">
+          <div class="pj-photo pj-photo-grid">
+            <img src="images/event-uravakonda-1.jpg" alt="Uravakonda School students supported by Nigama Foundation" loading="lazy" />
+            <img src="images/event-uravakonda-2.jpg" alt="Nigama Foundation engagement at Uravakonda School, Anantapur" loading="lazy" />
+            <img src="images/event-uravakonda-3.jpg" alt="School facilities and students at Uravakonda" loading="lazy" />
+            <img src="images/event-uravakonda-4.jpg" alt="Community program at Uravakonda School, founder's alma mater" loading="lazy" />
+            <div class="pj-photo-caption">Uravakonda · Anantapur · Sept 2023</div>
+          </div>
+          <div class="pj-meta">
+            <span class="pj-date-badge">Sept 2023</span>
+            <span class="pj-tag">Build What Lasts · Anantapur</span>
+          </div>
+          <h2>Uravakonda Auditorium — Govt. Jr. College</h2>
+          <p>Nigama Foundation constructed a full auditorium at Government Junior College, Uravakonda — the founder's own school. The facility now hosts daily morning prayers, seminars, college functions, and examinations. Uravakonda is where Sameer Penakalapati spent his school years; the auditorium is the foundation's way of giving that back permanently.</p>
+          <a href="/programs#infrastructure" class="pj-read-more">About our Infrastructure programs →</a>
+        </div>
+      </div>
+
+      <!-- Entry 6: Sadhana / Respect -->
       <div class="pj-entry fade-up">
         <div class="pj-spine">
           <div class="pj-node"></div>
         </div>
         <div class="pj-body">
           <div class="pj-photo">
-            <img src="images/event-vadaanya-1.jpg" alt="Vadaanya Janaa Society scholarship students supported by Nigama Foundation" loading="lazy" style="object-position:center 40%" />
-            <div class="pj-photo-caption">Vadaanya Janaa Society · Andhra Pradesh · July 2024</div>
+            <img src="images/sadhana_group_appliances.jpg" alt="Nigama Foundation Sadhana Institute delivery — appliances and supplies handover, May 2023" loading="lazy" style="object-position:center 40%" />
+            <div class="pj-photo-caption">Sadhana Institute for the Intellectually Challenged · Hyderabad · 2023</div>
           </div>
           <div class="pj-meta">
-            <span class="pj-date-badge">July 2024</span>
-            <span class="pj-tag">Educate the Young · Andhra Pradesh</span>
+            <span class="pj-date-badge">May 2023</span>
+            <span class="pj-tag">Build What Lasts · Hyderabad</span>
           </div>
-          <h2>Vadaanya Janaa Society</h2>
-          <p>Nigama Foundation partnered with Vadaanya Janaa Society, a youth-led non-profit funding merit scholarships and tuition for students who would otherwise be priced out of an education. Backing the Right to Education by supporting the organizations that make it real on the ground.</p>
-          <a href="https://www.nigamafoundation.org/vadaanya-janaa-society/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
+          <h2>Sadhana Institute — Appliances for the Intellectually Challenged</h2>
+          <p>Appliances, assistive resources, and sustained support for the Sadhana Institute for the Intellectually Challenged. Respect isn't sympathy from a distance — it's equipment delivered, a visit made, a hand shaken. The barrier for most people with disabilities is access, not ability. We address the barrier.</p>
+          <a href="/programs#infrastructure" class="pj-read-more">About our Infrastructure programs →</a>
+        </div>
+      </div>
+
+      <!-- Entry: Saraswathi Vidyamandir Oct 2018 -->
+      <div class="pj-entry fade-up">
+        <div class="pj-spine">
+          <div class="pj-node"></div>
+          <span class="pj-year">2018</span>
+        </div>
+        <div class="pj-body">
+          <div class="pj-photo pj-photo-grid pj-grid-3">
+            <img src="images/event-saraswathi-1.jpg" alt="Students at Saraswathi Vidya Mandir in Guntakal" loading="lazy" />
+            <img src="images/event-saraswathi-2.jpg" alt="Nigama Foundation support at Saraswathi Vidyamandir school" loading="lazy" />
+            <img src="images/event-saraswathi-3.jpg" alt="School children at Saraswathi Vidya Mandir, Guntakal" loading="lazy" />
+            <div class="pj-photo-caption">Saraswathi Vidya Mandir · Guntakal · Oct 2018</div>
+          </div>
+          <div class="pj-meta">
+            <span class="pj-date-badge">Oct 2018</span>
+            <span class="pj-tag">Build What Lasts · Guntakal</span>
+          </div>
+          <h2>School Building &amp; Electrical Infrastructure — Saraswathi Vidyamandir, Guntakal</h2>
+          <p>Nigama Foundation funded school building construction and full electrical board installation at Saraswathi Vidya Mandir in Guntakal — a school serving children from underserved communities. Beyond supplies, this is structural: lights that stay on, rooms that stand, a campus built to last for the next generation of students.</p>
+          <a href="https://www.nigamafoundation.org/saraswathi-vidyamandir/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
+        </div>
+      </div>
+
+      <div class="pj-section-divider">
+        <span class="pj-sd-pill" style="--sc:#2D6A4F">Care for Every Age</span>
+        <h3 class="pj-sd-title">Lifelines</h3>
+      </div>
+
+      <!-- Entry 3: Blood Donation -->
+      <div class="pj-entry fade-up">
+        <div class="pj-spine">
+          <div class="pj-node"></div>
+        </div>
+        <div class="pj-body">
+          <div class="pj-photo">
+            <img src="images/event-blood-donation.jpg" alt="Indotronix Avani blood donation camp 2025" loading="lazy" style="object-position:center 30%" />
+            <div class="pj-photo-caption">Indotronix Avani HQ · Hyderabad · Nov 2025</div>
+          </div>
+          <div class="pj-meta">
+            <span class="pj-date-badge">Nov 2025</span>
+            <span class="pj-tag">Community Health · Hyderabad</span>
+          </div>
+          <h2>Blood Donation Camp 2025</h2>
+          <p>The Indotronix Avani team in Hyderabad came together for a volunteer blood donation drive — a morning of compassion, community, and collective impact. The people who fund the mission also show up for it.</p>
+          <a href="https://www.nigamafoundation.org/blood-donation-camp-2025/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Entry: Community Impact Blood Donation Vizag June 2025 -->
+      <div class="pj-entry fade-up">
+        <div class="pj-spine">
+          <div class="pj-node"></div>
+        </div>
+        <div class="pj-body">
+          <div class="pj-photo pj-photo-grid pj-grid-3">
+            <img src="images/event-blood-donation-vizag-2025-1.jpg" alt="Employee donating blood at the Visakhapatnam office blood donation camp" loading="lazy" />
+            <img src="images/event-blood-donation-vizag-2025-2.jpg" alt="Volunteers at the Indotronix Avani Vizag blood donation drive" loading="lazy" />
+            <img src="images/event-blood-donation-vizag-2025-3.jpg" alt="Community Impact blood donation drive at the Visakhapatnam office" loading="lazy" />
+            <div class="pj-photo-caption">Indotronix Avani · Visakhapatnam · June 2025</div>
+          </div>
+          <div class="pj-meta">
+            <span class="pj-date-badge">June 2025</span>
+            <span class="pj-tag">Community Health · Visakhapatnam</span>
+          </div>
+          <h2>Community Impact — Blood Donation Drive, Vizag</h2>
+          <p>The Indotronix Avani Group team at the Visakhapatnam office gave up a weekend to donate blood — an overwhelming turnout that reflects a deep, standing commitment to community service. The people behind the mission roll up their sleeves for it, literally.</p>
+          <a href="https://www.nigamafoundation.org/community-impact-blood-donation-drive/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Entry: Flood Relief Vijayawada Sept 2024 -->
+      <div class="pj-entry fade-up">
+        <div class="pj-spine">
+          <div class="pj-node"></div>
+        </div>
+        <div class="pj-body">
+          <div class="pj-photo pj-photo-grid">
+            <img src="images/event-flood-relief-vijayawada-1.jpg" alt="Flood relief packs prepared for distribution in Vijayawada" loading="lazy" />
+            <img src="images/event-flood-relief-vijayawada-2.jpg" alt="Nigama Foundation distributing relief packs to flood-affected families" loading="lazy" />
+            <img src="images/event-flood-relief-vijayawada-3.jpg" alt="Flood survivors receiving essential relief supplies in Vijayawada" loading="lazy" />
+            <img src="images/event-flood-relief-vijayawada-4.jpg" alt="Relief pack handover after the September 2024 Vijayawada floods" loading="lazy" />
+            <div class="pj-photo-caption">Vijayawada · Sept 2024</div>
+          </div>
+          <div class="pj-meta">
+            <span class="pj-date-badge">Sept 2024</span>
+            <span class="pj-tag">Disaster Relief · Vijayawada</span>
+          </div>
+          <h2>Flood Relief Support — Vijayawada</h2>
+          <p>In the wake of the September 2024 floods, Nigama Foundation distributed 1,250 relief packs — each curated from survivor feedback with a blanket, towels, a steel plate, a bowl, and a durable cotton bag. A total contribution of roughly Rs. 10 lakh, delivered where it was needed, when it was needed.</p>
+          <a href="https://www.nigamafoundation.org/flood-relief-support-vijayawada/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
         </div>
       </div>
 
@@ -524,23 +544,80 @@
         </div>
       </div>
 
-      <!-- Entry 5: School Supplies -->
+      <div class="pj-section-divider">
+        <span class="pj-sd-pill" style="--sc:#C97A10">Fundraising</span>
+        <h3 class="pj-sd-title">Festivals of Giving</h3>
+      </div>
+
+      <!-- Entry: Diwali Fundraising 2024 -->
+      <div class="pj-entry fade-up">
+        <div class="pj-spine">
+          <div class="pj-node"></div>
+          <span class="pj-year">2024</span>
+        </div>
+        <div class="pj-body">
+          <div class="pj-photo pj-photo-grid">
+            <img src="images/event-diwali-2024-1.jpg" alt="Hand-painted diyas created by employees for the Diwali fundraiser" loading="lazy" />
+            <img src="images/event-diwali-2024-2.jpg" alt="Employees at the corporate Diwali fundraising celebration" loading="lazy" />
+            <img src="images/event-diwali-2024-3.jpg" alt="Diwali diya auction supporting Nigama Foundation CSR" loading="lazy" />
+            <img src="images/event-diwali-2024-4.jpg" alt="Festive Diwali celebration and fundraiser" loading="lazy" />
+            <div class="pj-photo-caption">Corporate Diwali Celebration · Oct 2024</div>
+          </div>
+          <div class="pj-meta">
+            <span class="pj-date-badge">Oct 2024</span>
+            <span class="pj-tag">Fundraising · Community</span>
+          </div>
+          <h2>Diwali Fundraising 2024</h2>
+          <p>Employees hand-painted diyas that were auctioned during the corporate Diwali celebrations, turning festive creativity into funding for the year's CSR initiatives. Every rupee raised flows straight into Nigama Foundation programs — art, generosity, and the spirit of giving in a single evening.</p>
+          <a href="https://www.nigamafoundation.org/diwali-fundraising-2024/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Entry: Diwali Fundraising 2023 -->
       <div class="pj-entry fade-up">
         <div class="pj-spine">
           <div class="pj-node"></div>
         </div>
         <div class="pj-body">
-          <div class="pj-photo">
-            <img src="images/program-education-distribution.jpg" alt="School supply distribution — Amitabha Aadarana Vidyalaya" loading="lazy" style="object-position:center 30%" />
-            <div class="pj-photo-caption">Amitabha Aadarana Vidyalaya · Hyderabad · 2024</div>
+          <div class="pj-photo pj-photo-grid pj-grid-3">
+            <img src="images/event-diwali-2023-1.jpg" alt="Employees at the 2023 corporate Diwali celebration and fundraiser" loading="lazy" />
+            <img src="images/event-diwali-2023-2.jpg" alt="Hand-painted diyas auctioned at the 2023 Diwali fundraiser" loading="lazy" />
+            <img src="images/event-diwali-2023-3.jpg" alt="Diwali celebration supporting Nigama Foundation CSR initiatives" loading="lazy" />
+            <div class="pj-photo-caption">Corporate Diwali Celebration · Oct 2023</div>
           </div>
           <div class="pj-meta">
-            <span class="pj-date-badge">2024</span>
-            <span class="pj-tag">Educate the Young · Hyderabad</span>
+            <span class="pj-date-badge">Oct 2023</span>
+            <span class="pj-tag">Fundraising · Community</span>
           </div>
-          <h2>School Supplies Distribution — Amitabha Aadarana</h2>
-          <p>Uniforms, notebooks, bags, and stationery distributed to students who would otherwise start the year without basics. Fifty children sponsored annually through the Nigama school-supply programme — each one named, each one tracked, each one followed through to the end of the year.</p>
-          <a href="/programs#education" class="pj-read-more">About our Education programs →</a>
+          <h2>Diwali Fundraising 2023</h2>
+          <p>Employee-painted diyas were auctioned at the corporate Diwali celebration, raising over Rs. 65,000 for Nigama Foundation's CSR work. A festival of lights turned into a fund for the year ahead.</p>
+          <a href="https://www.nigamafoundation.org/diwali-fundraising/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
+        </div>
+      </div>
+
+      <div class="pj-section-divider">
+        <span class="pj-sd-pill" style="--sc:#2D6A4F">Care for Every Age</span>
+        <h3 class="pj-sd-title">Homes &amp; Havens</h3>
+      </div>
+
+      <!-- Entry: Goshala Community Visit Feb 2025 -->
+      <div class="pj-entry fade-up">
+        <div class="pj-spine">
+          <div class="pj-node"></div>
+          <span class="pj-year">2025</span>
+        </div>
+        <div class="pj-body">
+          <div class="pj-photo">
+            <img src="images/goshala_handover_ceremony.jpg" alt="Nigama Foundation and Ceipal team at Pashu Mandap Goshala handover ceremony — Hyderabad, February 2025" loading="lazy" style="object-position:center 40%" />
+            <div class="pj-photo-caption">Pashu Mandap Goshala · Hyderabad · Feb 2025</div>
+          </div>
+          <div class="pj-meta">
+            <span class="pj-date-badge">Feb 2025</span>
+            <span class="pj-tag">Community Service · Hyderabad</span>
+          </div>
+          <h2>Goshala Community Visit — Pashu Mandap</h2>
+          <p>The Nigama Foundation and Ceipal teams visited Pashu Mandap Goshala in Hyderabad, bringing veterinary supplies, feed, and a formal handover ceremony attended by the goshala leadership. A reminder that the foundation's commitment extends to every living being in the communities it serves.</p>
+          <a href="/about" class="pj-read-more">About our approach →</a>
         </div>
       </div>
 
@@ -567,51 +644,6 @@
         </div>
       </div>
 
-      <!-- Entry: Diwali Fundraising 2023 -->
-      <div class="pj-entry fade-up">
-        <div class="pj-spine">
-          <div class="pj-node"></div>
-        </div>
-        <div class="pj-body">
-          <div class="pj-photo pj-photo-grid pj-grid-3">
-            <img src="images/event-diwali-2023-1.jpg" alt="Employees at the 2023 corporate Diwali celebration and fundraiser" loading="lazy" />
-            <img src="images/event-diwali-2023-2.jpg" alt="Hand-painted diyas auctioned at the 2023 Diwali fundraiser" loading="lazy" />
-            <img src="images/event-diwali-2023-3.jpg" alt="Diwali celebration supporting Nigama Foundation CSR initiatives" loading="lazy" />
-            <div class="pj-photo-caption">Corporate Diwali Celebration · Oct 2023</div>
-          </div>
-          <div class="pj-meta">
-            <span class="pj-date-badge">Oct 2023</span>
-            <span class="pj-tag">Fundraising · Community</span>
-          </div>
-          <h2>Diwali Fundraising 2023</h2>
-          <p>Employee-painted diyas were auctioned at the corporate Diwali celebration, raising over Rs. 65,000 for Nigama Foundation's CSR work. A festival of lights turned into a fund for the year ahead.</p>
-          <a href="https://www.nigamafoundation.org/diwali-fundraising/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
-        </div>
-      </div>
-
-      <!-- Entry: Uravakonda School Sept 2023 -->
-      <div class="pj-entry fade-up">
-        <div class="pj-spine">
-          <div class="pj-node"></div>
-        </div>
-        <div class="pj-body">
-          <div class="pj-photo pj-photo-grid">
-            <img src="images/event-uravakonda-1.jpg" alt="Uravakonda School students supported by Nigama Foundation" loading="lazy" />
-            <img src="images/event-uravakonda-2.jpg" alt="Nigama Foundation engagement at Uravakonda School, Anantapur" loading="lazy" />
-            <img src="images/event-uravakonda-3.jpg" alt="School facilities and students at Uravakonda" loading="lazy" />
-            <img src="images/event-uravakonda-4.jpg" alt="Community program at Uravakonda School, founder's alma mater" loading="lazy" />
-            <div class="pj-photo-caption">Uravakonda · Anantapur · Sept 2023</div>
-          </div>
-          <div class="pj-meta">
-            <span class="pj-date-badge">Sept 2023</span>
-            <span class="pj-tag">Build What Lasts · Anantapur</span>
-          </div>
-          <h2>Uravakonda Auditorium — Govt. Jr. College</h2>
-          <p>Nigama Foundation constructed a full auditorium at Government Junior College, Uravakonda — the founder's own school. The facility now hosts daily morning prayers, seminars, college functions, and examinations. Uravakonda is where Sameer Penakalapati spent his school years; the auditorium is the foundation's way of giving that back permanently.</p>
-          <a href="/programs#infrastructure" class="pj-read-more">About our Infrastructure programs →</a>
-        </div>
-      </div>
-
       <!-- Entry: Matrudevobhava Anadha Ashramam Sept 2023 -->
       <div class="pj-entry fade-up">
         <div class="pj-spine">
@@ -631,26 +663,6 @@
           <h2>Matrudevobhava Anadha Ashramam</h2>
           <p>This ashram provides safe shelter for impoverished, homeless, and mentally disabled people across the greater Hyderabad region. In September 2023, the Indotronix Avani Group CEO and employees donated generously to sustain the home's day-to-day needs.</p>
           <a href="https://www.nigamafoundation.org/matrudevobhava-anadha-ashramam/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
-        </div>
-      </div>
-
-      <!-- Entry 6: Sadhana / Respect -->
-      <div class="pj-entry fade-up">
-        <div class="pj-spine">
-          <div class="pj-node"></div>
-        </div>
-        <div class="pj-body">
-          <div class="pj-photo">
-            <img src="images/sadhana_group_appliances.jpg" alt="Nigama Foundation Sadhana Institute delivery — appliances and supplies handover, May 2023" loading="lazy" style="object-position:center 40%" />
-            <div class="pj-photo-caption">Sadhana Institute for the Intellectually Challenged · Hyderabad · 2023</div>
-          </div>
-          <div class="pj-meta">
-            <span class="pj-date-badge">May 2023</span>
-            <span class="pj-tag">Build What Lasts · Hyderabad</span>
-          </div>
-          <h2>Build What Lasts — Sadhana Institute</h2>
-          <p>Appliances, assistive resources, and sustained support for the Sadhana Institute for the Intellectually Challenged. Respect isn't sympathy from a distance — it's equipment delivered, a visit made, a hand shaken. The barrier for most people with disabilities is access, not ability. We address the barrier.</p>
-          <a href="/programs#infrastructure" class="pj-read-more">About our Infrastructure programs →</a>
         </div>
       </div>
 
@@ -721,29 +733,6 @@
         </div>
       </div>
 
-      <!-- Entry: Saraswathi Vidyamandir Oct 2018 -->
-      <div class="pj-entry fade-up">
-        <div class="pj-spine">
-          <div class="pj-node"></div>
-          <span class="pj-year">2018</span>
-        </div>
-        <div class="pj-body">
-          <div class="pj-photo pj-photo-grid pj-grid-3">
-            <img src="images/event-saraswathi-1.jpg" alt="Students at Saraswathi Vidya Mandir in Guntakal" loading="lazy" />
-            <img src="images/event-saraswathi-2.jpg" alt="Nigama Foundation support at Saraswathi Vidyamandir school" loading="lazy" />
-            <img src="images/event-saraswathi-3.jpg" alt="School children at Saraswathi Vidya Mandir, Guntakal" loading="lazy" />
-            <div class="pj-photo-caption">Saraswathi Vidya Mandir · Guntakal · Oct 2018</div>
-          </div>
-          <div class="pj-meta">
-            <span class="pj-date-badge">Oct 2018</span>
-            <span class="pj-tag">Build What Lasts · Guntakal</span>
-          </div>
-          <h2>School Building &amp; Electrical Infrastructure — Saraswathi Vidyamandir, Guntakal</h2>
-          <p>Nigama Foundation funded school building construction and full electrical board installation at Saraswathi Vidya Mandir in Guntakal — a school serving children from underserved communities. Beyond supplies, this is structural: lights that stay on, rooms that stand, a campus built to last for the next generation of students.</p>
-          <a href="https://www.nigamafoundation.org/saraswathi-vidyamandir/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
-        </div>
-      </div>
-
       <!-- Entry: Radha Kishan Balika Bhavan June 2018 -->
       <div class="pj-entry fade-up">
         <div class="pj-spine">
@@ -765,6 +754,7 @@
           <a href="https://www.nigamafoundation.org/radha-kishan-balika-bhavan/" target="_blank" rel="noopener" class="pj-read-more">Read more →</a>
         </div>
       </div>
+
 
     </div>
   </div>
@@ -872,6 +862,19 @@
           const matches = tag && tag.textContent.includes(pillar);
           entry.classList.toggle('pj-hidden', !matches);
         }
+      });
+
+      // Show/hide section dividers based on visible entries
+      document.querySelectorAll('.pj-section-divider').forEach(function(divider) {
+        var next = divider.nextElementSibling;
+        var hasVisible = false;
+        while (next && !next.classList.contains('pj-section-divider')) {
+          if (next.classList.contains('pj-entry') && !next.classList.contains('pj-hidden')) {
+            hasVisible = true; break;
+          }
+          next = next.nextElementSibling;
+        }
+        divider.style.display = hasVisible ? '' : 'none';
       });
     });
   });
