@@ -1328,6 +1328,46 @@
     </div>
   </div>
   <style>
+    /* ── Press masonry ──────────────────────────────────── */
+    .press-masonry {
+      columns: 3;
+      column-gap: 1.25rem;
+    }
+    .press-card {
+      break-inside: avoid;
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+    .press-caption {
+      padding: 0.75rem 1rem;
+    }
+    .press-pub {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--pv-purple);
+      margin-bottom: 0.25rem;
+    }
+    .press-card-lg .press-pub {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+    }
+    .press-date {
+      font-size: 0.73rem;
+      color: var(--gray-500);
+    }
+    @media (max-width: 768px) {
+      .press-masonry { columns: 2; }
+    }
+    @media (max-width: 480px) {
+      .press-masonry { columns: 1; }
+    }
+    /* ── End press masonry ──────────────────────────────── */
+
     #pv-page-nav::-webkit-scrollbar { display:none; }
     .pv-nav-pill {
       display:inline-flex;align-items:center;
@@ -1845,106 +1885,78 @@
       <p style="color:var(--gray-600);margin-top:0.75rem">Project Parivarthan's reach across 8 districts and 22,000+ youth has been covered by leading newspapers across Andhra Pradesh — in English and Telugu.</p>
     </div>
 
-    <!-- Featured English press — 2 columns -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem">
+    <!-- Masonry columns — all 9 clippings, no fixed row heights, no white-space gaps -->
+    <div class="press-masonry">
 
-      <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
-        <div style="overflow:hidden">
-          <img src="images/press-the-hindu.jpg" alt="The Hindu coverage of Project Parivarthan launch in Anantapur" class="press-clip" data-full="images/press-the-hindu.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
-        </div>
-        <div style="padding:1rem 1.5rem">
-          <div style="font-size:0.68rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.3rem">The Hindu · Anantapur</div>
-          <span style="font-size:0.75rem;color:var(--gray-500)">Aug 2, 2025</span>
+      <div class="press-card press-card-lg">
+        <img src="images/press-the-hindu.jpg" alt="The Hindu coverage of Project Parivarthan launch in Anantapur" class="press-clip" data-full="images/press-the-hindu.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
+        <div class="press-caption">
+          <div class="press-pub">The Hindu · Anantapur</div>
+          <span class="press-date">Aug 2, 2025</span>
         </div>
       </div>
 
-      <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
-        <div style="overflow:hidden">
-          <img src="images/press-deccan-chronicle.jpg" alt="Deccan Chronicle coverage of Project Parivarthan" class="press-clip" data-full="images/press-deccan-chronicle.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
-        </div>
-        <div style="padding:1rem 1.5rem">
-          <div style="font-size:0.68rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.3rem">Deccan Chronicle · Andhra Pradesh</div>
-          <span style="font-size:0.75rem;color:var(--gray-500)">Aug 2, 2025</span>
+      <div class="press-card press-card-lg">
+        <img src="images/press-deccan-chronicle.jpg" alt="Deccan Chronicle coverage of Project Parivarthan" class="press-clip" data-full="images/press-deccan-chronicle.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
+        <div class="press-caption">
+          <div class="press-pub">Deccan Chronicle · Andhra Pradesh</div>
+          <span class="press-date">Aug 2, 2025</span>
         </div>
       </div>
 
-    </div>
-
-    <!-- Hans India row -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem">
-
-      <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
-        <div style="overflow:hidden">
-          <img src="images/press-hans-india-1.jpg" alt="Hans India coverage of Project Parivarthan drug abuse prevention" class="press-clip" data-full="images/press-hans-india-1.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
-        </div>
-        <div style="padding:1rem 1.5rem">
-          <div style="font-size:0.68rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.3rem">Hans India · Kurnool</div>
-          <span style="font-size:0.75rem;color:var(--gray-500)">Feb 8, 2026 · Page 03</span>
+      <div class="press-card press-card-lg">
+        <img src="images/press-hans-india-1.jpg" alt="Hans India coverage of Project Parivarthan drug abuse prevention" class="press-clip" data-full="images/press-hans-india-1.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
+        <div class="press-caption">
+          <div class="press-pub">Hans India · Kurnool</div>
+          <span class="press-date">Feb 8, 2026 · Page 03</span>
         </div>
       </div>
 
-      <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:14px;overflow:hidden;display:flex;flex-direction:column">
-        <div style="overflow:hidden">
-          <img src="images/press-hans-india-2.jpg" alt="Hans India coverage of Project Parivarthan at PVKK College" class="press-clip" data-full="images/press-hans-india-2.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
-        </div>
-        <div style="padding:1rem 1.5rem">
-          <div style="font-size:0.68rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.3rem">Hans India · Kurnool</div>
-          <span style="font-size:0.75rem;color:var(--gray-500)">Mar 31, 2026 · Page 03</span>
+      <div class="press-card press-card-lg">
+        <img src="images/press-hans-india-2.jpg" alt="Hans India coverage of Project Parivarthan at PVKK College" class="press-clip" data-full="images/press-hans-india-2.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
+        <div class="press-caption">
+          <div class="press-pub">Hans India · Kurnool</div>
+          <span class="press-date">Mar 31, 2026 · Page 03</span>
         </div>
       </div>
 
-    </div>
-
-    <!-- Telugu press — 5 across -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem">
-
-      <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:12px;overflow:hidden">
-        <div style="overflow:hidden">
-          <img src="images/press-eenadu.jpg" alt="Eenadu coverage of Nigama Foundation Parivarthan programme" class="press-clip" data-full="images/press-eenadu.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
-        </div>
-        <div style="padding:1rem">
-          <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.4rem">ఈనాడు · Anantapur</div>
-          <span style="font-size:0.73rem;color:var(--gray-500)">Sep 3, 2025 · Page 04</span>
+      <div class="press-card">
+        <img src="images/press-eenadu.jpg" alt="Eenadu coverage of Nigama Foundation Parivarthan programme" class="press-clip" data-full="images/press-eenadu.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
+        <div class="press-caption">
+          <div class="press-pub">ఈనాడు · Anantapur</div>
+          <span class="press-date">Sep 3, 2025 · Page 04</span>
         </div>
       </div>
 
-      <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:12px;overflow:hidden">
-        <div style="overflow:hidden">
-          <img src="images/press-surya-1.jpg" alt="Surya newspaper coverage of Parivarthan awareness session" class="press-clip" data-full="images/press-surya-1.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
-        </div>
-        <div style="padding:1rem">
-          <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.4rem">సూర్య · Anantapur</div>
-          <span style="font-size:0.73rem;color:var(--gray-500)">Sep 3, 2025 · Page 12</span>
+      <div class="press-card">
+        <img src="images/press-surya-1.jpg" alt="Surya newspaper coverage of Parivarthan awareness session" class="press-clip" data-full="images/press-surya-1.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
+        <div class="press-caption">
+          <div class="press-pub">సూర్య · Anantapur</div>
+          <span class="press-date">Sep 3, 2025 · Page 12</span>
         </div>
       </div>
 
-      <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:12px;overflow:hidden">
-        <div style="overflow:hidden">
-          <img src="images/press-surya-2.jpg" alt="Surya newspaper coverage of Uravakonda Parivarthan session" class="press-clip" data-full="images/press-surya-2.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
-        </div>
-        <div style="padding:1rem">
-          <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.4rem">సూర్య · Rayadurgam</div>
-          <span style="font-size:0.73rem;color:var(--gray-500)">Oct 24, 2025 · Page 13</span>
+      <div class="press-card">
+        <img src="images/press-surya-2.jpg" alt="Surya newspaper coverage of Uravakonda Parivarthan session" class="press-clip" data-full="images/press-surya-2.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
+        <div class="press-caption">
+          <div class="press-pub">సూర్య · Rayadurgam</div>
+          <span class="press-date">Oct 24, 2025 · Page 13</span>
         </div>
       </div>
 
-      <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:12px;overflow:hidden">
-        <div style="overflow:hidden">
-          <img src="images/press-sakshi.jpg" alt="Sakshi newspaper coverage of Nigama Foundation awareness programme" class="press-clip" data-full="images/press-sakshi.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
-        </div>
-        <div style="padding:1rem">
-          <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.4rem">సాక్షి · Rayadurgam</div>
-          <span style="font-size:0.73rem;color:var(--gray-500)">Oct 24, 2025 · Page 11</span>
+      <div class="press-card">
+        <img src="images/press-sakshi.jpg" alt="Sakshi newspaper coverage of Nigama Foundation awareness programme" class="press-clip" data-full="images/press-sakshi.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
+        <div class="press-caption">
+          <div class="press-pub">సాక్షి · Rayadurgam</div>
+          <span class="press-date">Oct 24, 2025 · Page 11</span>
         </div>
       </div>
 
-      <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:12px;overflow:hidden">
-        <div style="overflow:hidden">
-          <img src="images/press-mee24news.jpg" alt="Mee24News coverage of Parivarthan drug awareness programme" class="press-clip" data-full="images/press-mee24news.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
-        </div>
-        <div style="padding:1rem">
-          <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--pv-purple);margin-bottom:0.4rem">మీ24న్యూస్ · Anantapur</div>
-          <span style="font-size:0.73rem;color:var(--gray-500)">Oct 24, 2025</span>
+      <div class="press-card">
+        <img src="images/press-mee24news.jpg" alt="Mee24News coverage of Parivarthan drug awareness programme" class="press-clip" data-full="images/press-mee24news.jpg" style="width:100%;height:auto;display:block" loading="lazy" />
+        <div class="press-caption">
+          <div class="press-pub">మీ24న్యూస్ · Anantapur</div>
+          <span class="press-date">Oct 24, 2025</span>
         </div>
       </div>
 
