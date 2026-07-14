@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B2VSY6T4RM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B2VSY6T4RM');
+  </script>
+  <meta charset="UTF-8" />
+  <style>html{background:#FEFCF5}body{opacity:0;animation:pageEnter .3s ease forwards}@keyframes pageEnter{from{opacity:0}to{opacity:1}}</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Store — Nigama Foundation | Wear the Mission</title>
+  <meta name="description" content="Nigama Foundation merchandise — quality items you'll actually use. 50% of every purchase goes directly to the foundation program you choose: education, care, infrastructure, or Project Parivarthan." />
+  <meta property="og:title" content="Nigama Foundation Store — Wear the Mission" />
+  <meta property="og:description" content="Quality merchandise where 50% of every purchase funds the foundation program you choose." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.nigamafoundation.org/store" />
+  <link rel="canonical" href="https://www.nigamafoundation.org/store" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       STORE PAGE — page-specific styles
+       ============================================================ */
+
+    /* ── Hero ── */
+    .store-hero {
+      position: relative;
+      background: linear-gradient(135deg, #0C2018 0%, #1A3C2A 55%, #16301F 100%);
+      padding: 9.5rem 0 4.5rem;
+      overflow: hidden;
+    }
+    .store-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 480px 320px at 88% 18%, rgba(232,130,10,0.14) 0%, transparent 70%),
+        radial-gradient(ellipse 360px 280px at 8% 90%, rgba(232,130,10,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .store-hero .container { position: relative; z-index: 1; }
+    .store-hero-inner { max-width: 640px; }
+    .store-hero-label {
+      display: inline-block;
+      background: rgba(232,130,10,0.16);
+      border: 1px solid rgba(232,130,10,0.4);
+      border-radius: 100px;
+      padding: 0.32rem 0.9rem;
+      color: #F0A930;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .store-hero h1 {
+      color: #fff;
+      font-size: clamp(2.3rem, 5vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.1rem;
+    }
+    .store-hero h1 em { font-style: normal; color: #F0931A; }
+    .store-hero-sub {
+      color: rgba(255,255,255,0.78);
+      font-size: 1.08rem;
+      line-height: 1.7;
+      max-width: 540px;
+      margin-bottom: 2rem;
+    }
+    .store-hero-sub strong { color: #F0A930; font-weight: 700; }
+    .store-hero-actions { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+
+    /* 50% split strip under hero */
+    .split-strip {
+      background: #fff;
+      border-top: 3px solid var(--gold);
+      border-bottom: 1px solid var(--gray-100);
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.12), 0 2px 12px rgba(0,0,0,0.06);
+      position: relative;
+      z-index: 3;
+      margin-top: -2rem;
+      border-radius: 16px 16px 0 0;
+    }
+    .split-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 1.4rem 0;
+    }
+    .split-item {
+      text-align: center;
+      padding: 0.6rem 1rem;
+      border-right: 1px solid var(--gray-100);
+    }
+    .split-item:last-child { border-right: none; }
+    .split-item-value {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .split-item-label {
+      display: block;
+      font-size: 0.66rem;
+      color: var(--gray-600);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.4rem;
+    }
+
+    /* ── How it works ── */
+    .how-section { background: var(--white); }
+    .how-header { text-align: center; max-width: 560px; margin: 0 auto 2.5rem; }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .how-step {
+      background: var(--surface-cream);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      padding: 1.9rem 1.6rem;
+      position: relative;
+    }
+    .how-step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      border: 2px solid rgba(232,130,10,0.45);
+    }
+    .how-step h3 { font-size: 1rem; color: var(--gray-800); margin-bottom: 0.45rem; }
+    .how-step p { font-size: 0.88rem; line-height: 1.65; }
+    .how-arrow {
+      position: absolute;
+      top: 50%;
+      right: -1.05rem;
+      transform: translateY(-50%);
+      color: var(--gray-200);
+      font-size: 1.1rem;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* ── Product grid ── */
+    .shop-section { background: var(--surface-cream); }
+    .shop-header { text-align: center; max-width: 560px; margin: 0 auto 2.5rem; }
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .product-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .product-visual {
+      height: 210px;
+      background: linear-gradient(160deg, #F4F1E9 0%, #EDEAE0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .product-visual-icon { font-size: 3.4rem; line-height: 1; }
+    .product-visual-tag {
+      position: absolute;
+      top: 0.9rem; left: 0.9rem;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--gray-100);
+      border-radius: 4px;
+      padding: 0.22rem 0.6rem;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-600);
+    }
+    .product-body {
+      padding: 1.6rem 1.6rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .product-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.35rem;
+    }
+    .product-body h3 { font-size: 1.15rem; color: var(--gray-800); }
+    .product-price {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+    .product-desc { font-size: 0.86rem; line-height: 1.6; margin-bottom: 0.9rem; }
+    .product-impact {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--gold-pale);
+      border: 1px solid rgba(232,130,10,0.3);
+      border-radius: 6px;
+      padding: 0.45rem 0.8rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #8B4E0A;
+      width: fit-content;
+      margin-bottom: 1.15rem;
+    }
+    .product-impact strong { color: var(--gold); font-weight: 800; }
+
+    /* Pillar selector pills */
+    .pillar-label {
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-300);
+      margin-bottom: 0.5rem;
+    }
+    .pillar-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.35rem;
+    }
+    .pillar-pill { position: relative; }
+    .pillar-pill input {
+      position: absolute;
+      opacity: 0;
+      inset: 0;
+      cursor: pointer;
+    }
+    .pillar-pill span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 100px;
+      padding: 0.32rem 0.75rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      cursor: pointer;
+      transition: var(--transition);
+      background: #fff;
+      user-select: none;
+    }
+    .pillar-pill span::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--pc, var(--gold));
+      flex-shrink: 0;
+    }
+    .pillar-pill input:checked + span {
+      border-color: var(--pc, var(--gold));
+      color: var(--pc, var(--gold));
+      background: color-mix(in srgb, var(--pc, var(--gold)) 7%, #fff);
+      font-weight: 700;
+    }
+    .pillar-pill input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+    .product-cta {
+      margin-top: auto;
+      width: 100%;
+      justify-content: center;
+      padding: 0.8rem;
+      font-size: 0.92rem;
+      border-radius: var(--radius-sm);
+    }
+
+    /* ── Why merchandise ── */
+    .why-section { background: var(--white); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .why-copy h2 { margin: 0.4rem 0 1rem; }
+    .why-copy p { margin-bottom: 1.1rem; }
+    .why-points { display: flex; flex-direction: column; gap: 1rem; }
+    .why-point {
+      background: var(--surface-cream);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.15rem 1.4rem;
+    }
+    .why-point h4 { font-size: 0.92rem; color: var(--gray-800); margin-bottom: 0.3rem; }
+    .why-point p { font-size: 0.86rem; line-height: 1.65; margin: 0; }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--surface-cream); }
+    .faq-header { text-align: center; max-width: 520px; margin: 0 auto 2rem; }
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.15rem 1.5rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--gray-800);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--gold);
+      line-height: 1;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-item p {
+      padding: 0 1.5rem 1.25rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* ── Order modal ── */
+    .order-modal {
+      position: fixed; inset: 0;
+      z-index: 9200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+    .order-modal.is-open { opacity: 1; pointer-events: auto; }
+    .order-modal-backdrop {
+      position: absolute; inset: 0;
+      background: rgba(6,18,12,0.82);
+      -webkit-backdrop-filter: blur(5px);
+              backdrop-filter: blur(5px);
+    }
+    .order-modal-card {
+      position: relative;
+      z-index: 1;
+      background: #fff;
+      border-radius: var(--radius-lg);
+      width: min(460px, 100%);
+      max-height: calc(100vh - 3rem);
+      overflow-y: auto;
+      padding: 2rem;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      transform: translateY(10px) scale(0.97);
+      transition: transform 0.24s ease;
+    }
+    .order-modal.is-open .order-modal-card { transform: translateY(0) scale(1); }
+    .order-modal-close {
+      position: absolute;
+      top: 1rem; right: 1.1rem;
+      background: none; border: none;
+      font-size: 1.6rem; line-height: 1;
+      color: var(--gray-300);
+      cursor: pointer;
+      transition: color 0.15s ease;
+    }
+    .order-modal-close:hover { color: var(--gray-800); }
+    .order-modal-card h3 {
+      font-size: 1.2rem;
+      color: var(--gray-800);
+      margin-bottom: 0.35rem;
+    }
+    .order-modal-sub {
+      font-size: 0.84rem;
+      color: var(--gray-600);
+      margin-bottom: 1.4rem;
+      line-height: 1.6;
+    }
+    .order-note {
+      background: var(--gold-pale);
+      border: 1px solid rgba(232,130,10,0.3);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 0.95rem;
+      font-size: 0.78rem;
+      color: #8B4E0A;
+      line-height: 1.6;
+      margin: 1rem 0 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .how-grid { grid-template-columns: 1fr; }
+      .how-arrow { display: none; }
+      .why-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 720px) {
+      .store-hero { padding: 7.5rem 0 3.5rem; }
+      .product-grid { grid-template-columns: 1fr; }
+      .split-strip-inner { grid-template-columns: 1fr; padding: 0.5rem 0; }
+      .split-item { border-right: none; border-bottom: 1px solid var(--gray-100); padding: 1rem; }
+      .split-item:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav scrolled" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="/" class="nav-logo" aria-label="Nigama Foundation home">
+      <img class="nav-logo-img" src="images/logo.svg" alt="Nigama Foundation" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-home-icon" aria-label="Home"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M1.5 7.5L8 1.5L14.5 7.5V14.5H10.5V10H5.5V14.5H1.5V7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/programs">Programs</a></li>
+      <li><a href="/impact">Impact</a></li>
+      <li><a href="/events">Events</a></li>
+      <li><a href="/wear-mission">Wear Mission</a></li>
+      <li><a href="/store" style="color:var(--gold);font-weight:700" aria-current="page">Store</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/donate" class="btn btn-primary">Donate</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" role="menu">
+    <a href="/">🏠 Home</a>
+    <a href="/about">About</a>
+    <a href="/programs">Programs</a>
+    <a href="/impact">Impact</a>
+    <a href="/events">Events</a>
+    <a href="/wear-mission">Wear Mission</a>
+    <a href="/store" style="color:var(--gold);font-weight:700">Store</a>
+    <a href="/contact">Contact</a>
+    <a href="/donate" class="btn btn-primary" style="margin-top:0.75rem;justify-content:center;">Donate Now</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="store-hero">
+  <div class="container">
+    <div class="store-hero-inner">
+      <span class="store-hero-label">Nigama Foundation Store</span>
+      <h1>Wear the <em>Mission.</em></h1>
+      <p class="store-hero-sub">Quality merchandise you'll actually use — and <strong>50% of every purchase</strong> goes directly to the foundation program you choose. You pick the item. You pick where the money goes.</p>
+      <div class="store-hero-actions">
+        <a href="#shop" class="btn btn-primary">Shop the Collection</a>
+        <a href="#how" class="btn btn-outline">How It Works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 50% SPLIT STRIP ── -->
+<div class="split-strip">
+  <div class="container">
+    <div class="split-strip-inner">
+      <div class="split-item">
+        <span class="split-item-value">50%</span>
+        <span class="split-item-label">Of Every Purchase Funds a Program</span>
+      </div>
+      <div class="split-item">
+        <span class="split-item-value">4</span>
+        <span class="split-item-label">Programs You Can Direct Funds To</span>
+      </div>
+      <div class="split-item">
+        <span class="split-item-value">100%</span>
+        <span class="split-item-label">Transparent — Tracked &amp; Reported</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how-section" id="how">
+  <div class="container">
+    <div class="how-header">
+      <span class="section-label">How It Works</span>
+      <h2>Three Steps. One Contribution.</h2>
+      <p>Every order is half merchandise, half mission — and you decide where the mission half goes.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-step">
+        <span class="how-step-num">1</span>
+        <h3>Choose Your Item</h3>
+        <p>Pick from our collection — tees, polos, notebooks, jackets. Everyday quality you'd buy anyway, carrying the Nigama Foundation mark.</p>
+        <span class="how-arrow" aria-hidden="true">→</span>
+      </div>
+      <div class="how-step">
+        <span class="how-step-num">2</span>
+        <h3>Pick Your Program</h3>
+        <p>Direct 50% of your purchase price to one of our four programs: education, care, infrastructure, or Project Parivarthan. Your call, not ours.</p>
+        <span class="how-arrow" aria-hidden="true">→</span>
+      </div>
+      <div class="how-step">
+        <span class="how-step-num">3</span>
+        <h3>We Ship, It Goes to Work</h3>
+        <p>Your order arrives at your door. Your contribution arrives at a classroom, a care home, or a counseling workshop — and we report back on where it went.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCT GRID ── -->
+<section class="shop-section" id="shop">
+  <div class="container">
+    <div class="shop-header">
+      <span class="section-label">The Collection</span>
+      <h2>Merchandise That Means Something.</h2>
+      <p>Four items. One promise: half of what you pay becomes school supplies, care drives, clean water, or a counselor's hour.</p>
+    </div>
+    <div class="product-grid">
+
+      <!-- Classic T-Shirt -->
+      <article class="product-card">
+        <div class="product-visual">
+          <span class="product-visual-tag">Apparel</span>
+          <span class="product-visual-icon" aria-hidden="true">👕</span>
+        </div>
+        <div class="product-body">
+          <div class="product-title-row">
+            <h3>Classic T-Shirt</h3>
+            <span class="product-price">₹799</span>
+          </div>
+          <p class="product-desc">Soft combed cotton with the Nigama Foundation wordmark. Unisex fit, sizes S–XXL.</p>
+          <span class="product-impact"><strong>₹400</strong> goes to your chosen program</span>
+          <div class="pillar-label">Your ₹400 supports</div>
+          <div class="pillar-pills" role="radiogroup" aria-label="Program choice for Classic T-Shirt">
+            <label class="pillar-pill" style="--pc:#1d4ed8"><input type="radio" name="pillar-tee" value="Educate the Young" checked /><span>Educate the Young</span></label>
+            <label class="pillar-pill" style="--pc:#2D6A4F"><input type="radio" name="pillar-tee" value="Care for Every Age" /><span>Care for Every Age</span></label>
+            <label class="pillar-pill" style="--pc:#0d1b4b"><input type="radio" name="pillar-tee" value="Build What Lasts" /><span>Build What Lasts</span></label>
+            <label class="pillar-pill" style="--pc:#7B2D8B"><input type="radio" name="pillar-tee" value="Project Parivarthan" /><span>Project Parivarthan</span></label>
+          </div>
+          <button class="btn btn-primary product-cta" data-order data-item="Classic T-Shirt (₹799)" data-pillar-group="pillar-tee">Order Now</button>
+        </div>
+      </article>
+
+      <!-- Polo Shirt -->
+      <article class="product-card">
+        <div class="product-visual">
+          <span class="product-visual-tag">Apparel</span>
+          <span class="product-visual-icon" aria-hidden="true">👔</span>
+        </div>
+        <div class="product-body">
+          <div class="product-title-row">
+            <h3>Polo Shirt</h3>
+            <span class="product-price">₹1,299</span>
+          </div>
+          <p class="product-desc">Pique-knit polo with an embroidered crest. Office-appropriate, mission-approved. Sizes S–XXL.</p>
+          <span class="product-impact"><strong>₹650</strong> goes to your chosen program</span>
+          <div class="pillar-label">Your ₹650 supports</div>
+          <div class="pillar-pills" role="radiogroup" aria-label="Program choice for Polo Shirt">
+            <label class="pillar-pill" style="--pc:#1d4ed8"><input type="radio" name="pillar-polo" value="Educate the Young" checked /><span>Educate the Young</span></label>
+            <label class="pillar-pill" style="--pc:#2D6A4F"><input type="radio" name="pillar-polo" value="Care for Every Age" /><span>Care for Every Age</span></label>
+            <label class="pillar-pill" style="--pc:#0d1b4b"><input type="radio" name="pillar-polo" value="Build What Lasts" /><span>Build What Lasts</span></label>
+            <label class="pillar-pill" style="--pc:#7B2D8B"><input type="radio" name="pillar-polo" value="Project Parivarthan" /><span>Project Parivarthan</span></label>
+          </div>
+          <button class="btn btn-primary product-cta" data-order data-item="Polo Shirt (₹1,299)" data-pillar-group="pillar-polo">Order Now</button>
+        </div>
+      </article>
+
+      <!-- Hardbound Notebook -->
+      <article class="product-card">
+        <div class="product-visual">
+          <span class="product-visual-tag">Stationery</span>
+          <span class="product-visual-icon" aria-hidden="true">📓</span>
+        </div>
+        <div class="product-body">
+          <div class="product-title-row">
+            <h3>Hardbound Notebook</h3>
+            <span class="product-price">₹549</span>
+          </div>
+          <p class="product-desc">A5 hardbound, 192 ruled pages, lay-flat binding. The foundation's motto inside the cover: Dignity, Delivered.</p>
+          <span class="product-impact"><strong>₹275</strong> goes to your chosen program</span>
+          <div class="pillar-label">Your ₹275 supports</div>
+          <div class="pillar-pills" role="radiogroup" aria-label="Program choice for Hardbound Notebook">
+            <label class="pillar-pill" style="--pc:#1d4ed8"><input type="radio" name="pillar-notebook" value="Educate the Young" checked /><span>Educate the Young</span></label>
+            <label class="pillar-pill" style="--pc:#2D6A4F"><input type="radio" name="pillar-notebook" value="Care for Every Age" /><span>Care for Every Age</span></label>
+            <label class="pillar-pill" style="--pc:#0d1b4b"><input type="radio" name="pillar-notebook" value="Build What Lasts" /><span>Build What Lasts</span></label>
+            <label class="pillar-pill" style="--pc:#7B2D8B"><input type="radio" name="pillar-notebook" value="Project Parivarthan" /><span>Project Parivarthan</span></label>
+          </div>
+          <button class="btn btn-primary product-cta" data-order data-item="Hardbound Notebook (₹549)" data-pillar-group="pillar-notebook">Order Now</button>
+        </div>
+      </article>
+
+      <!-- Winter Jacket -->
+      <article class="product-card">
+        <div class="product-visual">
+          <span class="product-visual-tag">Apparel</span>
+          <span class="product-visual-icon" aria-hidden="true">🧥</span>
+        </div>
+        <div class="product-body">
+          <div class="product-title-row">
+            <h3>Winter Jacket</h3>
+            <span class="product-price">₹2,499</span>
+          </div>
+          <p class="product-desc">Quilted, water-resistant shell with a fleece lining and a subtle sleeve crest. Sizes S–XXL.</p>
+          <span class="product-impact"><strong>₹1,250</strong> goes to your chosen program</span>
+          <div class="pillar-label">Your ₹1,250 supports</div>
+          <div class="pillar-pills" role="radiogroup" aria-label="Program choice for Winter Jacket">
+            <label class="pillar-pill" style="--pc:#1d4ed8"><input type="radio" name="pillar-jacket" value="Educate the Young" checked /><span>Educate the Young</span></label>
+            <label class="pillar-pill" style="--pc:#2D6A4F"><input type="radio" name="pillar-jacket" value="Care for Every Age" /><span>Care for Every Age</span></label>
+            <label class="pillar-pill" style="--pc:#0d1b4b"><input type="radio" name="pillar-jacket" value="Build What Lasts" /><span>Build What Lasts</span></label>
+            <label class="pillar-pill" style="--pc:#7B2D8B"><input type="radio" name="pillar-jacket" value="Project Parivarthan" /><span>Project Parivarthan</span></label>
+          </div>
+          <button class="btn btn-primary product-cta" data-order data-item="Winter Jacket (₹2,499)" data-pillar-group="pillar-jacket">Order Now</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY MERCHANDISE ── -->
+<section class="why-section">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-copy">
+        <span class="section-label">Why Merchandise?</span>
+        <h2>A Donation You Can Put On.</h2>
+        <p>Most giving is invisible. A t-shirt isn't. Every item in this collection turns a supporter into a walking introduction — a conversation that starts with "what's Nigama Foundation?" and ends with one more person who knows the work.</p>
+        <p>And unlike a logo giveaway, this is real funding: half of every rupee you spend goes straight into a program you chose yourself.</p>
+      </div>
+      <div class="why-points">
+        <div class="why-point">
+          <h4>Visibility</h4>
+          <p>Every shirt worn to the gym, every notebook on an office desk carries the foundation's name into rooms we could never reach on our own.</p>
+        </div>
+        <div class="why-point">
+          <h4>Community</h4>
+          <p>Merchandise marks belonging. Volunteers, donors, and staff wearing the same crest is a quiet statement: this mission has people behind it.</p>
+        </div>
+        <div class="why-point">
+          <h4>Funding</h4>
+          <p>The 50% split is not a rounding gesture. A single jacket funds ₹1,250 of program work — a month of school supplies for two children, delivered in person.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-header">
+      <span class="section-label">Questions</span>
+      <h2>Before You Order</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How does shipping work?</summary>
+        <p>We ship across India within 7–10 business days of order confirmation. Shipping within Hyderabad, Vizag, and Chennai is free; a flat ₹80 applies elsewhere in India. Once we confirm your order by email, we'll share tracking details as soon as your item is dispatched.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I pick the right size?</summary>
+        <p>Apparel runs true to standard Indian sizing (S through XXL). When we email your order confirmation, we'll include a size chart with chest and length measurements — you can confirm or adjust your size before anything ships. Exchanges for unworn items are free within 14 days.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How is the 50% contribution tracked?</summary>
+        <p>Every order is logged against the program you selected, and contributions are transferred to that program's ledger monthly. Nigama Foundation is 12AB registered and 80G certified, and merchandise-driven contributions appear in our published impact reporting — you'll see exactly which drives and projects your program funded.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo-white.png" alt="Nigama Foundation" class="footer-logo" />
+        <p>Delivering dignity, one person at a time, across Andhra Pradesh and Telangana.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">80G Certified</span>
+          <span class="footer-badge">12AB Registered</span>
+          <span class="footer-badge">🇮🇳 GoI Partner</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/programs">Programs</a></li>
+          <li><a href="/impact">Impact</a></li>
+          <li><a href="/store">Store</a></li>
+          <li><a href="/donate">Donate</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="/programs#education">Educate the Young</a></li>
+          <li><a href="/programs#care">Care for Every Age</a></li>
+          <li><a href="/programs#infrastructure">Build What Lasts</a></li>
+          <li><a href="/parivarthan">Project Parivarthan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-address">
+        <h4>Get in Touch</h4>
+        <p>
+          <a href="mailto:contact@nigamafoundation.org">contact@nigamafoundation.org</a><br><br>
+          Indotronix Avani Group, Orbit<br>
+          Plot No. 30/C, 20th Floor<br>
+          Knowledge City, Hyderabad<br>
+          Telangana – 500081
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Nigama Foundation. All Rights Reserved.</span>
+      <div class="footer-bottom-right">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── ORDER MODAL ── -->
+<div class="order-modal" id="order-modal" role="dialog" aria-modal="true" aria-labelledby="order-modal-title">
+  <div class="order-modal-backdrop" data-order-close></div>
+  <div class="order-modal-card">
+    <button class="order-modal-close" data-order-close aria-label="Close order form">&times;</button>
+    <h3 id="order-modal-title">Place Your Order</h3>
+    <p class="order-modal-sub">Fill in your details and send — the form opens a pre-filled email to our team.</p>
+    <form action="mailto:contact@nigamafoundation.org" method="post" enctype="text/plain">
+      <div class="form-group">
+        <label for="order-name">Full Name</label>
+        <input type="text" id="order-name" name="Name" required autocomplete="name" />
+      </div>
+      <div class="form-group">
+        <label for="order-email">Email</label>
+        <input type="email" id="order-email" name="Email" required autocomplete="email" />
+      </div>
+      <div class="form-group">
+        <label for="order-item">Item</label>
+        <select id="order-item" name="Item" required>
+          <option value="Classic T-Shirt (₹799)">Classic T-Shirt — ₹799</option>
+          <option value="Polo Shirt (₹1,299)">Polo Shirt — ₹1,299</option>
+          <option value="Hardbound Notebook (₹549)">Hardbound Notebook — ₹549</option>
+          <option value="Winter Jacket (₹2,499)">Winter Jacket — ₹2,499</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="order-program">Your 50% Goes To</label>
+        <select id="order-program" name="Program" required>
+          <option value="Educate the Young">Educate the Young</option>
+          <option value="Care for Every Age">Care for Every Age</option>
+          <option value="Build What Lasts">Build What Lasts</option>
+          <option value="Project Parivarthan">Project Parivarthan</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="order-qty">Quantity</label>
+        <input type="number" id="order-qty" name="Quantity" value="1" min="1" max="20" required />
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:0.85rem">Send Order Request</button>
+      <p class="order-note">We'll confirm your order within 24 hours and share payment details. No payment is taken on this page.</p>
+    </form>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  (function () {
+    var modal = document.getElementById('order-modal');
+    var itemSelect = document.getElementById('order-item');
+    var programSelect = document.getElementById('order-program');
+
+    function openModal(item, program) {
+      if (item) itemSelect.value = item;
+      if (program) programSelect.value = program;
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('order-name').focus();
+    }
+    function closeModal() {
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-order]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var group = btn.getAttribute('data-pillar-group');
+        var checked = document.querySelector('input[name="' + group + '"]:checked');
+        openModal(btn.getAttribute('data-item'), checked ? checked.value : null);
+      });
+    });
+    document.querySelectorAll('[data-order-close]').forEach(function (el) {
+      el.addEventListener('click', closeModal);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+  })();
+</script>
+</body>
+</html>

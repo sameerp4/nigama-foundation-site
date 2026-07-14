@@ -21,3 +21,6 @@
 /contact.html      /contact      301!
 /privacy.html      /privacy      301!
 /terms.html        /terms        301!
+
+/store          /store.html          200
+/wear-mission   /wear-mission.html   200
