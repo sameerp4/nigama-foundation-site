@@ -118,11 +118,13 @@ class SiteIntegrityTests(unittest.TestCase):
                     missing.append(f"{page.name}: twitter:card")
         self.assertEqual([], missing)
 
-    def test_donate_page_has_a_real_upi_qr_code(self) -> None:
+    def test_donate_page_has_no_scannable_upi_qr(self) -> None:
+        # QR removed intentionally: upi:// QR codes were being routed into
+        # WhatsApp Pay by donor devices. Donors enter the UPI ID manually.
         content = (ROOT / "donate.html").read_text(encoding="utf-8")
-        self.assertTrue((ROOT / "images" / "upi-donation-qr.png").is_file())
-        self.assertIn('src="images/upi-donation-qr.png"', content)
-        self.assertNotIn("Replace with UPI QR image", content)
+        self.assertNotIn("upi-donation-qr.png", content)
+        self.assertFalse((ROOT / "images" / "upi-donation-qr.png").exists())
+        self.assertIn("nigama.csr@okaxis", content)
 
     def test_public_pages_do_not_claim_unavailable_payment_methods(self) -> None:
         unavailable_claims = (
