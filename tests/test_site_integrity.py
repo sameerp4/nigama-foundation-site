@@ -146,6 +146,15 @@ class SiteIntegrityTests(unittest.TestCase):
         self.assertIn('href="mailto:donate@nigamafoundation.org', content)
         self.assertIn("PAN number if you need an 80G receipt", content)
 
+    def test_branded_404_page_exists_with_navigation(self) -> None:
+        page = ROOT / "404.html"
+        self.assertTrue(page.is_file())
+        content = page.read_text(encoding="utf-8")
+        self.assertIn('name="robots" content="noindex"', content)
+        # Must offer a real route back into the site, not a dead end.
+        for route in ('href="/"', 'href="/events"', 'href="/donate"'):
+            self.assertIn(route, content)
+
 
 if __name__ == "__main__":
     unittest.main()
