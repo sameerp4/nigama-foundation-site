@@ -420,6 +420,7 @@ section { padding: 3.5rem 0; }
   padding: 3.5rem 0;
   overflow: hidden;
   background: #ffffff;
+  border-bottom: 2px solid var(--gray-100);
 }
 /* Soft watercolor wash blobs */
 .video-section::before {
