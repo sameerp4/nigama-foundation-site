@@ -609,7 +609,6 @@ section { padding: 3.5rem 0; }
 .credentials {
   background: var(--surface-cream);
   padding: 3.5rem 0;
-  border-top: 1px solid var(--gray-100);
 }
 .credentials-header { text-align: center; margin-bottom: 2rem; }
 .credentials-header h2 { margin-top: 0.4rem; }
@@ -800,7 +799,6 @@ section { padding: 3.5rem 0; }
 .partners {
   background: var(--white);
   padding: 2rem 0;
-  border-top: 1px solid var(--gray-100);
 }
 .partners-header { text-align: center; max-width: 640px; margin: 0 auto 1.5rem; }
 .partners-header h2 { margin-top: 0.3rem; }
@@ -1004,7 +1002,7 @@ section { padding: 3.5rem 0; }
 /* ============================================================
    PROGRAMS — 3 cards with photos
    ============================================================ */
-.programs { background: var(--surface-cream); }
+.programs { background: var(--white); }
 .programs-header {
   text-align: center;
   max-width: 540px;
@@ -1165,6 +1163,7 @@ section { padding: 3.5rem 0; }
   display: flex;
   min-height: 460px;
   overflow: hidden;
+  padding: 0;
 }
 .pv-feature-photo-half {
   flex: 0 0 48%;
